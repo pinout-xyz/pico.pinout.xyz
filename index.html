@@ -12,7 +12,7 @@
     }
     article {
         display: grid;
-        grid-template-columns: 370px 210px 370px;
+        grid-template-columns: 455px 210px 455px;
         align-items: center;
     }
     .labels {
@@ -75,6 +75,16 @@
     }
     .labels.left span {margin-right:5px;float:right;}
     .labels.right span {margin-left:5px;}
+
+    /* Hide advanced labels by default */
+    .labels .advanced {visibility: hidden;}
+    .labels .adc.hidden, .labels.right .spi.hidden {visibility: hidden;}
+    .labels .i2c.hidden, .labels.left .spi.hidden, .labels .uart.hidden, .labels .pwm.hidden {display: none;}
+    .filter li.advanced {display: none;}
+
+    .pinout.hidden-spi .labels.right .adc.hidden {display:none;}
+    .pinout.hidden-adc .labels.right .spi.hidden {display:none;}
+
     .gpio {background-color: #859900;}
     .ground {background-color: #002b36;}
     .power {background-color: #dc322f;}
@@ -84,6 +94,7 @@
     .spi {background-color: #d33682;}
     .uart {background-color: #6c71c4;}
     .uart.default {background-color: #494daa;}
+    .pwm {background-color: #333333;}
 
     .labels li:hover:before {background-color: #eeeeee;}
     .labels li:hover .gpio {background-color: #9fb803;}
@@ -95,61 +106,139 @@
     .labels li:hover .spi {background-color: #f34f9f;}
     .labels li:hover .uart {background-color: #8d91e6;}
     .labels li:hover .uart.default {background-color: #686bce;}
+    .labels li:hover .pwm {background-color: #444444;}
+
+    .filter {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .filter li {
+        display: inline;
+        color: #002b36;
+        padding: 5px 10px 5px 5px;
+        line-height: 30px;
+    }
+    .filter.interfaces li {
+        color: #e9e5d2;
+    }
+    .filter.interfaces {
+        margin-bottom: 20px;
+    }
 </style>
 </head>
 <body>
     <h1>Raspberry Pi Pico Pinout</h1>
-    <article class="pinout">
+    <ul class="filter settings">
+        <li><input type="checkbox" name="advanced" id="advanced" /> <label for="advanced">Advanced</label></li>
+    </ul>
+    <ul class="filter interfaces">
+        <li class="spi"><input type="checkbox" checked name="spi" id="spi" />           <label for="spi">SPI</label></li>
+        <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" />           <label for="i2c">I2C</label></li>
+        <li class="adc"><input type="checkbox" checked name="adc" id="adc" />           <label for="adc">ADC</label></li>
+        <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" />   <label for="pwm">PWM</label></li>
+        <li class="uart"><input type="checkbox" checked name="uart" id="uart" />         <label for="uart">UART</label></li>
+    </ul>
+    <article class="pinout" id="pinout">
         <div class="labels left">
             <ol>
-                <li><span class="gpio">GP0</span>           <span class="spi" title="SPI 0: Host-receive">SPI0 RX</span>         <span class="i2c" title="I2C 0: Data">I2C0 SDA</span>        <span class="uart default" title="UART 0: Transmit">UART0 TX</span></span></li>
-                <li><span class="gpio">GP1</span>           <span class="spi" title="SPI 0: Chip-select">SPI0 CSn</span>         <span class="i2c" title="I2C 0: Clock">I2C0 SCL</span>       <span class="uart default" title="UART 0: Receive">UART0 RX</span></li>
-                <li><span class="ground" title="Ground">GND</span></li>
-                <li><span class="gpio">GP2</span>           <span class="spi" title="SPI 0: Clock">SPI0 SCK</span>               <span class="i2c" title="I2C 1: Data">I2C1 SDA</span></span></li>
-                <li><span class="gpio">GP3</span>           <span class="spi" title="SPI 0: Host-transmit">SPI0 TX</span>        <span class="i2c" title="I2C 1: Clock">I2C1 SCL</span></li>
-                <li><span class="gpio">GP4</span>           <span class="spi" title="SPI 0: Host-receive">SPI0 RX</span>         <span class="i2c" title="I2C 0: Data">I2C0 SDA</span>        <span class="uart" title="UART 1: Transmit">UART1 TX</span></span></li>
-                <li><span class="gpio">GP5</span>           <span class="spi" title="SPI 0: Chip-select">SPI0 CSn</span>         <span class="i2c" title="I2C 0: Clock">I2C0 SCL</span>       <span class="uart" title="UART 1: Receive">UART1 RX</span></span></li>
-                <li><span class="ground" title="Ground">GND</span></li>
-                <li><span class="gpio">GP6</span>           <span class="spi" title="SPI 0: Clock">SPI0 SCK</span>               <span class="i2c" title="I2C 1: Data">I2C1 SDA</span></li>
-                <li><span class="gpio">GP7</span>           <span class="spi" title="SPI 1: Host-transmit">SPI0 TX</span>        <span class="i2c" title="I2C 1: Clock">I2C1 SCL</span></li>
-                <li><span class="gpio">GP8</span>           <span class="spi" title="SPI 1: Host-receive">SPI1 RX</span>         <span class="i2c" title="I2C 0: Data">I2C0 SDA</span>        <span class="uart" title="UART 1: Transmit">UART1 TX</span></li>
-                <li><span class="gpio">GP9</span>           <span class="spi" title="SPI 1: Chip-select">SPI1 CSn</span>         <span class="i2c" title="I2C 0: Clock">I2C0 SCL</span>       <span class="uart" title="UART 1: Receive">UART1 RX</span></li>
-                <li><span class="ground" title="Ground">GND</span></li>
-                <li><span class="gpio">GP10</span>          <span class="spi" title="SPI 1: Clock">SPI1 SCK</span>               <span class="i2c" title="I2C 1: Data">I2C1 SDA</span></li>
-                <li><span class="gpio">GP11</span>          <span class="spi" title="SPI 1: Host-transmit">SPI1 TX</span>        <span class="i2c" title="I2C 1: Clock">I2C1 SCL</span></li>
-                <li><span class="gpio">GP12</span>          <span class="spi" title="SPI 1: Host-receive">SPI1 RX</span>         <span class="i2c" title="I2C 0: Data">I2C0 SDA</span>        <span class="uart" title="UART 0: Transmit">UART0 TX</span></li>
-                <li><span class="gpio">GP13</span>          <span class="spi" title="SPI 1: Chip-select">SPI1 CSn</span>         <span class="i2c" title="I2C 0: Clock">I2C0 SCL</span>       <span class="uart" title="UART 0: Receive">UART0 RX</span></li>
-                <li><span class="ground" title="Ground">GND</span></li>
-                <li><span class="gpio">GP14</span>          <span class="spi" title="SPI 1: Clock">SPI1 SCK</span>               <span class="i2c" title="I2C 0: Data">I2C1 SDA</span></li>
-                <li><span class="gpio">GP15</span>          <span class="spi" title="SPI 1: Host-transmit">SPI1 TX</span>        <span class="i2c" title="I2C 0: Clock">I2C1 SCL</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP0</span>           <span role="list-item" class="spi" title="SPI 0: Host-receive">SPI0 RX</span>         <span role="list-item" class="i2c" title="I2C 0: Data">I2C0 SDA</span>       <span role="list-item" class="uart default" title="UART 0: Transmit">UART0 TX</span>            <span role="list-item" class="pwm advanced" title="PWM 0: Channel A">PWM0 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP1</span>           <span role="list-item" class="spi" title="SPI 0: Chip-select">SPI0 CSn</span>         <span role="list-item" class="i2c" title="I2C 0: Clock">I2C0 SCL</span>      <span role="list-item" class="uart default" title="UART 0: Receive">UART0 RX</span>             <span role="list-item" class="pwm advanced" title="PWM 0: Channel B">PWM0 B</span></li>
+                <li class="skip" role="list"><span role="list-item" class="ground" title="Ground">GND</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP2</span>           <span role="list-item" class="spi" title="SPI 0: Clock">SPI0 SCK</span>               <span role="list-item" class="i2c" title="I2C 1: Data">I2C1 SDA</span>       <span role="list-item" class="uart advanced" title="UART 0: Clear to send">UART0 CTS</span>     <span role="list-item" class="pwm advanced" title="PWM 1: Channel A">PWM1 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP3</span>           <span role="list-item" class="spi" title="SPI 0: Host-transmit">SPI0 TX</span>        <span role="list-item" class="i2c" title="I2C 1: Clock">I2C1 SCL</span>      <span role="list-item" class="uart advanced" title="UART 0: Request to send">UART0 RTS</span>   <span role="list-item" class="pwm advanced" title="PWM 1: Channel B">PWM1 B</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP4</span>           <span role="list-item" class="spi" title="SPI 0: Host-receive">SPI0 RX</span>         <span role="list-item" class="i2c" title="I2C 0: Data">I2C0 SDA</span>       <span role="list-item" class="uart" title="UART 1: Transmit">UART1 TX</span>                    <span role="list-item" class="pwm advanced" title="PWM 2: Channel A">PWM2 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP5</span>           <span role="list-item" class="spi" title="SPI 0: Chip-select">SPI0 CSn</span>         <span role="list-item" class="i2c" title="I2C 0: Clock">I2C0 SCL</span>      <span role="list-item" class="uart" title="UART 1: Receive">UART1 RX</span>                     <span role="list-item" class="pwm advanced" title="PWM 2: Channel B">PWM2 B</span></li>
+                <li class="skip" role="list"><span role="list-item" class="ground" title="Ground">GND</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP6</span>           <span role="list-item" class="spi" title="SPI 0: Clock">SPI0 SCK</span>               <span role="list-item" class="i2c" title="I2C 1: Data">I2C1 SDA</span>       <span role="list-item" class="uart advanced" title="UART 1: Clear to send">UART1 CTS</span>     <span role="list-item" class="pwm advanced" title="PWM 3: Channel A">PWM3 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP7</span>           <span role="list-item" class="spi" title="SPI 1: Host-transmit">SPI0 TX</span>        <span role="list-item" class="i2c" title="I2C 1: Clock">I2C1 SCL</span>      <span role="list-item" class="uart advanced" title="UART 1: Request to send">UART1 RTS</span>   <span role="list-item" class="pwm advanced" title="PWM 3: Channel B">PWM3 B</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP8</span>           <span role="list-item" class="spi" title="SPI 1: Host-receive">SPI1 RX</span>         <span role="list-item" class="i2c" title="I2C 0: Data">I2C0 SDA</span>       <span role="list-item" class="uart" title="UART 1: Transmit">UART1 TX</span>                    <span role="list-item" class="pwm advanced" title="PWM 4: Channel A">PWM4 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP9</span>           <span role="list-item" class="spi" title="SPI 1: Chip-select">SPI1 CSn</span>         <span role="list-item" class="i2c" title="I2C 0: Clock">I2C0 SCL</span>      <span role="list-item" class="uart" title="UART 1: Receive">UART1 RX</span>                     <span role="list-item" class="pwm advanced" title="PWM 4: Channel B">PWM4 B</span></li>
+                <li role="list"><span role="list-item" class="ground" title="Ground">GND</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP10</span>          <span role="list-item" class="spi" title="SPI 1: Clock">SPI1 SCK</span>               <span role="list-item" class="i2c" title="I2C 1: Data">I2C1 SDA</span>       <span role="list-item" class="uart advanced" title="UART 1: Clear to send">UART1 CTS</span>     <span role="list-item" class="pwm advanced" title="PWM 5: Channel A">PWM5 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP11</span>          <span role="list-item" class="spi" title="SPI 1: Host-transmit">SPI1 TX</span>        <span role="list-item" class="i2c" title="I2C 1: Clock">I2C1 SCL</span>      <span role="list-item" class="uart advanced" title="UART 1: Request to send">UART1 RTS</span>   <span role="list-item" class="pwm advanced" title="PWM 5: Channel B">PWM5 B</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP12</span>          <span role="list-item" class="spi" title="SPI 1: Host-receive">SPI1 RX</span>         <span role="list-item" class="i2c" title="I2C 0: Data">I2C0 SDA</span>       <span role="list-item" class="uart" title="UART 0: Transmit">UART0 TX</span>                    <span role="list-item" class="pwm advanced" title="PWM 6: Channel A">PWM6 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP13</span>          <span role="list-item" class="spi" title="SPI 1: Chip-select">SPI1 CSn</span>         <span role="list-item" class="i2c" title="I2C 0: Clock">I2C0 SCL</span>      <span role="list-item" class="uart" title="UART 0: Receive">UART0 RX</span>                     <span role="list-item" class="pwm advanced" title="PWM 6: Channel B">PWM6 B</span></li>
+                <li role="list"><span role="list-item" class="ground" title="Ground">GND</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP14</span>          <span role="list-item" class="spi" title="SPI 1: Clock">SPI1 SCK</span>               <span role="list-item" class="i2c" title="I2C 0: Data">I2C1 SDA</span>       <span role="list-item" class="pwm advanced" title="PWM 7: Channel A">PWM7 A</span>              <span role="list-item" class="uart advanced" title="UART 0: Clear to send">UART0 CTS</span</li>
+                <li role="list"><span role="list-item" class="gpio">GP15</span>          <span role="list-item" class="spi" title="SPI 1: Host-transmit">SPI1 TX</span>        <span role="list-item" class="i2c" title="I2C 0: Clock">I2C1 SCL</span>      <span role="list-item" class="pwm advanced" title="PWM 7: Channel B">PWM7 B</span>              <span role="list-item" class="uart advanced" title="UART 0: Request to send">UART0 RTS</span</li>
             </ol>
         </div>
         <div class="pico">
         </div>
         <div class="labels right">
             <ol>
-                <li><span class="power" title="Power: USB Bus">VBUS</span></li>
-                <li><span class="power" title="Power: System">VSYS</span></li>
-                <li><span class="ground" title="Ground">GND</span></li>
-                <li><span class="system" title="System: 3v3 regulator enable">3V3_EN</span></li>
-                <li><span class="power" title="Power: 3v3 out">3V3(OUT)</span></li>
-                <li><span>&nbsp;</span>                         <span class="adc" title="ADC: Voltage-reference">ADC_VREF</span></li>
-                <li><span class="gpio">GP28</span>              <span class="adc" title="ADC: Channel 2">ADC2</span></li>
-                <li><span class="ground" title="Ground">GND</span> <span class="adc" title="ADC: Ground">AGND</span></li>
-                <li><span class="gpio">GP27</span>              <span class="adc" title="ADC: Channel 1">ADC1</span>           <span class="i2c" title="I2C 1: Clock">I2C1 SCL</span></span></li>
-                <li><span class="gpio">GP26</span>              <span class="adc" title="ADC: Channel 0">ADC0</span>           <span class="i2c" title="I2C 1: Data">I2C1 SDA</span></li>
-                <li><span class="system">RUN</span></li>
-                <li><span class="gpio">GP22</span></li>
-                <li><span class="ground" title="Ground">GND</span></li>
-                <li><span class="gpio">GP21</span>              <span>&nbsp;</span>                                             <span class="i2c" title="I2C 0: Clock">I2C0 SCL</span></li>
-                <li><span class="gpio">GP20</span>              <span>&nbsp;</span>                                             <span class="i2c" title="I2C 0: Data">I2C0 SDA</span></li>
-                <li><span class="gpio">GP19</span>              <span class="spi" title="SPI 0: Host-transmit">SPI0 TX</span>   <span class="i2c" title="I2C 1: Clock">I2C1 SCL</span></li>
-                <li><span class="gpio">GP18</span>              <span class="spi" title="SPI 0: Clock">SPI0 SCK</span>          <span class="i2c" title="I2C 1: Data">I2C1 SDA</span></span></li>
-                <li><span class="ground" title="Ground">GND</span></li>
-                <li><span class="gpio">GP17</span>              <span class="spi" title="SPI 0: Chip-select">SPI0 CSn</span>    <span class="i2c" title="I2C 0: Clock">I2C0 SCL</span>   <span class="uart" title="UART 0: Receive">UART0 RX</span></li>
-                <li><span class="gpio">GP16</span>              <span class="spi" title="SPI 0: Host-receive">SPI0 RX</span>    <span class="i2c" title="I2C 0: Data">I2C0 SDA</span>    <span class="uart" title="UART 0: Transmit">UART0 TX</span></li>
+                <li role="list"><span role="list-item" class="power" title="Power: USB Bus">VBUS</span></li>
+                <li role="list"><span role="list-item" class="power" title="Power: System">VSYS</span></li>
+                <li role="list"><span role="list-item" class="ground" title="Ground">GND</span></li>
+                <li role="list"><span role="list-item" class="system" title="System: 3v3 regulator enable">3V3_EN</span></li>
+                <li role="list"><span role="list-item" class="power" title="Power: 3v3 out">3V3(OUT)</span></li>
+                <li role="list"><span role="list-item">&nbsp;</span>                         <span role="list-item" class="adc" title="ADC: Voltage-reference">ADC_VREF</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP28</span>              <span role="list-item" class="adc" title="ADC: Channel 2">ADC2</span>                      <span role="list-item" class="i2c advanced" title="I2C 0: Data">I2C0 SDA</span>    <span role="list-item" class="uart advanced" title="UART 0: Transmit">UART0 TX</span>         <span role="list-item" class="pwm advanced" title="PWM 6: Channel A">PWM6 A</span></li>
+                <li role="list"><span role="list-item" class="ground" title="Ground">GND</span> <span role="list-item" class="adc" title="ADC: Ground">AGND</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP27</span>              <span role="list-item" class="adc" title="ADC: Channel 1">ADC1</span>                      <span role="list-item" class="i2c" title="I2C 1: Clock">I2C1 SCL</span>            <span role="list-item" class="uart advanced" title="UART 0: Clear to send">UART1 RTS</span>   <span role="list-item" class="pwm advanced" title="PWM 5: Channel B">PWM5 B</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP26</span>              <span role="list-item" class="adc" title="ADC: Channel 0">ADC0</span>                      <span role="list-item" class="i2c" title="I2C 1: Data">I2C1 SDA</span>             <span role="list-item" class="uart advanced" title="UART 1: Clear to send">UART1 CTS</span>   <span role="list-item" class="pwm advanced" title="PWM 5: Channel A">PWM5 A</span></li>
+                <li role="list"><span role="list-item" class="system">RUN</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP22</span>              <span role="list-item" class="spi" title="SPI 0: Clock">SPI0 SCK</span>                    <span role="list-item" class="i2c" title="I2C 1: Data">I2C1 SDA</span>             <span role="list-item" class="uart advanced" title="UART 1: Clear to send">UART1 CTS</span>   <span role="list-item" class="pwm advanced" title="PWM 3: Channel A">PWM3 A</span></li>
+                <li role="list"><span role="list-item" class="ground" title="Ground">GND</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP21</span>              <span role="list-item" class="spi advanced" title="SPI 0: Chip-select">SPI0 CSn</span>     <span role="list-item" class="i2c" title="I2C 0: Clock">I2C0 SCL</span>            <span role="list-item" class="uart advanced" title="UART 1: Receive">UART1 RX</span>          <span role="list-item" class="pwm advanced" title="PWM 2: Channel B">PWM2 B</span> </li>
+                <li role="list"><span role="list-item" class="gpio">GP20</span>              <span role="list-item" class="spi advanced" title="SPI 0: Host-receive">SPI0 RX</span>     <span role="list-item" class="i2c" title="I2C 0: Data">I2C0 SDA</span>             <span role="list-item" class="uart advanced" title="UART 1: Transmit">UART1 TX</span>         <span role="list-item" class="pwm advanced" title="PWM 2: Channel A">PWM2 A</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP19</span>              <span role="list-item" class="spi" title="SPI 0: Host-transmit">SPI0 TX</span>             <span role="list-item" class="i2c" title="I2C 1: Clock">I2C1 SCL</span>            <span role="list-item" class="uart advanced" title="UART 0: Request to send">UART0 TX</span>  <span role="list-item" class="pwm advanced" title="PWM 1: Channel B">PWM1 B</span> </li>
+                <li role="list"><span role="list-item" class="gpio">GP18</span>              <span role="list-item" class="spi" title="SPI 0: Clock">SPI0 SCK</span>                    <span role="list-item" class="i2c" title="I2C 1: Data">I2C1 SDA</span>             <span role="list-item" class="uart advanced" title="UART 0: Clear to send">UART1 RTS</span>   <span role="list-item" class="pwm advanced" title="PWM 1: Channel A">PWM1 A</span> </li>
+                <li role="list"><span role="list-item" class="ground" title="Ground">GND</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP17</span>              <span role="list-item" class="spi" title="SPI 0: Chip-select">SPI0 CSn</span>              <span role="list-item" class="i2c" title="I2C 0: Clock">I2C0 SCL</span>            <span role="list-item" class="uart" title="UART 0: Receive">UART0 RX</span>                   <span role="list-item" class="pwm advanced" title="PWM 0: Channel B">PWM0 B</span></li>
+                <li role="list"><span role="list-item" class="gpio">GP16</span>              <span role="list-item" class="spi" title="SPI 0: Host-receive">SPI0 RX</span>              <span role="list-item" class="i2c" title="I2C 0: Data">I2C0 SDA</span>             <span role="list-item" class="uart" title="UART 0: Transmit">UART0 TX</span>                  <span role="list-item" class="pwm advanced" title="PWM 0: Channel A">PWM0 A</span></li>
             </ol>
         </div>
     </article>
+    <script type="text/javascript">
+        'use strict';
+        var pinout = document.getElementById("pinout");
+        var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].type != "checkbox") continue;
+            inputs[i].onchange = inputs[i].name == "advanced" ? advanced_on_change : interface_on_change;
+
+            inputs[i].onchange();
+        }
+        function advanced_on_change() {
+            console.log(this.checked);
+            if (this.checked) {
+                var labels = document.getElementsByClassName("advanced");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.add("advanced-on");
+                }
+                var labels = document.getElementsByClassName("advanced-on");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.remove("advanced");
+                }
+            } else {
+                var labels = document.getElementsByClassName("advanced-on");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.add("advanced");
+                }
+                var labels = document.getElementsByClassName("advanced");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.remove("advanced-on");
+                }
+            }
+
+        }
+        function interface_on_change() {
+            console.log(this.checked);
+            var checked = this.checked;
+            var labels = pinout.getElementsByClassName(this.name);
+            for (var j = 0; j < labels.length; j++) {
+                if (checked) {
+                    labels[j].classList.remove("hidden");
+                    pinout.classList.remove("hidden-" + this.name);
+                } else {
+                    labels[j].classList.add("hidden");
+                    pinout.classList.add("hidden-" + this.name);
+                }
+            }
+        }
+    </script>
 </body>
+</html>
 
