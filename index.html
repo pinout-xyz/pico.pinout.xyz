@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<link rel="shortcut icon" href="pinout-logo.png" type="image/png">
+<link rel="manifest" href="manifest.json">
 <title>Raspberry Pi Pico GPIO Pinout</title>
-<meta name="description" content="The comprehensive add-on boards & GPIO Pinout guide for the Raspberry Pi Pico" />
+<meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the Raspberry Pi Pico" />
 <style type="text/css">
     body {
         display: grid;
@@ -14,6 +16,22 @@
         display: grid;
         grid-template-columns: 455px 207px 455px;
         align-items: center;
+    }
+    footer {
+        display: grid;
+        align-items: center;
+    }
+    footer p {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+    header,
+    nav {
+        text-align: center;
+    }
+    header h1 {
+        margin-bottom: 0;
     }
     .labels {
         height: 510px;
@@ -120,20 +138,29 @@
     .filter.interfaces {
         margin-bottom: 20px;
     }
+    .nojs ul {display:none;}
 </style>
 </head>
 <body>
-    <h1>Raspberry Pi Pico Pinout</h1>
-    <ul class="filter settings">
-        <li><input type="checkbox" name="advanced" id="advanced" /> <label for="advanced">Advanced</label></li>
-    </ul>
-    <ul class="filter interfaces">
-        <li class="spi"><input type="checkbox" checked name="spi" id="spi" />           <label for="spi">SPI</label></li>
-        <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" />           <label for="i2c">I2C</label></li>
-        <li class="adc"><input type="checkbox" checked name="adc" id="adc" />           <label for="adc">ADC</label></li>
-        <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" />   <label for="pwm">PWM</label></li>
-        <li class="uart"><input type="checkbox" checked name="uart" id="uart" />         <label for="uart">UART</label></li>
-    </ul>
+    <header>
+        <h1>Raspberry Pi Pico Pinout</h1>
+        <p>Interactive, accessible & beautiful GPIO pinout and pin function guide for the Raspberry Pi Pico</p>
+    </header>
+    <nav class="nojs" id="nav">
+        <ul class="filter settings">
+            <li><input type="checkbox" name="advanced" id="advanced" /> <label for="advanced">Advanced</label></li>
+        </ul>
+        <ul class="filter interfaces">
+            <li class="spi"><input type="checkbox" checked name="spi" id="spi" />           <label for="spi">SPI</label></li>
+            <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" />           <label for="i2c">I2C</label></li>
+            <li class="adc"><input type="checkbox" checked name="adc" id="adc" />           <label for="adc">ADC</label></li>
+            <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" />   <label for="pwm">PWM</label></li>
+            <li class="uart"><input type="checkbox" checked name="uart" id="uart" />         <label for="uart">UART</label></li>
+        </ul>
+        <noscript>
+            <p>Want to show/hide interfaces and view a full pinout? Enable JavaScript!</p>
+        </noscript>
+    </nav>
     <article class="pinout" id="pinout">
         <table aria-label="Left-hand pins" class="labels left" aria-rowcount="20" cellpadding="0" cellspacing="0">
             <tr aria-label="First pin."       ><td class="gpio">GP0</td>           <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart default" title="UART 0: Transmit">UART0 TX</td>            <td class="pwm advanced" title="PWM 0: Channel A">PWM0 A</td></tr>
@@ -179,11 +206,17 @@
             <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">GND</td></tr>
             <tr aria-label="Nineteenth pin."  ><td class="gpio">GP17</td>              <td class="spi" title="SPI 0: Chip-select">SPI0 CSn</td>              <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>            <td class="uart" title="UART 0: Receive">UART0 RX</td>                   <td class="pwm advanced" title="PWM 0: Channel B">PWM0 B</td></tr>
             <tr aria-label="Twentieth pin."   ><td class="gpio">GP16</td>              <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>              <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>             <td class="uart" title="UART 0: Transmit">UART0 TX</td>                  <td class="pwm advanced" title="PWM 0: Channel A">PWM0 A</td></tr>
+        </table>
     </article>
+    <footer>
+        <p>Raspberry Pico Pinout is maintained by me - <a href="https://twitter.com/gadgetoid">@Gadgetoid</a> - in my spare time.</p>
+        <p>Want to help out? <a href="https://github.com/gadgetoid/pico.pinout.xyz">Support this project with your time/expertise</a>, <a href="https://github.com/sponsors/Gadgetoid">sponsor me on GitHub</a> or <a href="https://www.patreon.com/gadgetoid">toss me a dollar on Patreon</a>.</p>
+    </footer>
     <script type="text/javascript">
         'use strict';
         var pinout = document.getElementById("pinout");
         var inputs = document.getElementsByTagName("input");
+        document.getElementById("nav").classList.remove("nojs");
         for (var i = 0; i < inputs.length; i++) {
             if (inputs[i].type != "checkbox") continue;
             inputs[i].onchange = inputs[i].name == "advanced" ? advanced_on_change : interface_on_change;
