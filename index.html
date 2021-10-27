@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="initial-scale=auto"></meta>
+<meta name="apple-mobile-web-app-capable" content="yes"></meta>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
 <link rel="shortcut icon" href="pinout-logo.png" type="image/png">
 <link rel="manifest" href="manifest.json">
 <title>Raspberry Pi Pico GPIO Pinout</title>
@@ -11,10 +14,12 @@
         display: grid;
         place-items: center;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
     }
     article {
         display: grid;
-        grid-template-columns: 455px 207px 455px;
+        grid-template-columns: 405px 207px 405px;
         align-items: center;
     }
     footer {
@@ -26,12 +31,33 @@
         margin: 0;
         text-align: center;
     }
-    header,
     nav {
         text-align: center;
+        margin-top: 20px;
+    }
+    header {
+        background: #002b36;
+        color: #e9e5d2;
+        display: block;
+        width: 100%;
+        line-height: 40px;
+        height: 40px;
+        border-bottom: 5px solid #268bd2;
     }
     header h1 {
-        margin-bottom: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        display: inline;
+        padding-left: 10px;
+    }
+    header p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        float: right;
+        display: inline;
+        padding-right: 10px;
     }
     .labels {
         height: 510px;
@@ -55,14 +81,14 @@
         display: block;
         height: 25px;
         line-height: 20px;
-        margin: 0 10px 0 0;
+        margin: 0 5px 0 0;
         color: #333333;
         font-size: 0;
     }
     .labels.right tr {
         counter-increment: item -1;
         text-align: left;
-        margin: 0 0 0 10px;
+        margin: 0 0 0 5px;
     }
     .labels tr:before {
         content: counter(item);
@@ -72,18 +98,18 @@
         background-color: #CCCCCC;
         width: 20px;
         height: 20px;
-        font-size: 13px;
+        font-size: 11px;
     }
     .labels.right tr:before {
         float: left;
     }
     .labels td {
         display: inline-block;
-        width: 80px;
+        width: 70px;
         height: 20px;
         text-align: center;
         color: #e9e5d2;
-        font-size: 13px;
+        font-size: 11px;
         cursor: help;
     }
     .labels.left td {margin-right:5px;float:right;}
@@ -129,8 +155,15 @@
     .filter li {
         display: inline;
         color: #002b36;
-        padding: 5px 10px 5px 5px;
+        padding: 5px 10px 5px 10px;
         line-height: 30px;
+        user-select: none;
+    }
+    .filter input {
+        margin: 0;
+    }
+    .filter label {
+        padding-left:5px;
     }
     .filter.interfaces li {
         color: #e9e5d2;
@@ -148,14 +181,14 @@
     </header>
     <nav class="nojs" id="nav">
         <ul class="filter settings">
-            <li><input type="checkbox" name="advanced" id="advanced" /> <label for="advanced">Advanced</label></li>
+            <li><input type="checkbox" name="advanced" id="advanced" /><label for="advanced">Advanced</label></li>
         </ul>
         <ul class="filter interfaces">
-            <li class="spi"><input type="checkbox" checked name="spi" id="spi" />           <label for="spi">SPI</label></li>
-            <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" />           <label for="i2c">I2C</label></li>
-            <li class="adc"><input type="checkbox" checked name="adc" id="adc" />           <label for="adc">ADC</label></li>
-            <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" />   <label for="pwm">PWM</label></li>
-            <li class="uart"><input type="checkbox" checked name="uart" id="uart" />         <label for="uart">UART</label></li>
+            <li class="spi"><input type="checkbox" checked name="spi" id="spi" /><label for="spi">SPI</label></li>
+            <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" /><label for="i2c">I2C</label></li>
+            <li class="adc"><input type="checkbox" checked name="adc" id="adc" /><label for="adc">ADC</label></li>
+            <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" /><label for="pwm">PWM</label></li>
+            <li class="uart"><input type="checkbox" checked name="uart" id="uart" /><label for="uart">UART</label></li>
         </ul>
         <noscript>
             <p>Want to show/hide interfaces and view a full pinout? Enable JavaScript!</p>
@@ -260,6 +293,11 @@
                 }
             }
         }
+
+        // Boof to a sensible default window size
+        // only tested on Windows 10...
+        // RIP 1024x768
+        window.resizeTo(1050, 800);
     </script>
 </body>
 </html>
