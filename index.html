@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="initial-scale=auto"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 <meta name="apple-mobile-web-app-capable" content="yes"></meta>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
 <link rel="shortcut icon" href="pinout-logo.png" type="image/png">
@@ -20,9 +20,10 @@
     }
     article {
         display: grid;
-        grid-template-columns: 405px 207px 405px;
+        grid-template-columns: auto auto auto;
         align-items: center;
         margin-top: 10px;
+        padding: 0 10px;
     }
     footer {
         display: grid;
@@ -30,7 +31,7 @@
         margin: 20px 0;
     }
     footer p {
-        padding: 0;
+        padding: 5px 10px;
         margin: 0;
         text-align: center;
     }
@@ -43,24 +44,22 @@
         color: #e9e5d2;
         display: block;
         width: 100%;
-        line-height: 40px;
-        height: 40px;
+        line-height: 22px;
+        padding: 10px 0;
         border-bottom: 5px solid #268bd2;
     }
     header h1 {
         margin: 0;
-        padding: 0;
         font-size: 20px;
         display: inline;
-        padding-left: 10px;
+        padding: 0 10px;
     }
     header p {
         margin: 0;
-        padding: 0;
         font-size: 14px;
         float: right;
         display: inline;
-        padding-right: 10px;
+        padding: 0 10px;
     }
     .pico {
         padding: 0px;
@@ -68,31 +67,29 @@
         top: -8px;
     }
     .labels.right {
-        counter-set: item 41;
+        counter-reset: pin 41;
+        display: grid;
+        align-items: left;
     }
-    .labels {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+    .labels.left {
+        direction: rtl;
+        display: grid;
+        align-items: right;
     }
     .labels tr {
-        counter-increment: item;
-        clear: both;
-        text-align: right;
-        display: block;
-        height: 25px;
+        counter-increment: pin;
         line-height: 20px;
-        margin: 0 5px 0 0;
         color: #333333;
         font-size: 0;
     }
+    .labels.left tr {
+        direction: ltr;
+    }
     .labels.right tr {
-        counter-increment: item -1;
-        text-align: left;
-        margin: 0 0 0 5px;
+        counter-increment: pin -1;
     }
     .labels tr:before {
-        content: counter(item);
+        content: counter(pin);
         text-align: center;
         display: inline-block;
         float: right;
@@ -105,16 +102,15 @@
         float: left;
     }
     .labels td {
-        display: inline-block;
         width: 70px;
         height: 20px;
         text-align: center;
+        overflow: hidden;
         color: #e9e5d2;
         font-size: 11px;
         cursor: help;
+        white-space: nowrap;
     }
-    .labels.left td {margin-right:5px;float:right;}
-    .labels.right td {margin-left:5px;}
 
     /* Hide advanced labels by default */
     .labels .advanced {visibility: hidden;}
@@ -222,48 +218,48 @@
         </noscript>
     </nav>
     <article class="pinout" id="pinout">
-        <table aria-label="Left-hand pins" class="labels left" aria-rowcount="20" cellpadding="0" cellspacing="0">
+        <table aria-label="Left-hand pins" class="labels left" aria-rowcount="20" cellpadding="0" cellspacing="5">
             <tr aria-label="First pin."       ><td class="gpio">GP0</td>           <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart default" title="UART 0: Transmit">UART0 TX</td>            <td class="pwm advanced" title="PWM 0: Channel A">PWM0 A</td></tr>
             <tr aria-label="Second pin."      ><td class="gpio">GP1</td>           <td class="spi" title="SPI 0: Chip-select">SPI0 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart default" title="UART 0: Receive">UART0 RX</td>             <td class="pwm advanced" title="PWM 0: Channel B">PWM0 B</td></tr>
-            <tr aria-label="Third pin."       ><td class="ground" title="Ground">GND</td></tr>
+            <tr aria-label="Third pin."       ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Forth pin."       ><td class="gpio">GP2</td>           <td class="spi" title="SPI 0: Clock">SPI0 SCK</td>               <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 0: Clear to send">UART0 CTS</td>     <td class="pwm advanced" title="PWM 1: Channel A">PWM1 A</td></tr>
             <tr aria-label="Fifth pin."       ><td class="gpio">GP3</td>           <td class="spi" title="SPI 0: Host-transmit">SPI0 TX</td>        <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 0: Request to send">UART0 RTS</td>   <td class="pwm advanced" title="PWM 1: Channel B">PWM1 B</td></tr>
             <tr aria-label="Sixth pin."       ><td class="gpio">GP4</td>           <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart" title="UART 1: Transmit">UART1 TX</td>                    <td class="pwm advanced" title="PWM 2: Channel A">PWM2 A</td></tr>
             <tr aria-label="Seventh pin."     ><td class="gpio">GP5</td>           <td class="spi" title="SPI 0: Chip-select">SPI0 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart" title="UART 1: Receive">UART1 RX</td>                     <td class="pwm advanced" title="PWM 2: Channel B">PWM2 B</td></tr>
-            <tr aria-label="Eighth pin."      ><td class="ground" title="Ground">GND</td></tr>
+            <tr aria-label="Eighth pin."      ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Ninth pin."       ><td class="gpio">GP6</td>           <td class="spi" title="SPI 0: Clock">SPI0 SCK</td>               <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>     <td class="pwm advanced" title="PWM 3: Channel A">PWM3 A</td></tr>
             <tr aria-label="Tenth pin."       ><td class="gpio">GP7</td>           <td class="spi" title="SPI 1: Host-transmit">SPI0 TX</td>        <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 1: Request to send">UART1 RTS</td>   <td class="pwm advanced" title="PWM 3: Channel B">PWM3 B</td></tr>
             <tr aria-label="Eleventh pin."    ><td class="gpio">GP8</td>           <td class="spi" title="SPI 1: Host-receive">SPI1 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart" title="UART 1: Transmit">UART1 TX</td>                    <td class="pwm advanced" title="PWM 4: Channel A">PWM4 A</td></tr>
             <tr aria-label="Twelveth pin."    ><td class="gpio">GP9</td>           <td class="spi" title="SPI 1: Chip-select">SPI1 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart" title="UART 1: Receive">UART1 RX</td>                     <td class="pwm advanced" title="PWM 4: Channel B">PWM4 B</td></tr>
-            <tr aria-label="Thirtheenth pin." ><td class="ground" title="Ground">GND</td></tr>
+            <tr aria-label="Thirtheenth pin." ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Fourteenth pin."  ><td class="gpio">GP10</td>          <td class="spi" title="SPI 1: Clock">SPI1 SCK</td>               <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>     <td class="pwm advanced" title="PWM 5: Channel A">PWM5 A</td></tr>
             <tr aria-label="Fifteenth pin."   ><td class="gpio">GP11</td>          <td class="spi" title="SPI 1: Host-transmit">SPI1 TX</td>        <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 1: Request to send">UART1 RTS</td>   <td class="pwm advanced" title="PWM 5: Channel B">PWM5 B</td></tr>
             <tr aria-label="Sixteenth pin."   ><td class="gpio">GP12</td>          <td class="spi" title="SPI 1: Host-receive">SPI1 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart" title="UART 0: Transmit">UART0 TX</td>                    <td class="pwm advanced" title="PWM 6: Channel A">PWM6 A</td></tr>
             <tr aria-label="Seventeenth pin." ><td class="gpio">GP13</td>          <td class="spi" title="SPI 1: Chip-select">SPI1 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart" title="UART 0: Receive">UART0 RX</td>                     <td class="pwm advanced" title="PWM 6: Channel B">PWM6 B</td></tr>
-            <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">GND</td></tr>
+            <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Nineteenth pin."  ><td class="gpio">GP14</td>          <td class="spi" title="SPI 1: Clock">SPI1 SCK</td>               <td class="i2c" title="I2C 0: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 0: Clear to send">UART0 CTS</td>     <td class="pwm advanced" title="PWM 7: Channel A">PWM7 A</td></tr>
             <tr aria-label="Twentieth pin."   ><td class="gpio">GP15</td>          <td class="spi" title="SPI 1: Host-transmit">SPI1 TX</td>        <td class="i2c" title="I2C 0: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 0: Request to send">UART0 RTS</td>   <td class="pwm advanced" title="PWM 7: Channel B">PWM7 B</td></tr>
         </table>
         <div class="pico"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing upwards, standing face-up on its GPIO pins." src="raspberry-pi-pico.svg" /></div>
-        <table aria-label="Right-hand pins" class="labels right" aria-rowcount="20" cellpadding="0" cellspacing="0">
+        <table aria-label="Right-hand pins" class="labels right" aria-rowcount="20" cellpadding="0" cellspacing="5">
             <tr aria-label="First pin."       ><td class="power" title="Power: USB Bus">VBUS</td></tr>
             <tr aria-label="Second pin."      ><td class="power" title="Power: System">VSYS</td></tr>
-            <tr aria-label="Third pin."       ><td class="ground" title="Ground">GND</td></tr>
+            <tr aria-label="Third pin."       ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Forth pin."       ><td class="system" title="System: 3v3 regulator enable">3V3_EN</td></tr>
             <tr aria-label="Fifth pin."       ><td class="power" title="Power: 3v3 out">3V3(OUT)</td></tr>
             <tr aria-label="Sixth pin."       ><td>&nbsp;</td>                         <td class="adc" title="ADC: Voltage-reference">ADC_VREF</td></tr>
             <tr aria-label="Seventh pin."     ><td class="gpio">GP28</td>              <td class="adc" title="ADC: Channel 2">ADC2</td>                      <td class="i2c advanced" title="I2C 0: Data">I2C0 SDA</td>    <td class="uart advanced" title="UART 0: Transmit">UART0 TX</td>         <td class="pwm advanced" title="PWM 6: Channel A">PWM6 A</td></tr>
-            <tr aria-label="Eighth pin."      ><td class="ground" title="Ground">GND</td> <td class="adc" title="ADC: Ground">AGND</td></tr>
+            <tr aria-label="Eighth pin."      ><td class="ground" title="Ground">Ground</td> <td class="adc" title="ADC: Ground">AGround</td></tr>
             <tr aria-label="Ninth pin."       ><td class="gpio">GP27</td>              <td class="adc" title="ADC: Channel 1">ADC1</td>                      <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>            <td class="uart advanced" title="UART 0: Clear to send">UART1 RTS</td>   <td class="pwm advanced" title="PWM 5: Channel B">PWM5 B</td></tr>
             <tr aria-label="Tenth pin."       ><td class="gpio">GP26</td>              <td class="adc" title="ADC: Channel 0">ADC0</td>                      <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>             <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>   <td class="pwm advanced" title="PWM 5: Channel A">PWM5 A</td></tr>
             <tr aria-label="Eleventh pin."    ><td class="system">RUN</td></tr>
             <tr aria-label="Twelveth pin."    ><td class="gpio">GP22</td>              <td class="spi advanced" title="SPI 0: Clock">SPI0 SCK</td>           <td class="i2c advanced" title="I2C 1: Data">I2C1 SDA</td>    <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>   <td class="pwm advanced" title="PWM 3: Channel A">PWM3 A</td></tr>
-            <tr aria-label="Thirtheenth pin." ><td class="ground" title="Ground">GND</td></tr>
+            <tr aria-label="Thirtheenth pin." ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Fourteenth pin."  ><td class="gpio">GP21</td>              <td class="spi advanced" title="SPI 0: Chip-select">SPI0 CSn</td>     <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>            <td class="uart advanced" title="UART 1: Receive">UART1 RX</td>          <td class="pwm advanced" title="PWM 2: Channel B">PWM2 B</td></tr>
             <tr aria-label="Fifteenth pin."   ><td class="gpio">GP20</td>              <td class="spi advanced" title="SPI 0: Host-receive">SPI0 RX</td>     <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>             <td class="uart advanced" title="UART 1: Transmit">UART1 TX</td>         <td class="pwm advanced" title="PWM 2: Channel A">PWM2 A</td></tr>
             <tr aria-label="Sixteenth pin."   ><td class="gpio">GP19</td>              <td class="spi" title="SPI 0: Host-transmit">SPI0 TX</td>             <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>            <td class="uart advanced" title="UART 0: Request to send">UART0 TX</td>  <td class="pwm advanced" title="PWM 1: Channel B">PWM1 B</td></tr>
             <tr aria-label="Seventeenth pin." ><td class="gpio">GP18</td>              <td class="spi" title="SPI 0: Clock">SPI0 SCK</td>                    <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>             <td class="uart advanced" title="UART 0: Clear to send">UART1 RTS</td>   <td class="pwm advanced" title="PWM 1: Channel A">PWM1 A</td></tr>
-            <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">GND</td></tr>
+            <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Nineteenth pin."  ><td class="gpio">GP17</td>              <td class="spi" title="SPI 0: Chip-select">SPI0 CSn</td>              <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>            <td class="uart" title="UART 0: Receive">UART0 RX</td>                   <td class="pwm advanced" title="PWM 0: Channel B">PWM0 B</td></tr>
             <tr aria-label="Twentieth pin."   ><td class="gpio">GP16</td>              <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>              <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>             <td class="uart" title="UART 0: Transmit">UART0 TX</td>                  <td class="pwm advanced" title="PWM 0: Channel A">PWM0 A</td></tr>
         </table>
@@ -325,6 +321,15 @@
         // only tested on Windows 10...
         // RIP 1024x768
         window.resizeTo(1050, 800);
+
+        // Janky hack for iOS at least
+        if (window.innerWidth < 400) {
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type != "checkbox") continue;
+                inputs[i].checked = false;
+                inputs[i].onchange();
+            }
+        }
     </script>
 </body>
 </html>

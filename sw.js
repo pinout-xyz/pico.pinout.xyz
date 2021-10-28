@@ -22,10 +22,12 @@ function precache() {
     ".",
       "pinout-logo.png",
       "raspberry-pi-pico.svg",
+      "pimoroni-pico-lipo.svg",
       "pipipi-icon-48.png",
       "pipipi-icon-192.png",
       "pipipi-icon-512.png",
       "index.html",
+      "pimoroni-pico-lipo.html",
       "register_serviceworker.js",
       "sw.js"
     ]);
