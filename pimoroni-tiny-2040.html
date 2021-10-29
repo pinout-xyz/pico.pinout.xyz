@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<meta name="apple-mobile-web-app-capable" content="yes"></meta>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+<link rel="shortcut icon" href="pinout-logo.png" type="image/png">
+<script src="register_serviceworker.js" type="text/javascript"></script>
+<link rel="manifest" href="manifest.json">
+<title>Pimoroni Pico LiPo GPIO Pinout</title>
+<meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the Pimoroni Pico LiPo" />
+<style type="text/css">
+    body {
+        display: grid;
+        place-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    article {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-items: center;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    footer {
+        display: grid;
+        align-items: center;
+        margin: 20px 0;
+    }
+    footer p {
+        padding: 5px 10px;
+        margin: 0;
+        text-align: center;
+    }
+    nav {
+        text-align: center;
+        margin-top: 20px;
+    }
+    header {
+        background: #002b36;
+        color: #e9e5d2;
+        display: block;
+        width: 100%;
+        line-height: 22px;
+        padding: 10px 0;
+        border-bottom: 5px solid #268bd2;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 20px;
+        display: inline;
+        padding: 0 10px;
+    }
+    header p {
+        margin: 0;
+        font-size: 14px;
+        float: right;
+        display: inline;
+        padding: 0 10px;
+    }
+    .pico {
+        padding: 0px;
+        position: relative;
+        top: -8px;
+    }
+    .labels.right {
+        counter-reset: pin 41;
+        display: grid;
+        align-items: left;
+    }
+    .labels.left {
+        direction: rtl;
+        display: grid;
+        align-items: right;
+    }
+    .labels tr {
+        counter-increment: pin;
+        line-height: 20px;
+        color: #333333;
+        font-size: 0;
+    }
+    .labels.left tr {
+        direction: ltr;
+    }
+    .labels.right tr {
+        counter-increment: pin -1;
+    }
+    .labels tr:before {
+        content: counter(pin);
+        text-align: center;
+        display: inline-block;
+        float: right;
+        background-color: #CCCCCC;
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+    .labels.right tr:before {
+        float: left;
+    }
+    .labels td {
+        width: 70px;
+        height: 20px;
+        text-align: center;
+        overflow: hidden;
+        color: #e9e5d2;
+        font-size: 11px;
+        cursor: help;
+        white-space: nowrap;
+    }
+
+    /* Hide advanced labels by default */
+    .labels .advanced {visibility: hidden;}
+    .labels .adc.hidden, .labels.right .spi.hidden {visibility: hidden;}
+    .labels .i2c.hidden, .labels.left .spi.hidden, .labels .uart.hidden, .labels .pwm.hidden {display: none;}
+    .filter li.advanced {display: none;}
+
+    .pinout.hidden-spi .labels.right .adc.hidden {display:none;}
+    .pinout.hidden-adc .labels.right .spi.hidden {display:none;}
+
+    .gpio {background-color: #859900;}
+    .ground {background-color: #002b36;}
+    .power {background-color: #dc322f;}
+    .adc {background-color: #2aa198;}
+    .system {background-color: #df8f8e;}
+    .i2c {background-color: #268bd2;}
+    .spi {background-color: #d33682;}
+    .uart {background-color: #6c71c4;}
+    .uart.default {background-color: #494daa;}
+    .pwm {background-color: #333333;}
+
+    .labels tr:hover:before {background-color: #eeeeee;}
+    .labels tr:hover .gpio {background-color: #9fb803;}
+    .labels tr:hover .ground {background-color: #014353;}
+    .labels tr:hover .power {background-color: #f13a37;}
+    .labels tr:hover .adc {background-color: #39d1c4;}
+    .labels tr:hover .system {background-color: #fab4b2;}
+    .labels tr:hover .i2c {background-color: #3ba6f1;}
+    .labels tr:hover .spi {background-color: #f34f9f;}
+    .labels tr:hover .uart {background-color: #8d91e6;}
+    .labels tr:hover .uart.default {background-color: #686bce;}
+    .labels tr:hover .pwm {background-color: #444444;}
+
+    .filter {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .filter li {
+        display: inline;
+        color: #002b36;
+        padding: 5px 10px 5px 10px;
+        line-height: 30px;
+        user-select: none;
+    }
+    .filter input {
+        margin: 0;
+    }
+    .filter label {
+        padding-left:5px;
+    }
+    .filter.interfaces li {
+        color: #e9e5d2;
+    }
+    .filter.interfaces {
+        margin-bottom: 20px;
+    }
+    .nojs ul {display:none;}
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #000000;
+        }
+        header {
+            background: #111111;
+            color: #666666;
+            border-bottom-color: #222222;
+        }
+        .filter li,
+        footer p,
+        nav p {
+            color: #666666;
+        }
+        footer a, footer a:visited {
+            color: #1d6ca5;
+        }
+        footer a:hover {
+            color: #3ba6f1;
+        }
+        .labels tr:before {
+            background-color: #002b36;
+            color: #e9e5d2;
+        }
+        .labels tr:hover:before {background-color: #013441;}
+    }
+
+    /* Pico LiPo Only */
+    article {
+        margin-top: 15px;
+    }
+    footer {
+        margin-top: 25px;
+    }
+    .pico {
+        top: -10px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Pimoroni Tiny 2040 Pinout</h1>
+        <p>Interactive, accessible &amp; beautiful GPIO pinout and pin function guide for the Pimoroni Tiny 2040</p>
+    </header>
+    <nav class="nojs" id="nav">
+        <ul class="filter settings">
+            <li><input type="checkbox" name="advanced" id="advanced" /><label for="advanced">Advanced</label></li>
+        </ul>
+        <ul class="filter interfaces">
+            <li class="spi"><input type="checkbox" checked name="spi" id="spi" /><label for="spi">SPI</label></li>
+            <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" /><label for="i2c">I2C</label></li>
+            <li class="adc"><input type="checkbox" checked name="adc" id="adc" /><label for="adc">ADC</label></li>
+            <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" /><label for="pwm">PWM</label></li>
+            <li class="uart"><input type="checkbox" checked name="uart" id="uart" /><label for="uart">UART</label></li>
+        </ul>
+        <noscript>
+            <p>Want to show/hide interfaces and view a full pinout? Enable JavaScript!</p>
+        </noscript>
+    </nav>
+    <article class="pinout" id="pinout">
+        <table aria-label="Left-hand pins" class="labels left" aria-rowcount="20" cellpadding="0" cellspacing="5">
+            <tr aria-label="First pin."       ><td class="power">VBUS</td></tr>
+            <tr aria-label="Second pin."      ><td class="ground">Ground</td></tr>
+            <tr aria-label="Third pin."       ><td class="power">3V3</td></tr>
+            <tr aria-label="Forth pin."       ><td class="gpio">GP29</td>               <td class="adc" title="ADC: Channel 3">ADC3</td>        <td class="i2c advanced">I2C0 SCL</td>   <td class="uart advanced">UART0 RX</td>    <td class="pwm advanced">PWM6 B</td></tr>
+            <tr aria-label="Fifth pin."       ><td class="gpio">GP28</td>               <td class="adc" title="ADC: Channel 2">ADC2</td>        <td class="i2c advanced">I2C0 SDA</td>   <td class="uart advanced">UART0 TX</td>    <td class="pwm advanced">PWM6 A</td></tr>
+            <tr aria-label="Sixth pin."       ><td class="gpio">GP27</td>               <td class="adc" title="ADC: Channel 1">ADC1</td>        <td class="i2c">I2C1 SCL</td>            <td class="uart advanced">UART1 RTS</td>   <td class="pwm advanced">PWM5 B</td></tr>
+            <tr aria-label="Seventh pin."     ><td class="gpio">GP26</td>               <td class="adc" title="ADC: Channel 0">ADC0</td>        <td class="i2c">I2C1 SDA</td>            <td class="uart advanced">UART1 CTS</td>   <td class="pwm advanced">PWM5 A</td></tr>
+            <tr aria-label="Eighth pin."      ><td class="ground">Ground</td></tr>
+        </table>
+        <div class="pico"><img width="174" alt="Pimoroni Tiny 2040 with the micro USB port facing upwards, standing face-up on its GPIO pins." src="pimoroni-tiny-2040.svg" /></div>
+        <table aria-label="Right-hand pins" class="labels right" aria-rowcount="20" cellpadding="0" cellspacing="5">
+            <tr aria-label="First pin."       ><td class="gpio">GP0</td>                <td class="spi">SPI0 RX</td>        <td class="i2c">I2C0 SDA</td>                                <td class="uart">UART0 TX</td>             <td class="pwm advanced">PWM0 A</td></tr>
+            <tr aria-label="Second pin."      ><td class="gpio">GP1</td>                <td class="spi">SPI0 CSn</td>       <td class="i2c">I2C0 SCL</td>                                <td class="uart">UART0 RX</td>             <td class="pwm advanced">PWM0 B</td></tr>
+            <tr aria-label="Third pin."       ><td class="gpio">GP2</td>                <td class="spi">SPI0 SCK</td>       <td class="i2c">I2C1 SDA</td>                                <td class="uart advanced">UART0 CTS</td>   <td class="pwm advanced">PWM1 A</td></tr>
+            <tr aria-label="Forth pin."       ><td class="gpio">GP3</td>                <td class="spi">SPI0 TX</td>        <td class="i2c">I2C1 SCL</td>                                <td class="uart advanced">UART0 RTS</td>   <td class="pwm advanced">PWM1 B</td></tr>
+            <tr aria-label="Fifth pin."       ><td class="gpio">GP4</td>                <td class="spi">SPI0 RX</td>        <td class="i2c">I2C0 SDA</td>                                <td class="uart">UART1 TX</td>             <td class="pwm advanced">PWM2 A</td></tr>
+            <tr aria-label="Sixth pin."       ><td class="gpio">GP5</td>                <td class="spi">SPI0 CSn</td>       <td class="i2c">I2C0 SCL</td>                                <td class="uart">UART1 RX</td>             <td class="pwm advanced">PWM2 B</td></tr>
+            <tr aria-label="Seventh pin."     ><td class="gpio">GP6</td>                <td class="spi">SPI0 SCK</td>       <td class="i2c">I2C1 SDA</td>                                <td class="uart advanced">UART1 CTS</td>   <td class="pwm advanced">PWM3 A</td></tr>
+            <tr aria-label="Eighth pin."      ><td class="gpio">GP7</td>                <td class="spi">SPI0 TX</td>        <td class="i2c">I2C1 SCL</td>                                <td class="uart advanced">UART1 RTS</td>   <td class="pwm advanced">PWM3 B</td></tr>
+        </table>
+    </article>
+    <footer>
+        <p>The Pimoroni Tiny 2040 Pinout is maintained by me - <a href="https://twitter.com/gadgetoid">@Gadgetoid</a> - in my spare time.</p>
+        <p>Want to help out? <a href="https://github.com/gadgetoid/pico.pinout.xyz">Support this project with your time/expertise</a>, <a href="https://github.com/sponsors/Gadgetoid">sponsor me on GitHub</a>, <a href="https://www.patreon.com/gadgetoid">toss me a dollar on Patreon</a> or <a href="https://shop.pimoroni.com/products/tiny-2040">buy a Tiny 2040</a></a>.</p>
+    </footer>
+    <script type="text/javascript">
+        'use strict';
+        var pinout = document.getElementById("pinout");
+        var inputs = document.getElementsByTagName("input");
+        document.getElementById("nav").classList.remove("nojs");
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].type != "checkbox") continue;
+            inputs[i].onchange = inputs[i].name == "advanced" ? advanced_on_change : interface_on_change;
+
+            inputs[i].onchange();
+        }
+        function advanced_on_change() {
+            console.log(this.checked);
+            if (this.checked) {
+                var labels = document.getElementsByClassName("advanced");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.add("advanced-on");
+                }
+                var labels = document.getElementsByClassName("advanced-on");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.remove("advanced");
+                }
+            } else {
+                var labels = document.getElementsByClassName("advanced-on");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.add("advanced");
+                }
+                var labels = document.getElementsByClassName("advanced");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.remove("advanced-on");
+                }
+            }
+
+        }
+        function interface_on_change() {
+            console.log(this.checked);
+            var checked = this.checked;
+            var labels = pinout.getElementsByClassName(this.name);
+            for (var j = 0; j < labels.length; j++) {
+                if (checked) {
+                    labels[j].classList.remove("hidden");
+                    pinout.classList.remove("hidden-" + this.name);
+                } else {
+                    labels[j].classList.add("hidden");
+                    pinout.classList.add("hidden-" + this.name);
+                }
+            }
+        }
+
+        // Boof to a sensible default window size
+        // only tested on Windows 10...
+        // RIP 1024x768
+        window.resizeTo(1050, 830);
+
+        // Janky hack for iOS at least
+        if (window.innerWidth < 400) {
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type != "checkbox") continue;
+                inputs[i].checked = false;
+                inputs[i].onchange();
+            }
+        }
+    </script>
+</body>
+</html>
+

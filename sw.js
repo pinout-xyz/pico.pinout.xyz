@@ -28,6 +28,9 @@ function precache() {
       "pipipi-icon-512.png",
       "index.html",
       "pimoroni-pico-lipo.html",
+      "pimoroni-pico-lipo",
+      "pimoroni-tiny-2040.html",
+      "pimoroni-tiny-2040",
       "register_serviceworker.js",
       "sw.js"
     ]);
