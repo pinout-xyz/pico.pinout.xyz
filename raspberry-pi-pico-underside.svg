@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 59.529 150.239"
+   version="1.1"
+   id="svg1242"
+   sodipodi:docname="raspberry-pi-pico-underside-v1.svg"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1246" />
+  <sodipodi:namedview
+     id="namedview1244"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="3.5801935"
+     inkscape:cx="-10.19498"
+     inkscape:cy="78.906349"
+     inkscape:window-width="1440"
+     inkscape:window-height="847"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1242" />
+  <path
+     d="M 21.264,0 A 0.565,0.565 0 0 0 20.722,0.4 L 20.41,1.43 19.843,2 v 14.441 a 0.567,0.567 0 0 0 0.567,0.568 h 3.46 a 0.284,0.284 0 0 0 0.284,-0.283 V 15.9 a 0.569,0.569 0 0 0 -0.295,-0.5 l -1.926,-1.052 a 0.567,0.567 0 0 1 -0.295,-0.5 V 13.021 H 22.9 V 12.07 h 1.94 v 0.953 h 1.144 v 1.971 a 0.567,0.567 0 0 0 0.567,0.568 h 0.919 v -1.023 h 4.59 v 1.023 h 0.92 a 0.567,0.567 0 0 0 0.566,-0.568 V 13.023 H 34.69 V 12.07 h 1.944 v 0.953 h 1.258 v 0.827 a 0.567,0.567 0 0 1 -0.3,0.5 l -1.921,1.05 a 0.568,0.568 0 0 0 -0.3,0.5 v 0.829 a 0.284,0.284 0 0 0 0.284,0.283 h 3.459 a 0.568,0.568 0 0 0 0.568,-0.568 V 2 L 39.114,1.433 38.809,0.4 A 0.567,0.567 0 0 0 38.266,0 Z"
+     style="fill:#dbddda"
+     id="path1014"
+     sodipodi:insensitive="true" />
+  <path
+     d="M59.529,15.537V10.755h0a1.18,1.18,0,0,1-.54-.143V15.68a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path824" />
+  <path
+     d="M59.529,22.738V17.956h0a1.18,1.18,0,0,1-.54-.143v5.068a1.165,1.165,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path826" />
+  <path
+     d="M59.529,29.938v-4.78h0a1.18,1.18,0,0,1-.54-.143v5.066a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path828" />
+  <path
+     d="M59.529,37.137v-4.78h0a1.18,1.18,0,0,1-.54-.143V37.28a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path830" />
+  <path
+     d="M59.529,44.336v-4.78h0a1.18,1.18,0,0,1-.54-.143v5.066a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path832" />
+  <path
+     d="M59.529,51.536v-4.78h0a1.181,1.181,0,0,1-.54-.144v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path834" />
+  <path
+     d="M59.529,58.736V53.955h0a1.18,1.18,0,0,1-.54-.143v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path836" />
+  <path
+     d="M59.529,65.936V61.155h0a1.18,1.18,0,0,1-.54-.143v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path838" />
+  <path
+     d="M59.529,73.137V68.356h0a1.18,1.18,0,0,1-.54-.143V73.28a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path840" />
+  <path
+     d="M59.529,80.337V75.556h0a1.18,1.18,0,0,1-.54-.143v5.066a1.177,1.177,0,0,1,.54-.143h0"
+     style="fill:#004e29"
+     id="path842" />
+  <path
+     d="M59.529,87.536v-4.78h0a1.181,1.181,0,0,1-.54-.144v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path844" />
+  <path
+     d="M59.529,94.736V89.955h0a1.18,1.18,0,0,1-.54-.143v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path846" />
+  <path
+     d="M59.529,101.936V97.155h0a1.18,1.18,0,0,1-.54-.143v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path848" />
+  <path
+     d="M59.529,109.137v-4.781h0a1.18,1.18,0,0,1-.54-.143v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path850" />
+  <path
+     d="M59.529,116.337v-4.781h0a1.18,1.18,0,0,1-.54-.143v5.066a1.176,1.176,0,0,1,.54-.142Z"
+     style="fill:#004e29"
+     id="path852" />
+  <path
+     d="M59.529,123.537v-4.781h0a1.169,1.169,0,0,1-.54-.144v5.067a1.176,1.176,0,0,1,.54-.142h0"
+     style="fill:#004e29"
+     id="path854" />
+  <path
+     d="M59.529,130.736v-4.781h0a1.18,1.18,0,0,1-.54-.143v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path856" />
+  <path
+     d="M59.529,137.936v-4.781h0a1.18,1.18,0,0,1-.54-.143v5.067a1.177,1.177,0,0,1,.54-.143Z"
+     style="fill:#004e29"
+     id="path858" />
+  <path
+     d="M59.529,145.136v-4.78h0a1.18,1.18,0,0,1-.54-.143v5.065a1.176,1.176,0,0,1,.54-.142Z"
+     style="fill:#004e29"
+     id="path860" />
+  <path
+     d="M59.529,147.555h0a1.18,1.18,0,0,1-.54-.143v1.577a.709.709,0,0,1-.709.709H38.032a1.174,1.174,0,0,1,.143.54H58.394a1.134,1.134,0,0,0,1.134-1.135v-1.549Z"
+     style="fill:#004e29"
+     id="path862" />
+  <path
+     d="M23.631,149.7a1.178,1.178,0,0,1,.143.541h4.78a1.183,1.183,0,0,1,.142-.541Z"
+     style="fill:#004e29"
+     id="path864" />
+  <path
+     d="M30.831,149.7a1.178,1.178,0,0,1,.143.541h4.782a1.183,1.183,0,0,1,.142-.541Z"
+     style="fill:#004e29"
+     id="path866" />
+  <path
+     d="M59.2,6l-.416.417a.707.707,0,0,1,.208.5V8.48a1.177,1.177,0,0,1,.54-.143h0V6.805A1.126,1.126,0,0,0,59.2,6"
+     style="fill:#004e29"
+     id="path868" />
+  <path
+     d="M21.5,149.7H1.251a.708.708,0,0,1-.5-.208l-.417.417a1.134,1.134,0,0,0,.8.332H21.355a1.178,1.178,0,0,1,.143-.541"
+     style="fill:#004e29"
+     id="path870" />
+  <path
+     d="m 0.542,6.921 v 1.558 a 1.2,1.2 0 0 1 0.67,1.067 1.2,1.2 0 0 1 -0.67,1.066 v 5.069 a 1.183,1.183 0 0 1 0,2.132 v 5.068 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.068 v 5.065 a 1.2,1.2 0 0 1 0.67,1.067 1.2,1.2 0 0 1 -0.67,1.067 v 5.065 a 1.2,1.2 0 0 1 0.67,1.068 1.2,1.2 0 0 1 -0.67,1.066 v 5.066 a 1.2,1.2 0 0 1 0.67,1.068 1.2,1.2 0 0 1 -0.67,1.066 v 5.067 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.067 v 5.067 a 1.2,1.2 0 0 1 0.67,1.066 1.206,1.206 0 0 1 -0.67,1.068 v 5.066 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.067 v 5.066 a 1.2,1.2 0 0 1 0.67,1.068 1.2,1.2 0 0 1 -0.67,1.066 v 5.066 a 1.2,1.2 0 0 1 0.67,1.068 1.2,1.2 0 0 1 -0.67,1.066 v 5.067 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.067 v 5.067 a 1.2,1.2 0 0 1 0.67,1.066 1.206,1.206 0 0 1 -0.67,1.068 v 5.066 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.067 v 5.066 a 1.2,1.2 0 0 1 0.67,1.068 1.2,1.2 0 0 1 -0.67,1.066 v 5.066 a 1.2,1.2 0 0 1 0.67,1.068 1.2,1.2 0 0 1 -0.67,1.066 v 5.067 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.067 v 5.067 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.068 v 5.066 a 1.2,1.2 0 0 1 0.67,1.066 1.2,1.2 0 0 1 -0.67,1.067 v 5.065 a 1.2,1.2 0 0 1 0.67,1.068 1.2,1.2 0 0 1 -0.67,1.066 v 1.577 a 0.708,0.708 0 0 0 0.709,0.708 H 21.5 a 1.185,1.185 0 0 1 2.134,0 H 28.7 a 1.185,1.185 0 0 1 2.134,0 H 35.9 a 1.185,1.185 0 0 1 2.134,0 h 20.245 a 0.708,0.708 0 0 0 0.708,-0.708 v -1.577 a 1.185,1.185 0 0 1 0,-2.134 v -5.064 a 1.185,1.185 0 0 1 0,-2.134 v -5.066 a 1.185,1.185 0 0 1 0,-2.134 v -5.067 a 1.185,1.185 0 0 1 0,-2.133 v -5.067 a 1.185,1.185 0 0 1 0,-2.134 v -5.065 a 1.185,1.185 0 0 1 0,-2.134 v -5.066 a 1.185,1.185 0 0 1 0,-2.134 v -5.066 a 1.185,1.185 0 0 1 0,-2.134 v -5.067 a 1.185,1.185 0 0 1 0,-2.133 v -5.067 a 1.185,1.185 0 0 1 0,-2.134 v -5.065 a 1.185,1.185 0 0 1 0,-2.134 v -5.066 a 1.185,1.185 0 0 1 0,-2.134 v -5.066 a 1.185,1.185 0 0 1 0,-2.134 v -5.067 a 1.185,1.185 0 0 1 0,-2.133 v -5.067 a 1.185,1.185 0 0 1 0,-2.133 v -5.066 a 1.185,1.185 0 0 1 0,-2.134 v -5.066 a 1.185,1.185 0 0 1 0,-2.134 v -5.065 a 1.185,1.185 0 0 1 0,-2.134 v -5.068 a 1.184,1.184 0 0 1 0,-2.132 v -5.069 a 1.185,1.185 0 0 1 0,-2.133 V 6.921 A 0.708,0.708 0 0 0 58.279,6.212 H 1.251 A 0.708,0.708 0 0 0 0.542,6.921 m 4.023,140.621 a 1.2,1.2 0 1 1 1.2,-1.2 1.2,1.2 0 0 1 -1.2,1.2 m 1.2,-8.4 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 0,-7.2 a 1.2,1.2 0 1 1 -1.2,-1.2 1.2,1.2 0 0 1 1.2,1.2 m 7.86,137.4 a 2.52,2.52 0 1 1 2.519,-2.519 2.522,2.522 0 0 1 -2.519,2.519 m 0,-132.95 A 2.519,2.519 0 1 1 16.144,11.472 2.522,2.522 0 0 1 13.622,14 m 8.943,133.54 a 1.2,1.2 0 1 1 1.2,-1.2 1.2,1.2 0 0 1 -1.2,1.2 m 7.2,0 a 1.2,1.2 0 1 1 1.2,-1.2 1.2,1.2 0 0 1 -1.2,1.2 m 24,-1.195 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m 0,-7.2 a 1.2,1.2 0 1 1 1.2,1.2 1.2,1.2 0 0 1 -1.2,-1.2 m -16.8,137.995 a 1.2,1.2 0 1 1 1.2,-1.2 1.2,1.2 0 0 1 -1.2,1.2 m 8.943,-0.591 a 2.52,2.52 0 1 1 2.519,-2.519 2.522,2.522 0 0 1 -2.519,2.519 m 0,-132.95 A 2.519,2.519 0 1 1 48.427,11.479 2.522,2.522 0 0 1 45.908,14"
+     style="fill:#006837"
+     id="path872"
+     sodipodi:insensitive="true" />
+  <path
+     d="M58.4,5.671H1.134A1.134,1.134,0,0,0,0,6.805V8.336H0a1.162,1.162,0,0,1,.54.144V6.921a.709.709,0,0,1,.709-.709H58.279a.7.7,0,0,1,.5.208L59.2,6a1.131,1.131,0,0,0-.8-.332"
+     style="fill:#33865f"
+     id="path874" />
+  <path
+     d="M0,17.956v4.782H0a1.158,1.158,0,0,1,.54.143V17.813a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path876" />
+  <path
+     d="M0,25.156v4.781H0a1.17,1.17,0,0,1,.54.143V25.013a1.158,1.158,0,0,1-.54.143H0"
+     style="fill:#33865f"
+     id="path878" />
+  <path
+     d="M0,32.356v4.781H0a1.169,1.169,0,0,1,.54.142V32.214a1.169,1.169,0,0,1-.54.142Z"
+     style="fill:#33865f"
+     id="path880" />
+  <path
+     d="M0,39.556v4.781H0a1.17,1.17,0,0,1,.54.143V39.413a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path882" />
+  <path
+     d="M0,46.755v4.781H0a1.17,1.17,0,0,1,.54.143V46.612a1.159,1.159,0,0,1-.54.144Z"
+     style="fill:#33865f"
+     id="path884" />
+  <path
+     d="M0,53.955v4.781H0a1.17,1.17,0,0,1,.54.143V53.812a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path886" />
+  <path
+     d="M0,61.155v4.781H0a1.17,1.17,0,0,1,.54.143V61.012a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path888" />
+  <path
+     d="M0,68.355v4.781H0a1.17,1.17,0,0,1,.54.143V68.212a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path890" />
+  <path
+     d="M0,75.556v4.781H0a1.17,1.17,0,0,1,.54.143V75.413a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path892" />
+  <path
+     d="M0,82.755v4.781H0a1.17,1.17,0,0,1,.54.143V82.612a1.159,1.159,0,0,1-.54.144Z"
+     style="fill:#33865f"
+     id="path894" />
+  <path
+     d="M0,89.955v4.781H0a1.17,1.17,0,0,1,.54.143V89.812a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path896" />
+  <path
+     d="M0,97.155v4.781H0a1.17,1.17,0,0,1,.54.143V97.012a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path898" />
+  <path
+     d="M0,104.355v4.781H0a1.17,1.17,0,0,1,.54.143v-5.067a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path900" />
+  <path
+     d="M0,111.556v4.781H0a1.17,1.17,0,0,1,.54.143v-5.067a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path902" />
+  <path
+     d="M0,118.755v4.781H0a1.17,1.17,0,0,1,.54.143v-5.066a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path904" />
+  <path
+     d="M0,125.955v4.781H0a1.17,1.17,0,0,1,.54.143v-5.067a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path906" />
+  <path
+     d="M0,133.155v4.781H0a1.17,1.17,0,0,1,.54.143v-5.067a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path908" />
+  <path
+     d="M0,140.355v4.78H0a1.17,1.17,0,0,1,.54.143v-5.066a1.17,1.17,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path910" />
+  <path
+     d="M0,10.755v4.782H0a1.159,1.159,0,0,1,.54.144V10.612a1.158,1.158,0,0,1-.54.143Z"
+     style="fill:#33865f"
+     id="path912" />
+  <path
+     d="M.333,149.906l.416-.417a.708.708,0,0,1-.207-.5v-1.576a1.177,1.177,0,0,1-.541.142V149.1a1.134,1.134,0,0,0,.332.8"
+     style="fill:#33865f"
+     id="path914" />
+  <path
+     d="M6.54,16.745A1.977,1.977,0,0,0,4.565,14.77H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,17.955H0v.765H4.565A1.977,1.977,0,0,0,6.54,16.745m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path916" />
+  <path
+     d="M6.54,21.971H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,25.156H0v.765H6.54ZM4.565,25.143a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path918" />
+  <path
+     d="M6.54,31.146A1.978,1.978,0,0,0,4.565,29.17H0v.766H0a1.21,1.21,0,0,1,0,2.42H0v.765H4.565A1.978,1.978,0,0,0,6.54,31.146m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path920" />
+  <path
+     d="M6.54,38.345a1.978,1.978,0,0,0-1.975-1.976H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,39.554H0v.765H4.565A1.976,1.976,0,0,0,6.54,38.345m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path922" />
+  <path
+     d="M6.54,45.545a1.978,1.978,0,0,0-1.975-1.976H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,46.754H0v.765H4.565A1.976,1.976,0,0,0,6.54,45.545m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path924" />
+  <path
+     d="M6.54,52.745a1.978,1.978,0,0,0-1.975-1.976H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,53.954H0v.765H4.565A1.976,1.976,0,0,0,6.54,52.745m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path926" />
+  <path
+     d="M6.54,57.97H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,61.155H0v.765H6.54ZM4.565,61.142a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path928" />
+  <path
+     d="M6.54,67.145A1.977,1.977,0,0,0,4.565,65.17H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,68.355H0v.765H4.565A1.977,1.977,0,0,0,6.54,67.145m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path930" />
+  <path
+     d="M6.54,74.345A1.977,1.977,0,0,0,4.565,72.37H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,75.555H0v.765H4.565A1.977,1.977,0,0,0,6.54,74.345m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path932" />
+  <path
+     d="M6.54,81.545A1.977,1.977,0,0,0,4.565,79.57H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,82.755H0v.765H4.565A1.977,1.977,0,0,0,6.54,81.545m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path934" />
+  <path
+     d="M6.54,88.745A1.977,1.977,0,0,0,4.565,86.77H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,89.955H0v.765H4.565A1.977,1.977,0,0,0,6.54,88.745m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path936" />
+  <path
+     d="M6.54,93.97H0v.766H0a1.21,1.21,0,0,1,0,2.42H0v.765H6.54ZM4.565,97.143a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path938" />
+  <path
+     d="M6.54,103.146a1.978,1.978,0,0,0-1.975-1.976H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,104.355H0v.766H4.565a1.978,1.978,0,0,0,1.975-1.975m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path940" />
+  <path
+     d="M6.54,110.346a1.978,1.978,0,0,0-1.975-1.976H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,111.555H0v.765H4.565a1.976,1.976,0,0,0,1.975-1.974m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path942" />
+  <path
+     d="M6.54,117.546a1.978,1.978,0,0,0-1.975-1.976H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,118.755H0v.765H4.565a1.976,1.976,0,0,0,1.975-1.974m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path944" />
+  <path
+     d="M6.54,124.746a1.978,1.978,0,0,0-1.975-1.976H0v.766H0a1.211,1.211,0,0,1,1.209,1.21A1.21,1.21,0,0,1,0,125.955H0v.765H4.565a1.976,1.976,0,0,0,1.975-1.974m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path946" />
+  <path
+     d="M6.54,129.971H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,133.156H0v.765H6.54Zm-1.975,3.172a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path948" />
+  <path
+     d="M6.54,139.146a1.977,1.977,0,0,0-1.975-1.975H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,140.356H0v.765H4.565a1.977,1.977,0,0,0,1.975-1.975m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path950" />
+  <path
+     d="M6.54,146.345a1.977,1.977,0,0,0-1.975-1.975H0v.766H0a1.21,1.21,0,0,1,1.209,1.209A1.211,1.211,0,0,1,0,147.555H0v.765H4.565a1.977,1.977,0,0,0,1.975-1.975m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path952" />
+  <path
+     d="M54.965,18.721h4.564v-.766a1.21,1.21,0,1,1,0-2.419V14.77H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path954" />
+  <path
+     d="M52.99,25.921h6.539v-.766a1.21,1.21,0,1,1,0-2.419V21.97H52.99Zm.778-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path956" />
+  <path
+     d="M54.965,33.12h4.564v-.765a1.21,1.21,0,1,1,0-2.419v-.767H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path958" />
+  <path
+     d="M54.965,40.32h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path960" />
+  <path
+     d="M54.965,47.52h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path962" />
+  <path
+     d="M54.965,54.72h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path964" />
+  <path
+     d="M52.99,61.92h6.539v-.766a1.21,1.21,0,1,1,0-2.419v-.766H52.99Zm.778-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path966" />
+  <path
+     d="M54.965,69.121h4.564v-.766a1.21,1.21,0,1,1,0-2.419V65.17H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path968" />
+  <path
+     d="M54.965,76.321h4.564v-.766a1.21,1.21,0,1,1,0-2.419V72.37H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path970" />
+  <path
+     d="M54.965,83.521h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.767H54.965a1.976,1.976,0,0,0,0,3.952m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path972" />
+  <path
+     d="M54.965,90.721h4.564v-.767a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.952m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path974" />
+  <path
+     d="M52.99,97.92h6.539v-.766a1.21,1.21,0,1,1,0-2.419v-.766H52.99Zm.778-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path976" />
+  <path
+     d="M54.965,105.12h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path978" />
+  <path
+     d="M54.965,112.321h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path980" />
+  <path
+     d="M54.965,119.521h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path982" />
+  <path
+     d="M54.965,126.721h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.975a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path984" />
+  <path
+     d="M52.99,133.921h6.539v-.766a1.21,1.21,0,1,1,0-2.419v-.766H52.99Zm.778-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path986" />
+  <path
+     d="M54.965,141.121h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.766H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path988" />
+  <path
+     d="M54.965,148.321h4.564v-.766a1.21,1.21,0,1,1,0-2.419v-.767H54.965a1.976,1.976,0,0,0,0,3.952m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path990" />
+  <path
+     d="M22.565,144.368a1.979,1.979,0,0,0-1.976,1.975v3.9h.766a1.21,1.21,0,1,1,2.42,0h.765v-3.9a1.979,1.979,0,0,0-1.975-1.975m1.2,1.976a1.2,1.2,0,1,1-1.2-1.2,1.2,1.2,0,0,1,1.2,1.2"
+     style="fill:#9a916c"
+     id="path992" />
+  <path
+     d="M27.788,144.43v5.809h.766a1.21,1.21,0,1,1,2.419,0h.765V144.43Zm3.173,1.914a1.2,1.2,0,1,1-1.2-1.2,1.2,1.2,0,0,1,1.2,1.2"
+     style="fill:#9a916c"
+     id="path994" />
+  <path
+     d="M36.966,144.368a1.979,1.979,0,0,0-1.976,1.975v3.9h.766a1.21,1.21,0,1,1,2.419,0h.765v-3.9a1.977,1.977,0,0,0-1.974-1.975m1.2,1.976a1.2,1.2,0,1,1-1.2-1.2,1.2,1.2,0,0,1,1.2,1.2"
+     style="fill:#9a916c"
+     id="path996" />
+  <path
+     d="M54.965,11.52h4.564v-.766a1.21,1.21,0,1,1,0-2.419V7.569H54.965a1.976,1.976,0,0,0,0,3.951m-1.2-1.976a1.2,1.2,0,1,1,1.2,1.2,1.2,1.2,0,0,1-1.2-1.2"
+     style="fill:#9a916c"
+     id="path998" />
+  <path
+     d="M6.54,9.544A1.977,1.977,0,0,0,4.565,7.569H0v.766H0A1.21,1.21,0,0,1,1.211,9.544,1.211,1.211,0,0,1,0,10.754H0v.765H4.565A1.977,1.977,0,0,0,6.54,9.544m-1.975,1.2a1.2,1.2,0,1,1,1.2-1.2,1.2,1.2,0,0,1-1.2,1.2"
+     style="fill:#9a916c"
+     id="path1000" />
+  <path
+     d="M13.622,148.949a4.52,4.52,0,1,1,4.52-4.519,4.524,4.524,0,0,1-4.52,4.519m0-7.039a2.52,2.52,0,1,0,2.52,2.52,2.523,2.523,0,0,0-2.52-2.52"
+     style="fill:#fcee21"
+     id="path1002" />
+  <path
+     d="M45.908,148.949a4.52,4.52,0,1,1,4.52-4.519,4.525,4.525,0,0,1-4.52,4.519m0-7.039a2.52,2.52,0,1,0,2.52,2.52,2.523,2.523,0,0,0-2.52-2.52"
+     style="fill:#fcee21"
+     id="path1004" />
+  <path
+     d="M13.622,16a4.52,4.52,0,1,1,4.52-4.519A4.524,4.524,0,0,1,13.622,16m0-7.039a2.519,2.519,0,1,0,2.52,2.52,2.522,2.522,0,0,0-2.52-2.52"
+     style="fill:#fcee21"
+     id="path1006" />
+  <path
+     d="M45.908,16a4.52,4.52,0,1,1,4.52-4.519A4.525,4.525,0,0,1,45.908,16m0-7.039a2.519,2.519,0,1,0,2.52,2.52,2.522,2.522,0,0,0-2.52-2.52"
+     style="fill:#fcee21"
+     id="path1008" />
+  <path
+     d="M20.465,2.883a11.555,11.555,0,0,1-.729-1.05,3.83,3.83,0,0,1-.3-.61,4.275,4.275,0,0,1-.184-.644A.34.34,0,0,1,19.908.4h0a3.073,3.073,0,0,0,.523.962,10.972,10.972,0,0,0,.79.865v0a.5.5,0,1,1-.715.7.515.515,0,0,1-.043-.05"
+     style="fill:#dbddda"
+     id="path1016" />
+  <path
+     d="M38.308,2.229a10.963,10.963,0,0,0,.79-.864A3.1,3.1,0,0,0,39.62.4h0a.34.34,0,0,1,.655.179,4.042,4.042,0,0,1-.184.643,3.826,3.826,0,0,1-.3.61,11.555,11.555,0,0,1-.729,1.05.5.5,0,1,1-.8-.6.472.472,0,0,1,.041-.048Z"
+     style="fill:#dbddda"
+     id="path1018" />
+  <rect
+     style="fill:#9a916c;fill-opacity:1;stroke:none;stroke-width:0.245669;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3204"
+     width="3.7795277"
+     height="3.7795277"
+     x="27.874737"
+     y="16.331814"
+     ry="1.1338583" />
+  <rect
+     style="fill:#9a916c;fill-opacity:1;stroke:none;stroke-width:0.245669;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3512"
+     width="3.7795277"
+     height="3.7795277"
+     x="34.081425"
+     y="25.641848"
+     ry="1.1338583" />
+  <rect
+     style="fill:#9a916c;fill-opacity:1;stroke:none;stroke-width:0.245669;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3514"
+     width="3.7795277"
+     height="3.7795277"
+     x="34.081425"
+     y="32.672863"
+     ry="1.1338583" />
+  <rect
+     style="fill:#9a916c;fill-opacity:1;stroke:none;stroke-width:0.245669;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3516"
+     width="3.7795277"
+     height="3.7795277"
+     x="34.081425"
+     y="39.703876"
+     ry="1.1338583" />
+  <rect
+     style="fill:#9a916c;fill-opacity:1;stroke:none;stroke-width:0.245669;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3621"
+     width="3.7795277"
+     height="3.7795277"
+     x="24.84"
+     y="8.290472"
+     ry="1.1338583" />
+  <rect
+     style="fill:#9a916c;fill-opacity:1;stroke:none;stroke-width:0.245669;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3623"
+     width="3.7795277"
+     height="3.7795277"
+     x="30.042067"
+     y="8.290472"
+     ry="1.1338583" />
+  <text
+     xml:space="preserve"
+     style="font-size:2.66667px;line-height:1.25;font-family:Tahoma;fill:#ffffff;-inkscape-font-specification:Tahoma;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+     x="8.6391821"
+     y="39.313404"
+     id="text11982"><tspan
+       sodipodi:role="line"
+       id="tspan11980"
+       x="8.6391821"
+       y="39.313404"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">3V3</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="46.648857"
+     id="text17530"><tspan
+       sodipodi:role="line"
+       id="tspan17528"
+       x="8.6391821"
+       y="46.648857"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">ADC_VREF</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.5402241"
+     y="53.827484"
+     id="text23064"><tspan
+       sodipodi:role="line"
+       id="tspan23062"
+       x="8.5402241"
+       y="53.827484"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 28_A2</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="61.173424"
+     id="text24298"><tspan
+       sodipodi:role="line"
+       id="tspan24296"
+       x="8.6391821"
+       y="61.173424"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">AGND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="18.740412"
+     id="text37380"><tspan
+       sodipodi:role="line"
+       id="tspan37378"
+       x="8.6391821"
+       y="18.740412"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">VBUS</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="22.755058"
+     id="text37384"><tspan
+       sodipodi:role="line"
+       id="tspan37382"
+       x="8.6391821"
+       y="22.755058"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">VSYS</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.5428276"
+     y="26.765799"
+     id="text37388"><tspan
+       sodipodi:role="line"
+       id="tspan37386"
+       x="8.5428276"
+       y="26.765799"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="32.113602"
+     id="text37392"><tspan
+       sodipodi:role="line"
+       id="tspan37390"
+       x="8.6391821"
+       y="32.113602"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">3V3_EN</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="68.347496"
+     id="text24298-3"><tspan
+       sodipodi:role="line"
+       id="tspan24296-3"
+       x="8.6391821"
+       y="68.347496"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 27_A1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="75.521561"
+     id="text24298-4"><tspan
+       sodipodi:role="line"
+       id="tspan24296-9"
+       x="8.6391821"
+       y="75.521561"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 26_A0</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="82.695625"
+     id="text24298-42"><tspan
+       sodipodi:role="line"
+       id="tspan24296-7"
+       x="8.6391821"
+       y="82.695625"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">RUN</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="89.869698"
+     id="text24298-6"><tspan
+       sodipodi:role="line"
+       id="tspan24296-2"
+       x="8.6391821"
+       y="89.869698"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 22</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="97.043755"
+     id="text24298-7"><tspan
+       sodipodi:role="line"
+       id="tspan24296-1"
+       x="8.6391821"
+       y="97.043755"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="104.21783"
+     id="text24298-64"><tspan
+       sodipodi:role="line"
+       id="tspan24296-8"
+       x="8.6391821"
+       y="104.21783"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 21</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="111.3919"
+     id="text24298-5"><tspan
+       sodipodi:role="line"
+       id="tspan24296-90"
+       x="8.6391821"
+       y="111.3919"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 20</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="118.56596"
+     id="text24298-72"><tspan
+       sodipodi:role="line"
+       id="tspan24296-94"
+       x="8.6391821"
+       y="118.56596"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 19</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="125.74003"
+     id="text24298-31"><tspan
+       sodipodi:role="line"
+       id="tspan24296-84"
+       x="8.6391821"
+       y="125.74003"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 18</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="131.27843"
+     id="text24298-8"><tspan
+       sodipodi:role="line"
+       id="tspan24296-6"
+       x="8.6391821"
+       y="131.27843"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="138.6389"
+     id="text45821"><tspan
+       sodipodi:role="line"
+       id="tspan45819"
+       x="8.6391821"
+       y="138.6389"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 16</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="8.6391821"
+     y="134.95866"
+     id="text45825"><tspan
+       sodipodi:role="line"
+       id="tspan45823"
+       x="8.6391821"
+       y="134.95866"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 17</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.95887"
+     y="39.313404"
+     id="text47521"><tspan
+       sodipodi:role="line"
+       id="tspan47519"
+       x="45.95887"
+       y="39.313404"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 3</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.874233"
+     y="46.648857"
+     id="text47525"><tspan
+       sodipodi:role="line"
+       id="tspan47523"
+       x="45.874233"
+       y="46.648857"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 4</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.947151"
+     y="53.827484"
+     id="text47529"><tspan
+       sodipodi:role="line"
+       id="tspan47527"
+       x="45.947151"
+       y="53.827484"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 5</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="46.059132"
+     y="61.173424"
+     id="text47533"><tspan
+       sodipodi:role="line"
+       id="tspan47531"
+       x="46.059132"
+       y="61.173424"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.915901"
+     y="18.740412"
+     id="text47537"><tspan
+       sodipodi:role="line"
+       id="tspan47535"
+       x="45.915901"
+       y="18.740412"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 0</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="46.023975"
+     y="22.755058"
+     id="text47541"><tspan
+       sodipodi:role="line"
+       id="tspan47539"
+       x="46.023975"
+       y="22.755058"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="46.059132"
+     y="26.765799"
+     id="text47545"><tspan
+       sodipodi:role="line"
+       id="tspan47543"
+       x="46.059132"
+       y="26.765799"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.925014"
+     y="32.113602"
+     id="text47549"><tspan
+       sodipodi:role="line"
+       id="tspan47547"
+       x="45.925014"
+       y="32.113602"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 2</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.895069"
+     y="68.347496"
+     id="text47553"><tspan
+       sodipodi:role="line"
+       id="tspan47551"
+       x="45.895069"
+       y="68.347496"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 6</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.904182"
+     y="75.521561"
+     id="text47557"><tspan
+       sodipodi:role="line"
+       id="tspan47555"
+       x="45.904182"
+       y="75.521561"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 7</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.904182"
+     y="82.695625"
+     id="text47561"><tspan
+       sodipodi:role="line"
+       id="tspan47559"
+       x="45.904182"
+       y="82.695625"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 8</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="45.918507"
+     y="89.869698"
+     id="text47565"><tspan
+       sodipodi:role="line"
+       id="tspan47563"
+       x="45.918507"
+       y="89.869698"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 9</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="46.059132"
+     y="97.043755"
+     id="text47569"><tspan
+       sodipodi:role="line"
+       id="tspan47567"
+       x="46.059132"
+       y="97.043755"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="44.457565"
+     y="104.21783"
+     id="text47573"><tspan
+       sodipodi:role="line"
+       id="tspan47571"
+       x="44.457565"
+       y="104.21783"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 10</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="44.565639"
+     y="111.3919"
+     id="text47577"><tspan
+       sodipodi:role="line"
+       id="tspan47575"
+       x="44.565639"
+       y="111.3919"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 11</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="44.466682"
+     y="118.56596"
+     id="text47581"><tspan
+       sodipodi:role="line"
+       id="tspan47579"
+       x="44.466682"
+       y="118.56596"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 12</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="44.500534"
+     y="125.74003"
+     id="text47585"><tspan
+       sodipodi:role="line"
+       id="tspan47583"
+       x="44.500534"
+       y="125.74003"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 13</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="46.059132"
+     y="131.27843"
+     id="text47589"><tspan
+       sodipodi:role="line"
+       id="tspan47587"
+       x="46.059132"
+       y="131.27843"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="44.488815"
+     y="138.6389"
+     id="text47593"><tspan
+       sodipodi:role="line"
+       id="tspan47591"
+       x="44.488815"
+       y="138.6389"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 15</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="44.415901"
+     y="134.95866"
+     id="text47597"><tspan
+       sodipodi:role="line"
+       id="tspan47595"
+       x="44.415901"
+       y="134.95866"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GP 14</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="-142.44057"
+     y="23.533903"
+     id="text74493"
+     transform="rotate(-90)"><tspan
+       sodipodi:role="line"
+       id="tspan74491"
+       x="-142.44057"
+       y="23.533903"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">SWDIO</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="-142.44057"
+     y="30.730816"
+     id="text3463"
+     transform="rotate(-90)"><tspan
+       sodipodi:role="line"
+       id="tspan3461"
+       x="-142.44057"
+       y="30.730816"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="-142.44057"
+     y="37.764164"
+     id="text3467"
+     transform="rotate(-90)"><tspan
+       sodipodi:role="line"
+       id="tspan3465"
+       x="-142.44057"
+       y="37.764164"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">SWCLK</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="22.378742"
+     y="14.978389"
+     id="text5483"><tspan
+       sodipodi:role="line"
+       id="tspan5481"
+       x="22.378742"
+       y="14.978389"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">TP 2</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="28.594257"
+     y="22.993134"
+     id="text6345"><tspan
+       sodipodi:role="line"
+       id="tspan6343"
+       x="28.594257"
+       y="22.993134"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">TP 1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="31.211317"
+     y="14.978389"
+     id="text6349"><tspan
+       sodipodi:role="line"
+       id="tspan6347"
+       x="31.211317"
+       y="14.978389"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">TP 3</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="27.755592"
+     y="28.501013"
+     id="text6353"><tspan
+       sodipodi:role="line"
+       id="tspan6351"
+       x="27.755592"
+       y="28.501013"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">TP 4</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="27.82851"
+     y="35.511848"
+     id="text6357"><tspan
+       sodipodi:role="line"
+       id="tspan6355"
+       x="27.82851"
+       y="35.511848"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">TP 5</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
+     x="27.776426"
+     y="42.561089"
+     id="text6361"><tspan
+       sodipodi:role="line"
+       id="tspan6359"
+       x="27.776426"
+       y="42.561089"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">TP 6</tspan></text>
+</svg>
