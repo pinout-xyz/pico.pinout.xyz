@@ -91,7 +91,6 @@
     .labels tr:before {
         content: counter(pin);
         text-align: center;
-        display: inline-block;
         float: right;
         background-color: #CCCCCC;
         width: 20px;
@@ -170,11 +169,52 @@
     }
     .nojs ul {display:none;}
 
+    /* tooltip for the reversed option */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 207px;
+        background-color: #002b36;
+        color: #e9e5d2;
+        text-align: center;
+        border-radius: 6px;
+        padding: 7px;
+        font-size: 14px;
+        position: absolute;
+        z-index: 1;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    /* Support for flipping board over to view from the bottom... */
+
+    /* Top-up View */
+    #upside {
+        display:block;
+    }
+    #underside {
+        display:none;
+    }
+
+    /* Bottom-up View */
+    .underside-view #underside {
+        display: block;
+    }
+    .underside-view #upside {
+        display: none;
+    }
+    .underside-view {
+        direction: rtl;
+    }
+    .underside-view .labels.left {
+        direction: ltr;
+    }
+    
     @media (prefers-color-scheme: dark) {
         body {
             background-color: #000000;
         }
-        header {
+        header, .tooltip .tooltiptext {
             background: #111111;
             color: #666666;
             border-bottom-color: #222222;
@@ -206,6 +246,7 @@
     <nav class="nojs" id="nav">
         <ul class="filter settings">
             <li><input type="checkbox" name="advanced" id="advanced" /><label for="advanced">Advanced</label></li>
+            <li class="tooltip"><input type="checkbox" name="reversed" id="reversed" /><label for="reversed" style= "cursor:help">Reversed</label><span class="tooltiptext">If you solder the headers on backwards to keep the pin numbers visible, then the pinout is reversed.</span></li>
         </ul>
         <ul class="filter interfaces">
             <li class="spi"><input type="checkbox" checked name="spi" id="spi" /><label for="spi">SPI</label></li>
@@ -241,7 +282,8 @@
             <tr aria-label="Nineteenth pin."  ><td class="gpio">GP14</td>          <td class="spi" title="SPI 1: Clock">SPI1 SCK</td>               <td class="i2c" title="I2C 0: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 0: Clear to send">UART0 CTS</td>     <td class="pwm advanced" title="PWM 7: Channel A">PWM7 A</td></tr>
             <tr aria-label="Twentieth pin."   ><td class="gpio">GP15</td>          <td class="spi" title="SPI 1: Host-transmit">SPI1 TX</td>        <td class="i2c" title="I2C 0: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 0: Request to send">UART0 RTS</td>   <td class="pwm advanced" title="PWM 7: Channel B">PWM7 B</td></tr>
         </table>
-        <div class="pico"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing upwards, standing face-up on its GPIO pins." src="raspberry-pi-pico.svg" /></div>
+        <div class="pico" id="upside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing upwards, standing face-up on its GPIO pins." src="raspberry-pi-pico.svg" /></div>
+        <div class="pico" id="underside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing downwards, standing bottom-up on its GPIO pins." src="raspberry-pi-pico-underside.svg" /></div>
         <table aria-label="Right-hand pins" class="labels right" aria-rowcount="20" cellpadding="0" cellspacing="5">
             <tr aria-label="First pin."       ><td class="power" title="Power: USB Bus">VBUS</td></tr>
             <tr aria-label="Second pin."      ><td class="power" title="Power: System">VSYS</td></tr>
@@ -276,12 +318,14 @@
         document.getElementById("nav").classList.remove("nojs");
         for (var i = 0; i < inputs.length; i++) {
             if (inputs[i].type != "checkbox") continue;
-            inputs[i].onchange = inputs[i].name == "advanced" ? advanced_on_change : interface_on_change;
-
+            if (inputs[i].name == "reversed") {
+                inputs[i].onchange = reversed_on_change;
+            } else {
+                inputs[i].onchange = inputs[i].name == "advanced" ? advanced_on_change : interface_on_change;
+            }
             inputs[i].onchange();
         }
         function advanced_on_change() {
-            console.log(this.checked);
             if (this.checked) {
                 var labels = document.getElementsByClassName("advanced");
                 for (var j = 0; j < labels.length; j++) {
@@ -304,7 +348,6 @@
 
         }
         function interface_on_change() {
-            console.log(this.checked);
             var checked = this.checked;
             var labels = pinout.getElementsByClassName(this.name);
             for (var j = 0; j < labels.length; j++) {
@@ -316,6 +359,9 @@
                     pinout.classList.add("hidden-" + this.name);
                 }
             }
+        }
+        function reversed_on_change() {
+            pinout.classList.toggle("underside-view", this.checked);
         }
 
         // Boof to a sensible default window size
