@@ -66,9 +66,6 @@
         position: relative;
         top: -8px;
     }
-    .underside {
-        display: none;
-    }
     .labels.right {
         counter-reset: pin 41;
         display: grid;
@@ -94,7 +91,6 @@
     .labels tr:before {
         content: counter(pin);
         text-align: center;
-        display: inline-block;
         float: right;
         background-color: #CCCCCC;
         width: 20px;
@@ -189,6 +185,30 @@
     .tooltip:hover .tooltiptext {
         visibility: visible;
     }
+
+    /* Support for flipping board over to view from the bottom... */
+
+    /* Top-up View */
+    #upside {
+        display:block;
+    }
+    #underside {
+        display:none;
+    }
+
+    /* Bottom-up View */
+    .underside-view #underside {
+        display: block;
+    }
+    .underside-view #upside {
+        display: none;
+    }
+    .underside-view {
+        direction: rtl;
+    }
+    .underside-view .labels.left {
+        direction: ltr;
+    }
     
     @media (prefers-color-scheme: dark) {
         body {
@@ -263,7 +283,7 @@
             <tr aria-label="Twentieth pin."   ><td class="gpio">GP15</td>          <td class="spi" title="SPI 1: Host-transmit">SPI1 TX</td>        <td class="i2c" title="I2C 0: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 0: Request to send">UART0 RTS</td>   <td class="pwm advanced" title="PWM 7: Channel B">PWM7 B</td></tr>
         </table>
         <div class="pico" id="upside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing upwards, standing face-up on its GPIO pins." src="raspberry-pi-pico.svg" /></div>
-        <div class="pico underside" id="underside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing downwards, standing bottom-up on its GPIO pins." src="raspberry-pi-pico-underside.svg" /></div>
+        <div class="pico" id="underside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing downwards, standing bottom-up on its GPIO pins." src="raspberry-pi-pico-underside.svg" /></div>
         <table aria-label="Right-hand pins" class="labels right" aria-rowcount="20" cellpadding="0" cellspacing="5">
             <tr aria-label="First pin."       ><td class="power" title="Power: USB Bus">VBUS</td></tr>
             <tr aria-label="Second pin."      ><td class="power" title="Power: System">VSYS</td></tr>
@@ -306,7 +326,6 @@
             inputs[i].onchange();
         }
         function advanced_on_change() {
-            console.log(this.checked);
             if (this.checked) {
                 var labels = document.getElementsByClassName("advanced");
                 for (var j = 0; j < labels.length; j++) {
@@ -329,7 +348,6 @@
 
         }
         function interface_on_change() {
-            console.log(this.checked);
             var checked = this.checked;
             var labels = pinout.getElementsByClassName(this.name);
             for (var j = 0; j < labels.length; j++) {
@@ -343,18 +361,7 @@
             }
         }
         function reversed_on_change() {
-            console.log(this.checked);
-            if (this.checked) {
-                document.getElementById("underside").style.display = "block";
-                document.getElementById("upside").style.display = "none";
-                document.getElementById("pinout").style.direction = "rtl";
-                document.getElementsByClassName('labels left')[0].style.direction = "ltr";
-            } else {
-                document.getElementById("underside").style.display = "none";
-                document.getElementById("upside").style.display = "block";
-                document.getElementById("pinout").style.direction = "ltr";
-                document.getElementsByClassName('labels left')[0].style.direction = "rtl";   
-            }
+            pinout.classList.toggle("underside-view", this.checked);
         }
 
         // Boof to a sensible default window size
