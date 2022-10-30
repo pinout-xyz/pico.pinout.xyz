@@ -113,8 +113,8 @@
 
     /* Hide advanced labels by default */
     .labels .advanced {visibility: hidden;}
-    .labels .adc.hidden, .labels.right .spi.hidden {visibility: hidden;}
-    .labels .i2c.hidden, .labels.left .spi.hidden, .labels .uart.hidden, .labels .pwm.hidden {display: none;}
+    .labels .adc.hidden, .labels.right .spi.hidden .audio.hidden, .labels .spiadc.hidden {visibility: hidden;}
+    .labels .i2c.hidden, .labels.left .spi.hidden, .labels .uart.hidden, .labels .pwm.hidden, .labels .audio.hidden {display: none;}
     .filter li.advanced {display: none;}
 
     .pinout.hidden-spi .labels.right .adc.hidden {display:none;}
@@ -124,7 +124,8 @@
     .ground {background-color: #002b36;}
     .power {background-color: #dc322f;}
     .adc {background-color: #2aa198;}
-    .system {background-color: #0863b9;}
+    .spiadc {background-color: #04524b;}
+    .system {background-color: #064b8b;}
     .i2c {background-color: #268bd2;}
     .spi {background-color: #d33682;}
     .uart {background-color: #6c71c4;}
@@ -137,6 +138,7 @@
     .labels tr:hover .ground {background-color: #014353;}
     .labels tr:hover .power {background-color: #f13a37;}
     .labels tr:hover .adc {background-color: #39d1c4;}
+    .labels tr:hover .spiadc {background-color: #084e47;}
     .labels tr:hover .system {background-color: #fab4b2;}
     .labels tr:hover .i2c {background-color: #3ba6f1;}
     .labels tr:hover .spi {background-color: #f34f9f;}
@@ -252,9 +254,11 @@
         <ul class="filter interfaces">
             <li class="spi"><input type="checkbox" checked name="spi" id="spi" /><label for="spi">SPI</label></li>
             <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" /><label for="i2c">I2C</label></li>
-            <li class="adc"><input type="checkbox" checked name="adc" id="adc" /><label for="adc">ADC</label></li>
+            <li class="adc"><input type="checkbox" checked name="adc" id="adc" /><label for="adc">Internal ADC</label></li>
             <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" /><label for="pwm">PWM</label></li>
             <li class="uart"><input type="checkbox" checked name="uart" id="uart" /><label for="uart">UART</label></li>
+            <li class="audio"><input type="checkbox" checked name="audio" id="audio" /><label for="audio">Audio Outputs</label></li>
+            <li class="spiadc"><input type="checkbox" checked name="spiadc" id="spiadc" /><label for="spiadc">Precision ADC</label></li>
         </ul>
         <noscript>
             <p>Want to show/hide interfaces and view a full pinout? Enable JavaScript!</p>
@@ -282,10 +286,10 @@
             <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Nineteenth pin."  ><td class="gpio">GP14</td>          <td class="spi" title="SPI 1: Clock">SPI1 SCK</td>               <td class="i2c" title="I2C 0: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 0: Clear to send">UART0 CTS</td>     <td class="pwm advanced" title="PWM 7: Channel A">PWM7 A</td></tr>
             <tr aria-label="Twentieth pin."   ><td class="power" title="VREF_EXT">VREF_EXT</td></tr>
-            <tr aria-label="Twenty-first pin."><td class="adc" title="ADC0">ADC0</td></tr>
-            <tr aria-label="Twenty-second pin."><td class="adc" title="ADC1">ADC1</td></tr>
-            <tr aria-label="Twenty-third pin."><td class="adc" title="ADC2">ADC2</td></tr>
-            <tr aria-label="Twenty-fourth pin."><td class="adc" title="ADC3">ADC3</td></tr>
+            <tr aria-label="Twenty-first pin."><td class="spiadc" title="ADC0">ADC0</td></tr>
+            <tr aria-label="Twenty-second pin."><td class="spiadc" title="ADC1">ADC1</td></tr>
+            <tr aria-label="Twenty-third pin."><td class="spiadc" title="ADC2">ADC2</td></tr>
+            <tr aria-label="Twenty-fourth pin."><td class="spiadc" title="ADC3">ADC3</td></tr>
         </table>
         <div class="pico" id="upside"><img width="210" height="620" style="margin-top: 8pt;" alt="Raspberry Pi Pico with the micro USB port facing upwards, standing face-up on its GPIO pins." src="datanoise-picoadk.svg" /></div>
         <table aria-label="Right-hand pins" class="labels right" aria-rowcount="24" cellpadding="0" cellspacing="5">
@@ -309,10 +313,10 @@
             <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Twenty-first pin."><td class="audio" title="AUDIO_OUT_R">AUDIO_OUT_R</td></tr>
             <tr aria-label="Twenty-second pin."><td class="audio" title="AUDIO_OUT_L">AUDIO_OUT_L</td></tr>
-            <tr aria-label="Twenty-first pin."><td class="adc" title="ADC7">ADC7</td></tr>
-            <tr aria-label="Twenty-second pin."><td class="adc" title="ADC6">ADC6</td></tr>
-            <tr aria-label="Twenty-third pin."><td class="adc" title="ADC5">ADC5</td></tr>
-            <tr aria-label="Twenty-fourth pin."><td class="adc" title="ADC4">ADC4</td></tr>
+            <tr aria-label="Twenty-first pin."><td class="spiadc" title="ADC7">ADC7</td></tr>
+            <tr aria-label="Twenty-second pin."><td class="spiadc" title="ADC6">ADC6</td></tr>
+            <tr aria-label="Twenty-third pin."><td class="spiadc" title="ADC5">ADC5</td></tr>
+            <tr aria-label="Twenty-fourth pin."><td class="spiadc" title="ADC4">ADC4</td></tr>
         </table>
     </article>
     <footer>
