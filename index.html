@@ -100,15 +100,18 @@
     .labels.right tr:before {
         float: left;
     }
-    .labels td {
-        width: 70px;
+    td {
         height: 20px;
-        text-align: center;
+        text-align: left;
         overflow: hidden;
-        color: #e9e5d2;
-        font-size: 11px;
-        cursor: help;
+        color: #222;
+        font-size: 12px;
+        cursor: default;
         white-space: nowrap;
+        position: relative;
+        border-width:0 4px 0 4px;
+        border-style: solid;
+        padding: 0 4px;
     }
 
     /* Hide advanced labels by default */
@@ -120,28 +123,31 @@
     .pinout.hidden-spi .labels.right .adc.hidden {display:none;}
     .pinout.hidden-adc .labels.right .spi.hidden {display:none;}
 
-    .gpio {background-color: #859900;}
-    .ground {background-color: #002b36;}
-    .power {background-color: #dc322f;}
-    .adc {background-color: #2aa198;}
-    .system {background-color: #df8f8e;}
-    .i2c {background-color: #268bd2;}
-    .spi {background-color: #d33682;}
-    .uart {background-color: #6c71c4;}
-    .uart.default {background-color: #494daa;}
-    .pwm {background-color: #333333;}
+    .gpio   {background-color: #85990033;border-color: #859900;}
+    .ground {background-color: #002b3633;border-color: #002b36;}
+    .power  {background-color: #dc322f33;border-color: #dc322f;}
+    .adc    {background-color: #2aa19833;border-color: #2aa198;}
+    .system {background-color: #df8f8e33;border-color: #df8f8e;}
+    .i2c    {background-color: #268bd233;border-color: #268bd2;}
+    .spi    {background-color: #d3368233;border-color: #d33682;}
+    .uart   {background-color: #6c71c433;border-color: #6c71c4;}
+    .uart.default {background-color: #494daa33;border-color: #494daa;}
+    .pwm    {background-color: #33333333;border-color: #333333;}
+
+    .labels.left td {border-width:0 0 0 4px;}
+    .labels.right td {border-width:0 4px 0 0;}
 
     .labels tr:hover:before {background-color: #eeeeee;}
-    .labels tr:hover .gpio {background-color: #9fb803;}
-    .labels tr:hover .ground {background-color: #014353;}
-    .labels tr:hover .power {background-color: #f13a37;}
-    .labels tr:hover .adc {background-color: #39d1c4;}
-    .labels tr:hover .system {background-color: #fab4b2;}
-    .labels tr:hover .i2c {background-color: #3ba6f1;}
-    .labels tr:hover .spi {background-color: #f34f9f;}
-    .labels tr:hover .uart {background-color: #8d91e6;}
-    .labels tr:hover .uart.default {background-color: #686bce;}
-    .labels tr:hover .pwm {background-color: #444444;}
+    .labels tr:hover .gpio {background-color: #9fb80366;}
+    .labels tr:hover .ground {background-color: #01435366;}
+    .labels tr:hover .power {background-color: #f13a3766;}
+    .labels tr:hover .adc {background-color: #39d1c466;}
+    .labels tr:hover .system {background-color: #fab4b266;}
+    .labels tr:hover .i2c {background-color: #3ba6f166;}
+    .labels tr:hover .spi {background-color: #f34f9f66;}
+    .labels tr:hover .uart {background-color: #8d91e666;}
+    .labels tr:hover .uart.default {background-color: #686bce66;}
+    .labels tr:hover .pwm {background-color: #44444466;}
 
     .filter {
         list-style: none;
@@ -162,7 +168,7 @@
         padding-left:5px;
     }
     .filter.interfaces li {
-        color: #e9e5d2;
+        color: #222;
     }
     .filter.interfaces {
         margin-bottom: 20px;
@@ -235,6 +241,9 @@
             color: #e9e5d2;
         }
         .labels tr:hover:before {background-color: #013441;}
+        .labels td, .filter.interfaces li {
+            color: #e9e5d2;
+        }
     }
 </style>
 </head>
