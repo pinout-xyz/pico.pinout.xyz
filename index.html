@@ -111,7 +111,7 @@
         position: relative;
         border-width:0 4px 0 4px;
         border-style: solid;
-        padding: 0 4px;
+        padding: 0 8px;
     }
 
     /* Hide advanced labels by default */
@@ -156,58 +156,42 @@
     }
     .filter li {
         display: inline;
+    }
+    .filter label {
+        display: inline;
         color: #002b36;
         padding: 5px 10px 5px 10px;
         line-height: 30px;
         user-select: none;
     }
+    .interfaces label {
+        border-width:0 0px 0 30px;
+        border-style: solid;
+    }
     .filter input {
-        margin: 0;
+        margin: 0 10px 0 0;
     }
-    .filter label {
-        padding-left:5px;
-    }
-    .filter.interfaces li {
+    .filter.interfaces label {
         color: #222;
     }
     .filter.interfaces {
         margin-bottom: 20px;
     }
-    .nojs ul {display:none;}
-
-    /* tooltip for the reversed option */
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 207px;
-        background-color: #002b36;
-        color: #e9e5d2;
-        text-align: center;
-        border-radius: 6px;
-        padding: 7px;
-        font-size: 14px;
-        position: absolute;
-        z-index: 1;
-    }
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-    }
+    .nojs ul {display: none;}
 
     /* Support for flipping board over to view from the bottom... */
 
     /* Top-up View */
-    #upside {
-        display:block;
-    }
-    #underside {
-        display:none;
+    .underside {
+        display: none;
     }
 
     /* Bottom-up View */
-    .underside-view #underside {
-        display: block;
-    }
-    .underside-view #upside {
+    .underside-view .pico {
         display: none;
+    }
+    .underside-view .underside {
+        display: block;
     }
     .underside-view {
         direction: rtl;
@@ -220,12 +204,12 @@
         body {
             background-color: #000000;
         }
-        header, .tooltip .tooltiptext {
+        header {
             background: #111111;
             color: #666666;
             border-bottom-color: #222222;
         }
-        .filter li,
+        .filter label,
         footer p,
         nav p {
             color: #666666;
@@ -241,7 +225,7 @@
             color: #e9e5d2;
         }
         .labels tr:hover:before {background-color: #013441;}
-        .labels td, .filter.interfaces li {
+        .labels td, .filter.interfaces label {
             color: #e9e5d2;
         }
     }
@@ -254,15 +238,15 @@
     </header>
     <nav class="nojs" id="nav">
         <ul class="filter settings">
-            <li><input type="checkbox" name="advanced" id="advanced" /><label for="advanced">Advanced</label></li>
-            <li class="tooltip"><input type="checkbox" name="reversed" id="reversed" /><label for="reversed" style= "cursor:help">Reversed</label><span class="tooltiptext">If you solder the headers on backwards to keep the pin numbers visible, then the pinout is reversed.</span></li>
+            <li><label for="advanced"><input type="checkbox" name="advanced" id="advanced" />Advanced</label></li>
+            <li><label for="reversed" title="If you solder the headers on backwards to keep the pin numbers visible, then the pinout is reversed."><input type="checkbox" name="reversed" id="reversed" />Rear View</label></li>
         </ul>
         <ul class="filter interfaces">
-            <li class="spi"><input type="checkbox" checked name="spi" id="spi" /><label for="spi">SPI</label></li>
-            <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" /><label for="i2c">I2C</label></li>
-            <li class="adc"><input type="checkbox" checked name="adc" id="adc" /><label for="adc">ADC</label></li>
-            <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" /><label for="pwm">PWM</label></li>
-            <li class="uart"><input type="checkbox" checked name="uart" id="uart" /><label for="uart">UART</label></li>
+            <li><label class="spi" for="spi"><input type="checkbox" checked name="spi" id="spi" />SPI</label></li>
+            <li><label class="i2c" for="i2c"><input type="checkbox" checked name="i2c" id="i2c" />I2C</label></li>
+            <li><label class="adc" for="adc"><input type="checkbox" checked name="adc" id="adc" />ADC</label></li>
+            <li class="advanced"><label class="pwm" for="pwm"><input type="checkbox" checked name="pwm" id="pwm" />PWM</label></li>
+            <li><label class="uart" for="uart"><input type="checkbox" checked name="uart" id="uart" />UART</label></li>
         </ul>
         <noscript>
             <p>Want to show/hide interfaces and view a full pinout? Enable JavaScript!</p>
@@ -291,8 +275,8 @@
             <tr aria-label="Nineteenth pin."  ><td class="gpio">GP14</td>          <td class="spi" title="SPI 1: Clock">SPI1 SCK</td>               <td class="i2c" title="I2C 0: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 0: Clear to send">UART0 CTS</td>     <td class="pwm advanced" title="PWM 7: Channel A">PWM7 A</td></tr>
             <tr aria-label="Twentieth pin."   ><td class="gpio">GP15</td>          <td class="spi" title="SPI 1: Host-transmit">SPI1 TX</td>        <td class="i2c" title="I2C 0: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 0: Request to send">UART0 RTS</td>   <td class="pwm advanced" title="PWM 7: Channel B">PWM7 B</td></tr>
         </table>
-        <div class="pico" id="upside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing upwards, standing face-up on its GPIO pins." src="raspberry-pi-pico.svg" /></div>
-        <div class="pico" id="underside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing downwards, standing bottom-up on its GPIO pins." src="raspberry-pi-pico-underside.svg" /></div>
+        <div class="pico"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing upwards, standing face-up on its GPIO pins." src="raspberry-pi-pico.svg" /></div>
+        <div class="pico underside"><img width="207" height="523" alt="Raspberry Pi Pico with the micro USB port facing downwards, standing bottom-up on its GPIO pins." src="raspberry-pi-pico-underside.svg" /></div>
         <table aria-label="Right-hand pins" class="labels right" aria-rowcount="20" cellpadding="0" cellspacing="5">
             <tr aria-label="First pin."       ><td class="power" title="Power: USB Bus">VBUS</td></tr>
             <tr aria-label="Second pin."      ><td class="power" title="Power: System">VSYS</td></tr>
@@ -324,49 +308,33 @@
         'use strict';
         var pinout = document.getElementById("pinout");
         var inputs = document.getElementsByTagName("input");
+        var advanced = document.querySelectorAll(".advanced");
         document.getElementById("nav").classList.remove("nojs");
         for (var i = 0; i < inputs.length; i++) {
             if (inputs[i].type != "checkbox") continue;
-            if (inputs[i].name == "reversed") {
-                inputs[i].onchange = reversed_on_change;
-            } else {
-                inputs[i].onchange = inputs[i].name == "advanced" ? advanced_on_change : interface_on_change;
+            switch(inputs[i].name) {
+                case "reversed":
+                    inputs[i].onchange = reversed_on_change;
+                    break;
+                case "advanced":
+                    inputs[i].onchange = advanced_on_change;
+                    break;
+                default:
+                    inputs[i].onchange = interface_on_change;
             }
             inputs[i].onchange();
         }
         function advanced_on_change() {
-            if (this.checked) {
-                var labels = document.getElementsByClassName("advanced");
-                for (var j = 0; j < labels.length; j++) {
-                    labels[j].classList.add("advanced-on");
-                }
-                var labels = document.getElementsByClassName("advanced-on");
-                for (var j = 0; j < labels.length; j++) {
-                    labels[j].classList.remove("advanced");
-                }
-            } else {
-                var labels = document.getElementsByClassName("advanced-on");
-                for (var j = 0; j < labels.length; j++) {
-                    labels[j].classList.add("advanced");
-                }
-                var labels = document.getElementsByClassName("advanced");
-                for (var j = 0; j < labels.length; j++) {
-                    labels[j].classList.remove("advanced-on");
-                }
+            for (var j = 0; j < advanced.length; j++) {
+                advanced[j].classList.toggle("advanced", !this.checked);
             }
-
         }
         function interface_on_change() {
             var checked = this.checked;
             var labels = pinout.getElementsByClassName(this.name);
             for (var j = 0; j < labels.length; j++) {
-                if (checked) {
-                    labels[j].classList.remove("hidden");
-                    pinout.classList.remove("hidden-" + this.name);
-                } else {
-                    labels[j].classList.add("hidden");
-                    pinout.classList.add("hidden-" + this.name);
-                }
+                labels[j].classList.toggle("hidden", !checked);
+                pinout.classList.toggle("hidden-" + this.name, !checked);
             }
         }
         function reversed_on_change() {
