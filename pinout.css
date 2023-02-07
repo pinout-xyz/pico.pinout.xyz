@@ -75,6 +75,7 @@ header p {
 .labels.right tr {
     counter-increment: pin -1;
 }
+.labels th, .labels thead {display:none;}
 .labels tr:before {
     content: counter(pin);
     text-align: center;
