@@ -75,11 +75,11 @@ header p {
 .labels.left tr {
     direction: ltr;
 }
-.labels.right tr {
+.labels.right tbody tr {
     counter-increment: pin -1;
 }
 .labels th, .labels thead {display:none;}
-.labels tr:before {
+.labels tbody tr:before {
     content: counter(pin);
     text-align: center;
     float: right;
@@ -88,7 +88,7 @@ header p {
     height: 20px;
     font-size: 11px;
 }
-.labels.right tr:before {
+.labels.right tbody tr:before {
     float: left;
 }
 td {
@@ -212,11 +212,11 @@ td {
     footer a:hover {
         color: #3ba6f1;
     }
-    .labels tr:before {
+    .labels tbody tr:before {
         background-color: #002b36;
         color: #e9e5d2;
     }
-    .labels tr:hover:before {background-color: #013441;}
+    .labels tbody tr:hover:before {background-color: #013441;}
     .labels td, .filter.interfaces label {
         color: #e9e5d2;
     }
