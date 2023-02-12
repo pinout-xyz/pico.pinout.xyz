@@ -58,6 +58,9 @@ header p {
     display: grid;
     align-items: left;
 }
+.tiny2040 .labels.right {
+    counter-reset: pin 17;
+}
 .labels.left {
     direction: rtl;
     display: grid;
