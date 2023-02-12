@@ -12,7 +12,7 @@
 <meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the RP2040-based Pimoroni Tiny 2040" />
 <link rel="stylesheet" href="pinout.css" type="text/css" media="screen" />
 </head>
-<body>
+<body class="tiny2040">
     <header>
         <h1>Pimoroni Tiny 2040 Pinout</h1>
         <p>Interactive, accessible &amp; beautiful GPIO pinout and pin function guide for the Pimoroni Tiny 2040</p>
@@ -33,26 +33,36 @@
         </noscript>
     </nav>
     <article class="pinout" id="pinout">
-        <table aria-label="Left-hand pins" class="labels left" aria-rowcount="20" cellpadding="0" cellspacing="5">
-            <tr aria-label="First pin."       ><td class="power">VBUS</td></tr>
-            <tr aria-label="Second pin."      ><td class="ground">Ground</td></tr>
-            <tr aria-label="Third pin."       ><td class="power">3V3</td></tr>
-            <tr aria-label="Forth pin."       ><td class="gpio">GP29</td>               <td class="adc" title="ADC: Channel 3">ADC3</td>        <td class="i2c advanced">I2C0 SCL</td>   <td class="uart advanced">UART0 RX</td>    <td class="pwm advanced">PWM6 B</td></tr>
-            <tr aria-label="Fifth pin."       ><td class="gpio">GP28</td>               <td class="adc" title="ADC: Channel 2">ADC2</td>        <td class="i2c advanced">I2C0 SDA</td>   <td class="uart advanced">UART0 TX</td>    <td class="pwm advanced">PWM6 A</td></tr>
-            <tr aria-label="Sixth pin."       ><td class="gpio">GP27</td>               <td class="adc" title="ADC: Channel 1">ADC1</td>        <td class="i2c">I2C1 SCL</td>            <td class="uart advanced">UART1 RTS</td>   <td class="pwm advanced">PWM5 B</td></tr>
-            <tr aria-label="Seventh pin."     ><td class="gpio">GP26</td>               <td class="adc" title="ADC: Channel 0">ADC0</td>        <td class="i2c">I2C1 SDA</td>            <td class="uart advanced">UART1 CTS</td>   <td class="pwm advanced">PWM5 A</td></tr>
-            <tr aria-label="Eighth pin."      ><td class="ground">Ground</td></tr>
+        <table aria-label="Left-hand pins" class="labels left" aria-rowcount="8" aria-colcount="5" cellpadding="5" cellspacing="5">
+            <thead>
+                <th scope="col">Pin</th><th scope="col">Name</th><th scope="col">ADC</th><th scope="col">I2C</th><th scope="col">UART</th><th scope="col">PWM</th>
+            </thead>
+            <tbody>
+            <tr aria-label="First pin."       ><th>1</th><td class="power">VBUS</td></tr>
+            <tr aria-label="Second pin."      ><th>2</th><td class="ground">Ground</td></tr>
+            <tr aria-label="Third pin."       ><th>3</th><td class="power">3V3</td></tr>
+            <tr aria-label="Forth pin."       ><th>4</th><td class="gpio">GP29</td>               <td class="adc" title="ADC: Channel 3">ADC3</td>        <td class="i2c advanced">I2C0 SCL</td>   <td class="uart advanced">UART0 RX</td>    <td class="pwm advanced">PWM6 B</td></tr>
+            <tr aria-label="Fifth pin."       ><th>5</th><td class="gpio">GP28</td>               <td class="adc" title="ADC: Channel 2">ADC2</td>        <td class="i2c advanced">I2C0 SDA</td>   <td class="uart advanced">UART0 TX</td>    <td class="pwm advanced">PWM6 A</td></tr>
+            <tr aria-label="Sixth pin."       ><th>6</th><td class="gpio">GP27</td>               <td class="adc" title="ADC: Channel 1">ADC1</td>        <td class="i2c">I2C1 SCL</td>            <td class="uart advanced">UART1 RTS</td>   <td class="pwm advanced">PWM5 B</td></tr>
+            <tr aria-label="Seventh pin."     ><th>7</th><td class="gpio">GP26</td>               <td class="adc" title="ADC: Channel 0">ADC0</td>        <td class="i2c">I2C1 SDA</td>            <td class="uart advanced">UART1 CTS</td>   <td class="pwm advanced">PWM5 A</td></tr>
+            <tr aria-label="Eighth pin."      ><th>8</th><td class="ground">Ground</td></tr>
+            </tbody>
         </table>
         <div class="pico"><img width="174" alt="Pimoroni Tiny 2040 with the micro USB port facing upwards, standing face-up on its GPIO pins." src="pimoroni-tiny-2040.svg" /></div>
-        <table aria-label="Right-hand pins" class="labels right" aria-rowcount="20" cellpadding="0" cellspacing="5">
-            <tr aria-label="First pin."       ><td class="gpio">GP0</td>                <td class="spi">SPI0 RX</td>        <td class="i2c">I2C0 SDA</td>                                <td class="uart">UART0 TX</td>             <td class="pwm advanced">PWM0 A</td></tr>
-            <tr aria-label="Second pin."      ><td class="gpio">GP1</td>                <td class="spi">SPI0 CSn</td>       <td class="i2c">I2C0 SCL</td>                                <td class="uart">UART0 RX</td>             <td class="pwm advanced">PWM0 B</td></tr>
-            <tr aria-label="Third pin."       ><td class="gpio">GP2</td>                <td class="spi">SPI0 SCK</td>       <td class="i2c">I2C1 SDA</td>                                <td class="uart advanced">UART0 CTS</td>   <td class="pwm advanced">PWM1 A</td></tr>
-            <tr aria-label="Forth pin."       ><td class="gpio">GP3</td>                <td class="spi">SPI0 TX</td>        <td class="i2c">I2C1 SCL</td>                                <td class="uart advanced">UART0 RTS</td>   <td class="pwm advanced">PWM1 B</td></tr>
-            <tr aria-label="Fifth pin."       ><td class="gpio">GP4</td>                <td class="spi">SPI0 RX</td>        <td class="i2c">I2C0 SDA</td>                                <td class="uart">UART1 TX</td>             <td class="pwm advanced">PWM2 A</td></tr>
-            <tr aria-label="Sixth pin."       ><td class="gpio">GP5</td>                <td class="spi">SPI0 CSn</td>       <td class="i2c">I2C0 SCL</td>                                <td class="uart">UART1 RX</td>             <td class="pwm advanced">PWM2 B</td></tr>
-            <tr aria-label="Seventh pin."     ><td class="gpio">GP6</td>                <td class="spi">SPI0 SCK</td>       <td class="i2c">I2C1 SDA</td>                                <td class="uart advanced">UART1 CTS</td>   <td class="pwm advanced">PWM3 A</td></tr>
-            <tr aria-label="Eighth pin."      ><td class="gpio">GP7</td>                <td class="spi">SPI0 TX</td>        <td class="i2c">I2C1 SCL</td>                                <td class="uart advanced">UART1 RTS</td>   <td class="pwm advanced">PWM3 B</td></tr>
+        <table aria-label="Right-hand pins" class="labels right" aria-rowcount="8" aria-colcount="5" cellpadding="5" cellspacing="5">
+            <thead>
+                <th scope="col">Pin</th><th scope="col">Name</th><th scope="col">SPI</th><th scope="col">I2C</th><th scope="col">UART</th><th scope="col">PWM</th>
+            </thead>
+            <tbody>
+            <tr aria-label="First pin."       ><th>16</th><td class="gpio">GP0</td>                <td class="spi">SPI0 RX</td>        <td class="i2c">I2C0 SDA</td>                                <td class="uart">UART0 TX</td>             <td class="pwm advanced">PWM0 A</td></tr>
+            <tr aria-label="Second pin."      ><th>15</th><td class="gpio">GP1</td>                <td class="spi">SPI0 CSn</td>       <td class="i2c">I2C0 SCL</td>                                <td class="uart">UART0 RX</td>             <td class="pwm advanced">PWM0 B</td></tr>
+            <tr aria-label="Third pin."       ><th>14</th><td class="gpio">GP2</td>                <td class="spi">SPI0 SCK</td>       <td class="i2c">I2C1 SDA</td>                                <td class="uart advanced">UART0 CTS</td>   <td class="pwm advanced">PWM1 A</td></tr>
+            <tr aria-label="Forth pin."       ><th>13</th><td class="gpio">GP3</td>                <td class="spi">SPI0 TX</td>        <td class="i2c">I2C1 SCL</td>                                <td class="uart advanced">UART0 RTS</td>   <td class="pwm advanced">PWM1 B</td></tr>
+            <tr aria-label="Fifth pin."       ><th>12</th><td class="gpio">GP4</td>                <td class="spi">SPI0 RX</td>        <td class="i2c">I2C0 SDA</td>                                <td class="uart">UART1 TX</td>             <td class="pwm advanced">PWM2 A</td></tr>
+            <tr aria-label="Sixth pin."       ><th>11</th><td class="gpio">GP5</td>                <td class="spi">SPI0 CSn</td>       <td class="i2c">I2C0 SCL</td>                                <td class="uart">UART1 RX</td>             <td class="pwm advanced">PWM2 B</td></tr>
+            <tr aria-label="Seventh pin."     ><th>10</th><td class="gpio">GP6</td>                <td class="spi">SPI0 SCK</td>       <td class="i2c">I2C1 SDA</td>                                <td class="uart advanced">UART1 CTS</td>   <td class="pwm advanced">PWM3 A</td></tr>
+            <tr aria-label="Eighth pin."      ><th>9</th><td class="gpio">GP7</td>                <td class="spi">SPI0 TX</td>        <td class="i2c">I2C1 SCL</td>                                <td class="uart advanced">UART1 RTS</td>   <td class="pwm advanced">PWM3 B</td></tr>
+            </tbody>
         </table>
     </article>
     <footer>
