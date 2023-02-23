@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<meta name="apple-mobile-web-app-capable" content="yes"></meta>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></meta>
+<link rel="shortcut icon" href="pinout-logo.png" type="image/png">
+<script src="register_serviceworker.js" type="text/javascript"></script>
+<link rel="manifest" href="manifest.json">
+<title>DatanoiseTV PicoADK GPIO Pinout</title>
+<meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the DatanoiseTV PicoADK GPIO Pinout" />
+<style type="text/css">
+    body {
+        display: grid;
+        place-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    article {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        align-items: center;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    footer {
+        display: grid;
+        align-items: center;
+        margin: 20px 0;
+    }
+    footer p {
+        padding: 5px 10px;
+        margin: 0;
+        text-align: center;
+    }
+    nav {
+        text-align: center;
+        margin-top: 20px;
+    }
+    header {
+        background: #002b36;
+        color: #e9e5d2;
+        display: block;
+        width: 100%;
+        line-height: 22px;
+        padding: 10px 0;
+        border-bottom: 5px solid #268bd2;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 20px;
+        display: inline;
+        padding: 0 10px;
+    }
+    header p {
+        margin: 0;
+        font-size: 14px;
+        float: right;
+        display: inline;
+        padding: 0 10px;
+    }
+    .pico {
+        padding: 0px;
+        position: relative;
+        top: -8px;
+    }
+    .labels.right {
+        counter-reset: pin 49;
+        display: grid;
+        align-items: left;
+    }
+    .labels.left {
+        direction: rtl;
+        display: grid;
+        align-items: right;
+    }
+    .labels tr {
+        counter-increment: pin;
+        line-height: 20px;
+        color: #333333;
+        font-size: 0;
+        /*font-family: 'Ubuntu';
+        font-weight: 600;*/
+
+        font-weight: 500;
+    }
+    .labels.left tr {
+        direction: ltr;
+    }
+    .labels.right tr {
+        counter-increment: pin -1;
+    }
+    .labels tr:before {
+        content: counter(pin);
+        text-align: center;
+        float: right;
+        background-color: #CCCCCC;
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+    .labels.right tr:before {
+        float: left;
+    }
+    .labels td {
+        width: 70px;
+        height: 20px;
+        text-align: center;
+        overflow: hidden;
+        color: #e9e5d2;
+        font-size: 11px;
+        cursor: help;
+        white-space: nowrap;
+    }
+
+    /* Hide advanced labels by default */
+    .labels .advanced {visibility: hidden;}
+    .labels .adc.hidden, .labels.right .spi.hidden .audio.hidden, .labels .spiadc.hidden {visibility: hidden;}
+    .labels .i2c.hidden, .labels.left .spi.hidden, .labels .uart.hidden, .labels .pwm.hidden, .labels .audio.hidden {display: none;}
+    .filter li.advanced {display: none;}
+
+    .pinout.hidden-spi .labels.right .adc.hidden {display:none;}
+    .pinout.hidden-adc .labels.right .spi.hidden {display:none;}
+
+    .gpio {background-color: #656962;}
+    .ground {background-color: #002b36;}
+    .power {background-color: #dc322f;}
+    .adc {background-color: #2aa198;}
+    .spiadc {background-color: #990059;}
+    .system {background-color: #064b8b;}
+    .i2c {background-color: #268bd2;}
+    .spi {background-color: #d33682;}
+    .uart {background-color: #6c71c4;}
+    .uart.default {background-color: #494daa;}
+    .pwm {background-color: #333333;}
+    .audio {background-color: #bb8c00; padding-left: 10px; padding-right: 10px;}
+
+    .labels tr:hover:before {background-color: #eeeeee;}
+    .labels tr:hover .gpio {background-color: #9fb803;}
+    .labels tr:hover .ground {background-color: #014353;}
+    .labels tr:hover .power {background-color: #f13a37;}
+    .labels tr:hover .adc {background-color: #39d1c4;}
+    .labels tr:hover .spiadc {background-color: #084e47;}
+    .labels tr:hover .system {background-color: #fab4b2;}
+    .labels tr:hover .i2c {background-color: #3ba6f1;}
+    .labels tr:hover .spi {background-color: #f34f9f;}
+    .labels tr:hover .uart {background-color: #8d91e6;}
+    .labels tr:hover .uart.default {background-color: #686bce;}
+    .labels tr:hover .pwm {background-color: #444444;}
+    .labels tr:hover .audio {background-color: #b58900;}
+
+    .filter {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .filter li {
+        display: inline;
+        color: #002b36;
+        padding: 5px 10px 5px 10px;
+        line-height: 30px;
+        user-select: none;
+    }
+    .filter input {
+        margin: 0;
+    }
+    .filter label {
+        padding-left:5px;
+    }
+    .filter.interfaces li {
+        color: #e9e5d2;
+    }
+    .filter.interfaces {
+        margin-bottom: 20px;
+    }
+    .nojs ul {display:none;}
+
+    /* tooltip for the reversed option */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 207px;
+        background-color: #002b36;
+        color: #e9e5d2;
+        text-align: center;
+        border-radius: 6px;
+        padding: 7px;
+        font-size: 14px;
+        position: absolute;
+        z-index: 1;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    /* Support for flipping board over to view from the bottom... */
+
+    /* Top-up View */
+    #upside {
+        display:block;
+    }
+    #underside {
+        display:none;
+    }
+
+    /* Bottom-up View */
+    .underside-view #underside {
+        display: block;
+    }
+    .underside-view #upside {
+        display: none;
+    }
+    .underside-view {
+        direction: rtl;
+    }
+    .underside-view .labels.left {
+        direction: ltr;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #000000;
+        }
+        header, .tooltip .tooltiptext {
+            background: #111111;
+            color: #666666;
+            border-bottom-color: #222222;
+        }
+        .filter li,
+        footer p,
+        nav p {
+            color: #666666;
+        }
+        footer a, footer a:visited {
+            color: #1d6ca5;
+        }
+        footer a:hover {
+            color: #3ba6f1;
+        }
+        .labels tr:before {
+            background-color: #002b36;
+            color: #e9e5d2;
+        }
+        .labels tr:hover:before {background-color: #013441;}
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>DatanoiseTV PicoADK Pinout</h1>
+        <p>Interactive, accessible &amp; beautiful GPIO pinout and pin function guide for the DatanoiseTV PicoADK</p>
+    </header>
+    <nav class="nojs" id="nav">
+        <ul class="filter settings">
+            <li><input type="checkbox" name="advanced" id="advanced" /><label for="advanced">Advanced</label></li>
+        </ul>
+        <ul class="filter interfaces">
+            <li class="spi"><input type="checkbox" checked name="spi" id="spi" /><label for="spi">SPI</label></li>
+            <li class="i2c"><input type="checkbox" checked name="i2c" id="i2c" /><label for="i2c">I2C</label></li>
+            <li class="adc"><input type="checkbox" checked name="adc" id="adc" /><label for="adc">Internal ADC</label></li>
+            <li class="pwm advanced"><input type="checkbox" checked name="pwm" id="pwm" /><label for="pwm">PWM</label></li>
+            <li class="uart"><input type="checkbox" checked name="uart" id="uart" /><label for="uart">UART</label></li>
+            <li class="audio"><input type="checkbox" checked name="audio" id="audio" /><label for="audio">Audio Outputs</label></li>
+            <li class="spiadc"><input type="checkbox" checked name="spiadc" id="spiadc" /><label for="spiadc">Precision ADC</label></li>
+        </ul>
+        <noscript>
+            <p>Want to show/hide interfaces and view a full pinout? Enable JavaScript!</p>
+        </noscript>
+    </nav>
+    <article class="pinout" id="pinout">
+        <table aria-label="Left-hand pins" class="labels left" aria-rowcount="24" cellpadding="0" cellspacing="5">
+            <tr aria-label="First pin."       ><td class="gpio">GP0</td>           <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart default" title="UART 0: Transmit">UART0 TX</td>            <td class="pwm advanced" title="PWM 0: Channel A">PWM0 A</td></tr>
+            <tr aria-label="Second pin."      ><td class="gpio">GP1</td>           <td class="spi" title="SPI 0: Chip-select">SPI0 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart default" title="UART 0: Receive">UART0 RX</td>             <td class="pwm advanced" title="PWM 0: Channel B">PWM0 B</td></tr>
+            <tr aria-label="Third pin."       ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Forth pin."       ><td class="gpio">GP2</td>           <td class="spi" title="SPI 0: Clock">SPI0 SCK</td>               <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 0: Clear to send">UART0 CTS</td>     <td class="pwm advanced" title="PWM 1: Channel A">PWM1 A</td></tr>
+            <tr aria-label="Fifth pin."       ><td class="gpio">GP3</td>           <td class="spi" title="SPI 0: Host-transmit">SPI0 TX</td>        <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 0: Request to send">UART0 RTS</td>   <td class="pwm advanced" title="PWM 1: Channel B">PWM1 B</td></tr>
+            <tr aria-label="Sixth pin."       ><td class="gpio">GP4</td>           <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart" title="UART 1: Transmit">UART1 TX</td>                    <td class="pwm advanced" title="PWM 2: Channel A">PWM2 A</td></tr>
+            <tr aria-label="Seventh pin."     ><td class="gpio">GP5</td>           <td class="spi" title="SPI 0: Chip-select">SPI0 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart" title="UART 1: Receive">UART1 RX</td>                     <td class="pwm advanced" title="PWM 2: Channel B">PWM2 B</td></tr>
+            <tr aria-label="Eighth pin."      ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Ninth pin."       ><td class="gpio">GP6</td>           <td class="spi" title="SPI 0: Clock">SPI0 SCK</td>               <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>     <td class="pwm advanced" title="PWM 3: Channel A">PWM3 A</td></tr>
+            <tr aria-label="Tenth pin."       ><td class="gpio">GP7</td>           <td class="spi" title="SPI 1: Host-transmit">SPI0 TX</td>        <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 1: Request to send">UART1 RTS</td>   <td class="pwm advanced" title="PWM 3: Channel B">PWM3 B</td></tr>
+            <tr aria-label="Eleventh pin."    ><td class="gpio">GP8</td>           <td class="spi" title="SPI 1: Host-receive">SPI1 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart" title="UART 1: Transmit">UART1 TX</td>                    <td class="pwm advanced" title="PWM 4: Channel A">PWM4 A</td></tr>
+            <tr aria-label="Twelveth pin."    ><td class="gpio">GP9</td>           <td class="spi" title="SPI 1: Chip-select">SPI1 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart" title="UART 1: Receive">UART1 RX</td>                     <td class="pwm advanced" title="PWM 4: Channel B">PWM4 B</td></tr>
+            <tr aria-label="Thirtheenth pin." ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Fourteenth pin."  ><td class="gpio">GP10</td>          <td class="spi" title="SPI 1: Clock">SPI1 SCK</td>               <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>     <td class="pwm advanced" title="PWM 5: Channel A">PWM5 A</td></tr>
+            <tr aria-label="Fifteenth pin."   ><td class="gpio">GP11</td>          <td class="spi" title="SPI 1: Host-transmit">SPI1 TX</td>        <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>      <td class="uart advanced" title="UART 1: Request to send">UART1 RTS</td>   <td class="pwm advanced" title="PWM 5: Channel B">PWM5 B</td></tr>
+            <tr aria-label="Sixteenth pin."   ><td class="gpio">GP12</td>          <td class="spi" title="SPI 1: Host-receive">SPI1 RX</td>         <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>       <td class="uart" title="UART 0: Transmit">UART0 TX</td>                    <td class="pwm advanced" title="PWM 6: Channel A">PWM6 A</td></tr>
+            <tr aria-label="Seventeenth pin." ><td class="gpio">GP13</td>          <td class="spi" title="SPI 1: Chip-select">SPI1 CSn</td>         <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>      <td class="uart" title="UART 0: Receive">UART0 RX</td>                     <td class="pwm advanced" title="PWM 6: Channel B">PWM6 B</td></tr>
+            <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Nineteenth pin."  ><td class="gpio">GP14</td>          <td class="spi" title="SPI 1: Clock">SPI1 SCK</td>               <td class="i2c" title="I2C 0: Data">I2C1 SDA</td>       <td class="uart advanced" title="UART 0: Clear to send">UART0 CTS</td>     <td class="pwm advanced" title="PWM 7: Channel A">PWM7 A</td></tr>
+            <tr aria-label="Twentieth pin."   ><td class="power" title="VREF_EXT">VREF_EXT</td></tr>
+            <tr aria-label="Twenty-first pin."><td class="spiadc" title="ADC0">ADC0</td></tr>
+            <tr aria-label="Twenty-second pin."><td class="spiadc" title="ADC1">ADC1</td></tr>
+            <tr aria-label="Twenty-third pin."><td class="spiadc" title="ADC2">ADC2</td></tr>
+            <tr aria-label="Twenty-fourth pin."><td class="spiadc" title="ADC3">ADC3</td></tr>
+        </table>
+        <div class="pico" id="upside"><img width="210" height="620" style="margin-top: 8pt;" alt="DatanoiseTV PicoADK with the micro USB port facing upwards, standing face-up on its GPIO pins." src="datanoise-picoadk.svg" /></div>
+        <table aria-label="Right-hand pins" class="labels right" aria-rowcount="24" cellpadding="0" cellspacing="5">
+            <tr aria-label="First pin."       ><td class="power" title="Power: USB Bus">VBUS</td></tr>
+            <tr aria-label="Second pin."      ><td class="power" title="Power: System">VSYS</td></tr>
+            <tr aria-label="Third pin."       ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Forth pin."       ><td>&nbsp;</td></tr>
+            <tr aria-label="Fifth pin."       ><td class="power" title="Power: 3v3 out">3V3(OUT)</td></tr>
+            <tr aria-label="Sixth pin."       ><td class="system" title="nBOOT">nBOOT</td></tr>
+            <tr aria-label="Seventh pin."     ><td class="gpio">GP28</td>              <td class="adc" title="Internal ADC: Channel 2">INT_ADC2</td>                      <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>    <td class="uart" title="UART 0: Transmit">UART0 TX</td>         <td class="pwm advanced" title="PWM 6: Channel A">PWM6 A</td></tr>
+            <tr aria-label="Eighth pin."      ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Ninth pin."       ><td class="gpio">GP27</td>              <td class="adc" title="Internal ADC: Channel 1">INT_ADC1</td>                      <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>            <td class="uart advanced" title="UART 0: Clear to send">UART1 RTS</td>   <td class="pwm advanced" title="PWM 5: Channel B">PWM5 B</td></tr>
+            <tr aria-label="Tenth pin."       ><td class="gpio">GP26</td>              <td class="adc" title="Internal ADC: Channel 0">INT_ADC0</td>                      <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>             <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>   <td class="pwm advanced" title="PWM 5: Channel A">PWM5 A</td></tr>
+            <tr aria-label="Eleventh pin."    ><td class="system">RUN</td></tr>
+            <tr aria-label="Twelveth pin."    ><td class="gpio">GP22</td>              <td class="spi" title="SPI 0: Clock">SPI0 SCK</td>           <td class="i2c" title="I2C 1: Data">I2C1 SDA</td>    <td class="uart advanced" title="UART 1: Clear to send">UART1 CTS</td>   <td class="pwm advanced" title="PWM 3: Channel A">PWM3 A</td></tr>
+            <tr aria-label="Thirtheenth pin." ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Fourteenth pin."  ><td class="gpio">GP21</td>              <td class="spi" title="SPI 0: Chip-select">SPI0 CSn</td>     <td class="i2c" title="I2C 0: Clock">I2C0 SCL</td>            <td class="uart" title="UART 1: Receive">UART1 RX</td>          <td class="pwm advanced" title="PWM 2: Channel B">PWM2 B</td></tr>
+            <tr aria-label="Fifteenth pin."   ><td class="gpio">GP20</td>              <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>     <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>             <td class="uart" title="UART 1: Transmit">UART1 TX</td>         <td class="pwm advanced" title="PWM 2: Channel A">PWM2 A</td></tr>
+            <tr aria-label="Sixteenth pin."   ><td class="gpio">GP19</td>              <td class="spi" title="SPI 0: Host-transmit">SPI0 TX</td>             <td class="i2c" title="I2C 1: Clock">I2C1 SCL</td>            <td class="uart advanced" title="UART 0: Request to send">UART0 RTS</td>  <td class="pwm advanced" title="PWM 1: Channel B">PWM1 B</td></tr>
+            <tr aria-label="Seventeenth pin." ><td class="gpio">GP29</td>               <td class="adc" title="Internal ADC: Channel 3">INT_ADC3</td><td class="spi" title="SPI 1: CSn">SPI1 CSn</td>                    <td class="i2c" title="I2C 0: Data">I2C0 SCL</td>             <td class="uart" title="UART 0: RX">UART0 RX</td>   <td class="pwm advanced" title="PWM 6: Channel B">PWM6 B</td></tr>
+            <tr aria-label="Eighteenth pin."  ><td class="ground" title="Ground">Ground</td></tr>
+            <tr aria-label="Twenty-first pin."><td class="audio" title="AUDIO_OUT_R">AUDIO_OUT_R</td></tr>
+            <tr aria-label="Twenty-second pin."><td class="audio" title="AUDIO_OUT_L">AUDIO_OUT_L</td></tr>
+            <tr aria-label="Twenty-first pin."><td class="spiadc" title="ADC7">ADC7</td></tr>
+            <tr aria-label="Twenty-second pin."><td class="spiadc" title="ADC6">ADC6</td></tr>
+            <tr aria-label="Twenty-third pin."><td class="spiadc" title="ADC5">ADC5</td></tr>
+            <tr aria-label="Twenty-fourth pin."><td class="spiadc" title="ADC4">ADC4</td></tr>
+        </table>
+    </article>
+    <footer>
+        <p>DatanoiseTV PicoADK Pinout is maintained by a 3rd party - <a href="https://twitter.com/datanoisetv">@DatanoiseTV</a> in his spare time.</p>
+        <p>This tool is made by <a href="https://github.com/gadgetoid">@Gadgetoid</a>.</p>
+        <p>Want to help out? <a href="https://github.com/gadgetoid/pico.pinout.xyz">Support this project with your time/expertise</a>, <a href="https://github.com/sponsors/Gadgetoid">sponsor me on GitHub</a> or <a href="https://www.patreon.com/gadgetoid">toss me a dollar on Patreon</a>.</p>
+    </footer>
+    <script type="text/javascript">
+        'use strict';
+        var pinout = document.getElementById("pinout");
+        var inputs = document.getElementsByTagName("input");
+        document.getElementById("nav").classList.remove("nojs");
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].type != "checkbox") continue;
+            if (inputs[i].name == "reversed") {
+                inputs[i].onchange = reversed_on_change;
+            } else {
+                inputs[i].onchange = inputs[i].name == "advanced" ? advanced_on_change : interface_on_change;
+            }
+            inputs[i].onchange();
+        }
+        function advanced_on_change() {
+            if (this.checked) {
+                var labels = document.getElementsByClassName("advanced");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.add("advanced-on");
+                }
+                var labels = document.getElementsByClassName("advanced-on");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.remove("advanced");
+                }
+            } else {
+                var labels = document.getElementsByClassName("advanced-on");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.add("advanced");
+                }
+                var labels = document.getElementsByClassName("advanced");
+                for (var j = 0; j < labels.length; j++) {
+                    labels[j].classList.remove("advanced-on");
+                }
+            }
+
+        }
+        function interface_on_change() {
+            var checked = this.checked;
+            var labels = pinout.getElementsByClassName(this.name);
+            for (var j = 0; j < labels.length; j++) {
+                if (checked) {
+                    labels[j].classList.remove("hidden");
+                    pinout.classList.remove("hidden-" + this.name);
+                } else {
+                    labels[j].classList.add("hidden");
+                    pinout.classList.add("hidden-" + this.name);
+                }
+            }
+        }
+        function reversed_on_change() {
+            pinout.classList.toggle("underside-view", this.checked);
+        }
+
+        // Boof to a sensible default window size
+        // only tested on Windows 10...
+        // RIP 1024x768
+        window.resizeTo(1050, 830);
+
+        // Janky hack for iOS at least
+        if (window.innerWidth < 400) {
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type != "checkbox") continue;
+                inputs[i].checked = false;
+                inputs[i].onchange();
+            }
+        }
+    </script>
+</body>
+</html>
+
