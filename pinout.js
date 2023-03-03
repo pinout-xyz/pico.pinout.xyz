@@ -27,7 +27,6 @@ function interface_on_change() {
     var labels = pinout.getElementsByClassName(this.name);
     for (var j = 0; j < labels.length; j++) {
         labels[j].classList.toggle("hidden", !checked);
-        pinout.classList.toggle("hidden-" + this.name, !checked);
     }
 }
 function reversed_on_change() {
