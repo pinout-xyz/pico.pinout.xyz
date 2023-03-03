@@ -107,12 +107,8 @@ td {
 
 /* Hide advanced labels by default */
 .labels .advanced {visibility: hidden;}
-.labels .adc.hidden, .labels.right .spi.hidden {visibility: hidden;}
-.labels .i2c.hidden, .labels.left .spi.hidden, .labels .uart.hidden, .labels .pwm.hidden {display: none;}
+.labels .hidden {display: none;}
 .filter li.advanced {display: none;}
-
-.pinout.hidden-spi .labels.right .adc.hidden {display:none;}
-.pinout.hidden-adc .labels.right .spi.hidden {display:none;}
 
 .gpio   {background-color: #85990033;border-color: #859900;}
 .ground {background-color: #002b3633;border-color: #002b36;}
@@ -122,23 +118,21 @@ td {
 .i2c    {background-color: #268bd233;border-color: #268bd2;}
 .spi    {background-color: #d3368233;border-color: #d33682;}
 .uart   {background-color: #6c71c433;border-color: #6c71c4;}
-.uart.default {background-color: #494daa33;border-color: #494daa;}
 .pwm    {background-color: #33333333;border-color: #333333;}
 
 .labels.left td {border-width:0 0 0 4px;}
 .labels.right td {border-width:0 4px 0 0;}
 
-.labels tr:hover:before {background-color: #eeeeee;}
-.labels tr:hover .gpio {background-color: #9fb80366;}
+.labels tr:hover:before  {background-color: #eeeeee;}
+.labels tr:hover .gpio   {background-color: #9fb80366;}
 .labels tr:hover .ground {background-color: #01435366;}
-.labels tr:hover .power {background-color: #f13a3766;}
-.labels tr:hover .adc {background-color: #39d1c466;}
+.labels tr:hover .power  {background-color: #f13a3766;}
+.labels tr:hover .adc    {background-color: #39d1c466;}
 .labels tr:hover .system {background-color: #fab4b266;}
-.labels tr:hover .i2c {background-color: #3ba6f166;}
-.labels tr:hover .spi {background-color: #f34f9f66;}
-.labels tr:hover .uart {background-color: #8d91e666;}
-.labels tr:hover .uart.default {background-color: #686bce66;}
-.labels tr:hover .pwm {background-color: #44444466;}
+.labels tr:hover .i2c    {background-color: #3ba6f166;}
+.labels tr:hover .spi    {background-color: #f34f9f66;}
+.labels tr:hover .uart   {background-color: #8d91e666;}
+.labels tr:hover .pwm    {background-color: #44444466;}
 
 .filter {
     list-style: none;
