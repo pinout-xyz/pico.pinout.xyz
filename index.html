@@ -89,9 +89,28 @@
             <tr aria-label="Twentieth pin."   ><th>21</th><td class="gpio">GP16</td>                                <td class="spi" title="SPI 0: Host-receive">SPI0 RX</td>     <td class="i2c" title="I2C 0: Data">I2C0 SDA</td>             <td class="uart" title="UART 0: Transmit">UART0 TX</td>                  <td class="pwm advanced" title="PWM 0: Channel A">PWM0 A</td></tr>
             </tbody>
         </table>
+        <table class="labels below advanced">
+            <tbody>
+                <tr><td aria-label="Left debug pin.">SWCLK</td><td aria-label="Middle debug pin.">GND</td><td aria-label="Right debug pin.">SWDIO</td></tr>
+            </tbody>
+        </table>
+    </article>
+    <article class="extra advanced">
+        <table aria-label="Additional pin definitions.">
+            <thead>
+                <th scope="col">Pin</th><th scope="col">Function</th><th scope="col">Notes</th>
+            </thead>
+            <tbody>
+                <tr><td>GP23</td><td>RT6150B-33GQW Power-Select</td><td>LOW (default) for high efficiency (PFM)<br>HIGH for improved ripple (PWM)</td></tr>
+                <tr><td>GP24</td><td>VBUS Sense</td><td>Detect USB power or VBUS pin</td></tr>
+                <tr><td>GP25</td><td>User LED</td><td></td></tr>
+            </tbody>
+        </table>
     </article>
     <footer>
-        <p><a href="https://picow.pinout.xyz/">View the Pico W version of this pinout.</a></p>
+        <p><a href="https://picow.pinout.xyz/">Pico W version of this pinout</a>
+| <a title="Raspberry Pi Pico Datasheet (PDF)" href="https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf">Datasheet</a>
+| <a title="Getting Started With Raspberry Pi Pico (PDF)" href="https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf">Getting Started Guide</a></a></p>
         <p>Raspberry Pi Pico Pinout is maintained by <a href="https://fosstodon.org/@gadgetoid" title="@gadgetoid at Mastodon">@Gadgetoid</a>.</p>
         <p>Want to help out? <a href="https://github.com/pinout-xyz/pico.pinout.xyz" title="Send a pull-request on GitHub.">Send a PR</a>, or toss me some coin via <a href="https://ko-fi.com/gadgetoid" title="Buy me a coffee on Ko-Fi">Ko-Fi</a>, <a href="https://github.com/sponsors/Gadgetoid" title="Sponsor me on GitHub">GitHub</a> or <a href="https://www.patreon.com/gadgetoid" title="Sponsor me on Patreon">Patreon</a>.</p>
     </footer>

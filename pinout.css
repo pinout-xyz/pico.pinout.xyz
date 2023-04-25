@@ -78,6 +78,18 @@ header p {
 .labels.right tbody tr {
     counter-increment: pin -1;
 }
+.labels.below {
+    grid-column: 2;
+    margin: -5px auto 0 auto;
+}
+.labels.below td {
+    width: 23px;
+    height: auto;
+    border: none;
+    padding: 0;
+    writing-mode: sideways-lr;
+    vertical-align: top;
+}
 .labels th, .labels thead {display:none;}
 .labels tbody tr:before {
     content: counter(pin);
@@ -91,7 +103,8 @@ header p {
 .labels.right tbody tr:before {
     float: left;
 }
-td {
+.labels.below tbody tr:before {display:none;}
+td, th {
     height: 20px;
     text-align: left;
     overflow: hidden;
@@ -104,10 +117,18 @@ td {
     border-style: solid;
     padding: 0 8px;
 }
+.extra td {
+    border: none;
+    background-color: #9e9d9b33;
+}
+.extra th {
+    border: none;
+    background-color: transparent;
+}
 
 /* Hide advanced labels by default */
 .labels .advanced {visibility: hidden;}
-.labels .hidden {display: none;}
+.labels .hidden, .extra.advanced, .below.advanced {display: none;}
 .filter li.advanced {display: none;}
 
 .gpio   {background-color: #85990033;border-color: #859900;}
@@ -211,7 +232,7 @@ td {
         color: #e9e5d2;
     }
     .labels tbody tr:hover:before {background-color: #013441;}
-    .labels td, .filter.interfaces label {
+    td, th, .filter.interfaces label {
         color: #e9e5d2;
     }
 }
