@@ -81,6 +81,8 @@ header p {
 .labels.below {
     grid-column: 2;
     margin: -5px auto 0 auto;
+    position: relative;
+    left: 2px;
 }
 .labels.below td {
     width: 23px;
@@ -89,6 +91,9 @@ header p {
     padding: 0;
     writing-mode: sideways-lr;
     vertical-align: top;
+}
+.underside-view .labels.below {
+    left: -2px;
 }
 .labels th, .labels thead {display:none;}
 .labels tbody tr:before {
