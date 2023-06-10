@@ -32,22 +32,32 @@ header {
     display: block;
     width: 100%;
     line-height: 22px;
-    padding: 10px 0;
+    padding: 10px;
     border-bottom: 5px solid #268bd2;
+    display: grid;
+    grid-template-columns: 10px auto auto 10px;
 }
 header h1 {
     margin: 0;
+    padding: 0;
     font-size: 20px;
-    display: inline;
-    padding: 0 10px;
+    grid-column: 2;
 }
-header p {
+header ul {
+    grid-column: 3;
+    list-style: none;
     margin: 0;
-    font-size: 14px;
-    float: right;
-    display: inline;
-    padding: 0 10px;
+    padding: 0;
+    text-align: right;
 }
+header li {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    white-space: pre;
+}
+header li:nth-child(2) a, header li:nth-child(2) a:visited, header li:nth-child(2) a:hover {color: #268bd2;}
+header li:nth-child(3) a, header li:nth-child(3) a:visited, header li:nth-child(3) a:hover {color: #d33682;}
+header li:nth-child(4) a, header li:nth-child(4) a:visited, header li:nth-child(4) a:hover {color: #dc322f;}
 .pico {
     padding: 0px;
     position: relative;
