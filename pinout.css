@@ -63,6 +63,18 @@ header li:nth-child(4) a, header li:nth-child(4) a:visited, header li:nth-child(
     position: relative;
     top: -8px;
 }
+table {
+    font-family: ui-monospace, 
+    Menlo, Monaco,
+    "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono",
+    "Oxygen Mono",
+    "Ubuntu Monospace",
+    "Source Code Pro",
+    "Fira Mono",
+    "Droid Sans Mono",
+    "Courier New", monospace;
+}
 .labels.right {
     counter-reset: pin 41;
     display: grid;
