@@ -251,6 +251,10 @@ td, th {
     nav p {
         color: #666666;
     }
+    footer a.selected {
+        text-decoration: none;
+        color: #666666;
+    }
     footer a, footer a:visited {
         color: #1d6ca5;
     }
