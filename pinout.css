@@ -239,6 +239,8 @@ td, th {
 .underside-view .labels.left {
     direction: ltr;
 }
+.underside-view .labels.left td {border-width:0 4px 0 0;}
+.underside-view .labels.right td {border-width:0 0 0 4px;}
 
 @media (prefers-color-scheme: dark) {
     body {
