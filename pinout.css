@@ -110,12 +110,14 @@ table {
     left: 2px;
 }
 .labels.below td {
-    width: 23px;
+    width: 25px;
     height: auto;
     border: none;
     padding: 0;
-    writing-mode: sideways-lr;
+    writing-mode: vertical-lr;
     vertical-align: top;
+    min-width: 25px;
+    display: inline-block;
 }
 .underside-view .labels.below {
     left: -2px;
