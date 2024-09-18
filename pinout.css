@@ -32,25 +32,22 @@ nav {
 header {
     background: #002b36;
     color: #e9e5d2;
-    display: block;
     width: 100%;
     line-height: 22px;
     padding: 10px;
     border-bottom: 5px solid #268bd2;
     display: grid;
-    grid-template-columns: 10px auto auto 10px;
+    grid-template-columns: auto auto;
 }
 header h1 {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0 10px;
     font-size: 20px;
-    grid-column: 2;
 }
 header ul {
-    grid-column: 3;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 10px 0 0;
     text-align: right;
 }
 header li {
@@ -152,11 +149,37 @@ td, th {
 }
 .extra td {
     border: none;
+    background-color: #9e9d9b22;
+    padding: 5px;
+}
+.extra tr:nth-child(odd) td {
     background-color: #9e9d9b33;
 }
 .extra th {
     border: none;
     background-color: transparent;
+}
+.extra .wl_gpio {
+    position: relative;
+    top: 5px;
+}
+.extra .wl_gpio td {
+    background-color: #d3368222;
+}
+.extra .wl_gpio tr:nth-child(odd) td {
+    background-color: #d3368233;
+}
+.extra .power_pins td {
+    background-color: #dc322f22;
+}
+.extra .power_pins tr:nth-child(odd) td {
+    background-color: #dc322f33;
+}
+.extra .tpads td {
+    background-color: #85990022;
+}
+.extra .tpads tr:nth-child(odd) td {
+    background-color: #85990033;
 }
 
 /* Hide advanced labels by default */
@@ -244,6 +267,13 @@ td, th {
 .underside-view .labels.left td {border-width:0 4px 0 0;}
 .underside-view .labels.right td {border-width:0 0 0 4px;}
 
+sup {
+    position: absolute;
+    top: -25%;
+    font-size: 70%;
+    vertical-align: middle;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #000000;
@@ -259,7 +289,6 @@ td, th {
         color: #666666;
     }
     footer a.selected {
-        text-decoration: none;
         color: #666666;
     }
     footer a, footer a:visited {

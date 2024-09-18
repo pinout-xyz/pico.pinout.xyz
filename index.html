@@ -10,7 +10,7 @@
 <link rel="manifest" href="manifest.json">
 <title>Raspberry Pi Pico GPIO Pinout</title>
 <meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the Raspberry Pi Pico" />
-<link rel="stylesheet" href="pinout.css?v=20240917" type="text/css" media="screen" />
+<link rel="stylesheet" href="pinout.css?v=20240918" type="text/css" media="screen" />
 </head>
 <body>
     <header>
@@ -67,8 +67,8 @@
                 <th scope="col">Pin</th><th scope="col">Name/ADC</th><th scope="col">SPI</th><th scope="col">I2C</th><th scope="col">UART</th><th scope="col">PWM</th>
             </thead>
             <tbody>
-            <tr aria-label="First pin."       ><th>40</th><td class="power" title="Power: USB input voltage">VBUS</td></tr>
-            <tr aria-label="Second pin."      ><th>39</th><td class="power" title="Power: System voltage">VSYS</td></tr>
+            <tr aria-label="First pin."       ><th>40</th><td class="power" title="Power: USB input voltage">VBUS 5V</td></tr>
+            <tr aria-label="Second pin."      ><th>39</th><td class="power" title="Power: System voltage">VSYS 5V<sup>*</sup></td></tr>
             <tr aria-label="Third pin."       ><th>38</th><td class="ground" title="Ground">Ground</td></tr>
             <tr aria-label="Forth pin."       ><th>37</th><td class="system" title="System: 3v3 regulator enable">3V3 En</td></tr>
             <tr aria-label="Fifth pin."       ><th>36</th><td class="power" title="Power: 3v3 output">3V3 Out</td></tr>
@@ -100,12 +100,18 @@
             <thead>
                 <th scope="col">Pin</th><th scope="col">Function</th><th scope="col">Notes</th>
             </thead>
+            <tbody class="power_pins">
+                <tr><td>VSYS</td><td>System voltage in/out</td><td><sup>*</sup>5V <em>out</em> when powered by USB (diode to VBUS),<br>1.8V to 5.5V <em>in</em> if powered externally</td></tr>
+                <tr><td>3V3 Out</td><td>Chip 3V3 supply</td><td>Can be used to power external circuitry,<br>recommended to keep the load less than 300mA</td></tr>
+            </tbody>
             <tbody>
                 <tr><td>GP23</td><td>RT6150B-33GQW Power-Select</td><td>LOW (default) for high efficiency (PFM)<br>HIGH for improved ripple (PWM)</td></tr>
                 <tr><td>GP24</td><td>VBUS Sense</td><td>Detect USB power or VBUS pin</td></tr>
                 <tr><td>GP25</td><td>User LED</td><td></td></tr>
                 <tr><td>GP29 / A3</td><td>VSYS Sense</td><td>Read VSYS/3 through resistor divider and FET Q1</td></tr>
                 <tr><td>A4</td><td>Temperature</td><td>Read onboard temperature sensor</td></tr>
+            </tbody>
+            <tbody class="tpads">
                 <tr><td>TP1</td><td>Ground</td><td>close coupled ground for differential USB signals</td></tr>
                 <tr><td>TP2</td><td>USB DM</td><td>USB Data Negative pin</td></tr>
                 <tr><td>TP3</td><td>USB DP</td><td>USB Data Positive pin</td></tr>
