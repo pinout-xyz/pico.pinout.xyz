@@ -117,8 +117,15 @@ table {
     min-width: 25px;
     display: inline-block;
 }
+.australian-view .labels.left, .australian-view .labels.right {
+    writing-mode: horizontal-bt;
+}
+.australian-view .labels.below {
+    position: relative;
+    top: -550px;
+}
 .underside-view .labels.below {
-    left: -2px;
+    left: 2px;
 }
 .labels th, .labels thead {display:none;}
 .labels tbody tr:before {
@@ -252,6 +259,26 @@ td, th {
     display: none;
 }
 
+/* Aussie View */
+.australian-view .pico {
+    rotate: 180deg;
+    position: relative;
+    top: 8px;
+}
+
+.australian-view {
+    direction: rtl;
+}
+.australian-view .labels.left {
+    direction: ltr;
+}
+.underside-view.australian-view {
+    direction: ltr;
+}
+.underside-view.australian-view .labels.left {
+    direction: rtl;
+}
+
 /* Bottom-up View */
 .underside-view .pico {
     display: none;
@@ -299,7 +326,7 @@ sup {
         color: #3ba6f1;
     }
     .labels tbody tr:before {
-        background-color: #002b36;
+        background-color: #002b36; 
         color: #e9e5d2;
     }
     .labels tbody tr:hover:before {background-color: #013441;}

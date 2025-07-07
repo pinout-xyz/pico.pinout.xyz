@@ -6,6 +6,9 @@ document.getElementById("nav").classList.remove("nojs");
 for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].type != "checkbox") continue;
     switch(inputs[i].name) {
+        case "australian":
+            inputs[i].onchange = australian_on_change;
+            break;
         case "reversed":
             inputs[i].onchange = reversed_on_change;
             break;
@@ -31,6 +34,9 @@ function interface_on_change() {
 }
 function reversed_on_change() {
     pinout.classList.toggle("underside-view", this.checked);
+}
+function australian_on_change() {
+    pinout.classList.toggle("australian-view", this.checked);
 }
 
 // Boof to a sensible default window size
