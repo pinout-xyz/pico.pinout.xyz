@@ -25,6 +25,7 @@ footer p {
 footer a.selected {
     text-decoration: none;
 }
+footer.print {display: none;}
 nav {
     text-align: center;
     margin-top: 20px;
@@ -304,5 +305,18 @@ sup {
     .labels tbody tr:hover:before {background-color: #013441;}
     td, th, .filter.interfaces label {
         color: #e9e5d2;
+    }
+}
+
+@media print {
+    footer, header ul, #nav {display: none;}
+    footer.print {
+        display: block;
+        border-top: 5px solid #268bd2;
+    }
+    #pinout {margin-top: 40px;}
+    header {
+        background: transparent;
+        color: #666666;
     }
 }
