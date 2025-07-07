@@ -118,7 +118,10 @@ table {
     display: inline-block;
 }
 .australian-view .labels.left, .australian-view .labels.right {
-    writing-mode: horizontal-bt;
+    transform: scale(1, -1);
+}
+.australian-view .labels.left tr, .australian-view .labels.right tr {
+    transform: scale(1, -1);
 }
 .australian-view .labels.below {
     position: relative;
