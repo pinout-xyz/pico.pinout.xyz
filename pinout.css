@@ -39,6 +39,7 @@ header {
     border-bottom: 5px solid #268bd2;
     display: grid;
     grid-template-columns: auto auto;
+    box-sizing: border-box;
 }
 header h1 {
     margin: 0;
@@ -65,7 +66,7 @@ header li:nth-child(4) a, header li:nth-child(4) a:visited, header li:nth-child(
     top: -8px;
 }
 table {
-    font-family: ui-monospace, 
+    font-family: ui-monospace,
     Menlo, Monaco,
     "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono",
@@ -126,9 +127,6 @@ table {
 .australian-view .labels.below {
     position: relative;
     top: -550px;
-}
-.underside-view .labels.below {
-    left: 2px;
 }
 .labels th, .labels thead {display:none;}
 .labels tbody tr:before {
@@ -333,7 +331,7 @@ sup {
         color: #3ba6f1;
     }
     .labels tbody tr:before {
-        background-color: #002b36; 
+        background-color: #002b36;
         color: #e9e5d2;
     }
     .labels tbody tr:hover:before {background-color: #013441;}
