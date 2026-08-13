@@ -8,6 +8,11 @@ body {
     margin: 0;
     padding: 0;
 }
+main {
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
 article {
     display: grid;
     grid-template-columns: auto auto auto;
