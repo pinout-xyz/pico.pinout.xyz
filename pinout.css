@@ -191,7 +191,7 @@ td, th {
 
 /* Hide advanced labels by default */
 .labels .advanced {visibility: hidden;}
-.labels .hidden, .extra.advanced, .below.advanced {display: none;}
+.labels .hidden, .extra.advanced, .below.advanced, .share.hidden {display: none;}
 .filter li.advanced {display: none;}
 
 .gpio   {background-color: #85990033;border-color: #859900;}
@@ -204,6 +204,7 @@ td, th {
 .spi    {background-color: #d3368233;border-color: #d33682;}
 .uart   {background-color: #6c71c433;border-color: #6c71c4;}
 .pwm    {background-color: #33333333;border-color: #333333;}
+.custom {background-color: #cbcbcb33;border-color: #cbcbcb;}
 
 .labels.left td {border-width:0 0 0 4px;}
 .labels.right td {border-width:0 4px 0 0;}
@@ -305,6 +306,117 @@ sup {
     vertical-align: middle;
 }
 
+td.custom {
+    background: transparent;
+    border: 0;
+    padding: 0 4px;
+    min-width: 12ch;
+    overflow: visible;
+    position: relative;
+}
+button.pen {
+    font: inherit;
+    font-size: 12px;
+    line-height: 18px;
+    min-width: 22px;
+    height: 20px;
+    padding: 0 5px;
+    color: #222;
+    border-width: 0;
+    border-style: solid;
+    box-sizing: border-box;
+    cursor: pointer;
+    white-space: nowrap;
+}
+button.pen svg {fill: #999999; vertical-align: middle;}
+td.spacer {background: transparent; border: 0;}
+
+button.pen.empty {
+    background: transparent;
+    border: 1px dashed #bbbbbb;
+    border-radius: 2px;
+    opacity: 0.35;
+}
+.labels tr:hover button.pen.empty, button.pen.empty:focus {opacity: 1;}
+button.pen.empty:hover {border-color: #666666;}
+button.pen:not(.empty) {
+    border-width: 0 0 0 4px;
+    width: 100%;
+    text-align: left;
+}
+.labels.right button.pen:not(.empty) {border-width: 0 4px 0 0;}
+
+.label-editor {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    margin-top: 2px;
+    padding: 6px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px #00000033;
+    direction: ltr;
+    text-align: left;
+}
+.label-editor .row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+button.trash {
+    padding: 3px 5px;
+    background: transparent;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    cursor: pointer;
+    line-height: 1;
+}
+button.trash svg {fill: #999999; vertical-align: middle;}
+button.trash:hover {border-color: #dc322f;}
+button.trash:hover svg {fill: #dc322f;}
+.label-editor input {
+    font: inherit;
+    font-size: 12px;
+    width: 90px;
+    padding: 3px;
+    border: 1px solid #cccccc;
+}
+.swatches {display: flex; gap: 3px; margin-top: 5px;}
+button.swatch {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: 1px solid #00000033;
+    border-radius: 2px;
+    cursor: pointer;
+}
+button.swatch.chosen {box-shadow: inset 0 0 0 2px #ffffff, inset 0 0 0 3px #00000066;}
+
+.share {
+    grid-column: 1 / -1;
+    background: none;
+    margin: 30px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+}
+.share button {
+    font: inherit;
+    margin: 0 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+}
+.share button:hover {background: #ffffff;}
+#share_count, #share_status {margin-left: 12px; color: #666666;}
+#share_notice {
+    display: block;
+    margin-top: 10px;
+}
+#share_notice:empty {display: none;}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #000000;
@@ -333,6 +445,30 @@ sup {
         color: #e9e5d2;
     }
     .labels tbody tr:hover th {background-color: #013441;}
+    button.pen {color: #e9e5d2;}
+    button.pen.empty {border-color: #444444;}
+    button.pen.empty:hover {border-color: #888888;}
+    .label-editor {background: #111111; border-color: #333333;}
+    .label-editor .row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+button.trash {
+    padding: 3px 5px;
+    background: transparent;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    cursor: pointer;
+    line-height: 1;
+}
+button.trash svg {fill: #999999; vertical-align: middle;}
+button.trash:hover {border-color: #dc322f;}
+button.trash:hover svg {fill: #dc322f;}
+.label-editor input {background: #000000; color: #e9e5d2; border-color: #333333;}
+    .share button {background: #111111; border-color: #333333; color: #e9e5d2;}
+    .share button:hover {background: #222222;}
+
     td, th, .filter.interfaces label {
         color: #e9e5d2;
     }
@@ -345,6 +481,10 @@ sup {
         border-top: 5px solid #268bd2;
     }
     #pinout {margin-top: 40px;}
+    .share {display: none;}
+    button.pen {border-style: solid; cursor: default;}
+    button.pen svg {display: none;}
+
     header {
         background: transparent;
         color: #666666;

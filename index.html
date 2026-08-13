@@ -11,7 +11,7 @@
 <link rel="manifest" href="manifest.json">
 <title>Raspberry Pi Pico GPIO Pinout</title>
 <meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the Raspberry Pi Pico" />
-<link rel="stylesheet" href="pinout.css?v=20250707v3" type="text/css" media="screen,print" />
+<link rel="stylesheet" href="pinout.css?v=20260813v1" type="text/css" media="screen,print" />
 </head>
 <body>
     <header>
@@ -29,6 +29,7 @@
             <li><label class="i2c" for="i2c" title="Show or hide I2C functions."><input type="checkbox" checked name="i2c" id="i2c" />I2C</label></li>
             <li class="advanced"><label class="pwm" for="pwm" title="Show or hide PWM functions."><input type="checkbox" checked name="pwm" id="pwm" />PWM</label></li>
             <li><label class="uart" for="uart" title="Show or hide UART functions."><input type="checkbox" checked name="uart" id="uart" />UART</label></li>
+            <li><label class="custom" for="custom" title="Add your own pin labels and share them as a link."><input type="checkbox" name="custom" id="custom" />Custom</label></li>
         </ul>
         <noscript>
             <p>Want to show/hide interfaces and view a full pinout? Enable JavaScript!</p>
@@ -96,6 +97,13 @@
                 <tr><td aria-label="Left debug pin.">SWCLK</td><td aria-label="Middle debug pin.">GND</td><td aria-label="Right debug pin.">SWDIO</td></tr>
             </tbody>
         </table>
+        <p class="custom share">
+            <button type="button" id="share" tabindex="0">Copy sharing link</button>
+            <button type="button" id="clear" tabindex="0">Clear labels</button>
+            <span id="share_count"></span>
+            <span id="share_status" role="status" aria-live="polite"></span>
+            <span id="share_notice"></span>
+        </p>
     </article>
     <article class="extra advanced">
         <table aria-label="Additional pin definitions.">
@@ -142,7 +150,7 @@
     <footer class="print">
         <p>pico.pinout.xyz - This interactive, accessible &amp; beautiful GPIO pinout and pin function guide for the Raspberry Pi Pico is maintained by @gadgetoid</p>
     </footer>
-    <script src="pinout.js?v=20250707v1" type="text/javascript"></script>
+    <script src="pinout.js?v=20260813v1" type="text/javascript"></script>
 </body>
 </html>
 
