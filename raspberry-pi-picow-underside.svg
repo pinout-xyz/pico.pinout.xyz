@@ -906,7 +906,7 @@
        id="tspan74491-3"
        x="-43.438103"
        y="87.662468"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">SWDIO</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">SWCLK</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
@@ -918,7 +918,7 @@
        id="tspan3465-6"
        x="-53.980412"
        y="77.181839"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">SWCLK</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma">SWDIO</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.66667px;line-height:1.25;font-family:Tahoma;-inkscape-font-specification:Tahoma;fill:#ffffff"
