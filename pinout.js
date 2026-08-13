@@ -279,6 +279,14 @@ function align_custom_column() {
         cell.classList.remove("collapsed");
     });
 
+    var probe = pinout.querySelector("td.custom");
+    if (probe && probe.classList.contains("hidden")) {
+        Array.prototype.forEach.call(pinout.querySelectorAll("td.custom"), function (cell) {
+            cell.parentElement.appendChild(cell);
+        });
+        return;
+    }
+
     ["left", "right"].forEach(function (side) {
         var rows = Array.prototype.slice.call(
             pinout.querySelectorAll("table.labels." + side + " tbody tr"));
