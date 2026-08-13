@@ -275,6 +275,9 @@ function align_custom_column() {
     Array.prototype.forEach.call(pinout.querySelectorAll("td.spacer"), function (cell) {
         cell.parentElement.removeChild(cell);
     });
+    Array.prototype.forEach.call(pinout.querySelectorAll("td.collapsed"), function (cell) {
+        cell.classList.remove("collapsed");
+    });
 
     ["left", "right"].forEach(function (side) {
         var rows = Array.prototype.slice.call(
@@ -298,6 +301,13 @@ function align_custom_column() {
                 var spacer = document.createElement("td");
                 spacer.className = "spacer";
                 row.insertBefore(spacer, label);
+            }
+
+            var trailing = label.classList.contains("hidden") === false;
+            var cell = label.nextSibling;
+            while (cell) {
+                if (cell.classList) cell.classList.toggle("collapsed", trailing);
+                cell = cell.nextSibling;
             }
         });
     });
@@ -489,6 +499,9 @@ function advanced_on_change() {
     for (var j = 0; j < advanced.length; j++) {
         advanced[j].classList.toggle("advanced", !this.checked);
     }
+    if (typeof align_custom_column === "function") align_custom_column();
+    store_toggles();
+    update_url();
 }
 function interface_on_change() {
     var checked = this.checked;

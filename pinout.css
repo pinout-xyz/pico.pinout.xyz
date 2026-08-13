@@ -330,6 +330,7 @@ button.pen {
 }
 button.pen svg {fill: #999999; vertical-align: middle;}
 td.spacer {background: transparent; border: 0;}
+td.collapsed {display: none;}
 
 button.pen.empty {
     background: transparent;
