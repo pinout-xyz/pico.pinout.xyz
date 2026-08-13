@@ -1,0 +1,2 @@
+[codespell]
+skip = ./.git,*.svg,*.png,LICENSE
