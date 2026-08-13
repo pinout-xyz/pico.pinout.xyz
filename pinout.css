@@ -1,3 +1,6 @@
+:root {
+    color-scheme: light dark;
+}
 body {
     display: grid;
     place-items: center;
@@ -78,29 +81,22 @@ table {
     "Courier New", monospace;
 }
 .labels.right {
-    counter-reset: pin 41;
     display: grid;
-    align-items: left;
 }
-.tiny2040 .labels.right {
-    counter-reset: pin 17;
+.labels.left, .labels.right {
+    border-spacing: 5px;
 }
 .labels.left {
     direction: rtl;
     display: grid;
-    align-items: right;
 }
 .labels tr {
-    counter-increment: pin;
     line-height: 20px;
     color: #333333;
     font-size: 0;
 }
 .labels.left tr {
     direction: ltr;
-}
-.labels.right tbody tr {
-    counter-increment: pin -1;
 }
 .labels.below {
     grid-column: 2;
@@ -128,9 +124,11 @@ table {
     position: relative;
     top: -550px;
 }
-.labels th, .labels thead {display:none;}
-.labels tbody tr:before {
-    content: counter(pin);
+.labels thead {display:none;}
+.labels tbody th {
+    padding: 0;
+    border: 0;
+    min-width: 20px;
     text-align: center;
     float: right;
     background-color: #CCCCCC;
@@ -138,10 +136,10 @@ table {
     height: 20px;
     font-size: 11px;
 }
-.labels.right tbody tr:before {
+.labels.right tbody th {
     float: left;
 }
-.labels.below tbody tr:before {display:none;}
+.labels.below tbody th {display:none;}
 td, th {
     height: 20px;
     text-align: left;
@@ -210,7 +208,7 @@ td, th {
 .labels.left td {border-width:0 0 0 4px;}
 .labels.right td {border-width:0 4px 0 0;}
 
-.labels tr:hover:before  {background-color: #eeeeee;}
+.labels tr:hover th  {background-color: #eeeeee;}
 .labels tr:hover .gpio   {background-color: #9fb80366;}
 .labels tr:hover .ground {background-color: #01435366;}
 .labels tr:hover .power  {background-color: #f13a3766;}
@@ -330,11 +328,11 @@ sup {
     footer a:hover {
         color: #3ba6f1;
     }
-    .labels tbody tr:before {
+    .labels tbody th {
         background-color: #002b36;
         color: #e9e5d2;
     }
-    .labels tbody tr:hover:before {background-color: #013441;}
+    .labels tbody tr:hover th {background-color: #013441;}
     td, th, .filter.interfaces label {
         color: #e9e5d2;
     }
@@ -351,4 +349,13 @@ sup {
         background: transparent;
         color: #666666;
     }
+}
+
+:focus-visible {
+    outline: 2px solid #268bd2;
+    outline-offset: 2px;
+}
+label:has(input:focus-visible) {
+    outline: 2px solid #268bd2;
+    outline-offset: 2px;
 }
