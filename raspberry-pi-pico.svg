@@ -64,10 +64,9 @@
       <use href="#pad" y="49.087"/>
       <use href="#pad" y="51.627"/>
     </g>
+    <circle id="pad-mount" r="1.6" fill="#fcee21"/>
     <path id="pad-debug" d="M-.7 0v-1.373a.7 .7 0 0 1 1.4 0V0z"/>
     <rect id="pad-debug-gnd" x="-.7" y="-2.073" width="1.4" height="2.073"/>
-    <circle id="pad-mount" r="1.6" fill="#fcee21"/>
-    <circle id="pad-test" r=".4"/>
     <g id="usb-micro-b">
       <rect x="-3.5" y="-2.316" width="7" height="5.316" rx=".2" fill="#363a44"/>
       <path d="M-2.999-3a.199.199 0 0 0-.191.141l-.11.363L-3.5-2.294V2.8a.2.2 0 0 0 .2.2h1.221a.1.1 0 0 0 .1-.1V2.609a.201.201 0 0 0-.104-.176l-.679-.371a.2.2 0 0 1-.104-.176v-.292H-2.421V1.258H-1.737v.336h.404v.695a.2.2 0 0 0 .2.2h.324V2.129h1.619v.361h.325a.2.2 0 0 0 .2-.2V1.594H1.738V1.258h.686v.336h.444v.292a.2.2 0 0 1-.106.176L2.084 2.433a.2.2 0 0 0-.106.176v.292a.1.1 0 0 0 .1.1h1.22a.2.2 0 0 0 .2-.2V-2.294l-.2-.2L3.191-2.859a.2.2 0 0 0-.192-.141z" fill="#dbddda"/>
@@ -83,6 +82,7 @@
       <rect x="-.5" y="-.25" width="1" height=".5" fill="#dbddda"/>
       <rect x="-.3" y="-.25" width=".6" height=".5"/>
     </g>
+    <circle id="pad-test" r=".4"/>
     <g id="inductor-2016">
       <rect x="-1" y="-.75" width="2" height="1.5" fill="#dbddda"/>
       <rect x="-.75" y="-.75" width="1.5" height="1.5" fill="#958863"/>
@@ -126,8 +126,6 @@
       <use href="#pad-debug" x="7.96" y="53"/>
       <use href="#pad-debug-gnd" x="10.5" y="53"/>
       <use href="#pad-debug" x="13.04" y="53"/>
-      <use href="#pad-test" x="4.74" y="9.25"/>
-      <use href="#pad-test" x="16.54" y="46.97"/>
     </g>
     <use href="#pad-mount" x="4.8" y="4"/>
     <use href="#pad-mount" x="16.2" y="4"/>
@@ -140,6 +138,7 @@
     <use href="#sot-1.5x2.5" x="16.44" y="8.16" fill="#2a2d2e"/>
     <use href="#passive-0402" x="7.7" y="8.41" fill="#2a2d2e"/>
     <use href="#passive-0402" x="13.33" y="8.41" fill="#2a2d2e"/>
+    <use href="#pad-test" x="4.74" y="9.25" fill="#9a916c"/>
     <use href="#passive-0402" x="7.7" y="9.28" fill="#2a2d2e"/>
     <use href="#inductor-2016" x="13.33" y="10.02"/>
     <use href="#dfn-2.5x2.5" x="13.33" y="12.49" fill="#2a2d2e"/>
@@ -151,7 +150,7 @@
     <use href="#passive-0805-v" x="14.83" y="17.91" fill="#2a2d2e"/>
     <use href="#passive-0201-v" x="5.89" y="18.29" fill="#9a916c"/>
     <use href="#passive-0402-v" x="4.99" y="19.66" fill="#2a2d2e"/>
-    <use href="#sod-1.5x0.5" x="16.95" y="19.83" fill="#2a2d2e"/>
+    <use href="#sod-1.5x0.5" x="16.95" y="19.82" fill="#2a2d2e"/>
     <use href="#uson-8" x="6.72" y="20.66" fill="#2a2d2e"/>
     <use href="#passive-0402-v" x="4.99" y="21.66" fill="#2a2d2e"/>
     <use href="#passive-0201-v" x="9.72" y="22.42" fill="#9a916c"/>
@@ -177,6 +176,7 @@
     <use href="#passive-0201-v" x="10.45" y="35.76" fill="#9a916c"/>
     <use href="#crystal-3225" x="8.15" y="36.39"/>
     <use href="#passive-0201-v" x="5.77" y="37.01" fill="#9a916c"/>
+    <use href="#pad-test" x="16.54" y="46.97" fill="#9a916c"/>
   </g>
   <use href="#raspberry-pi-logo" x="10.5" y="43.41" fill="#fff"/>
   <use href="#raspberry-pi-logo" transform="translate(10.5 26.93)scale(.4049)" fill="#3d3f38"/>

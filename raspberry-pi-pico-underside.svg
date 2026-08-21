@@ -69,9 +69,9 @@
       <use href="#pad" y="49.087"/>
       <use href="#pad" y="51.627"/>
     </g>
+    <circle id="pad-mount" r="1.6" fill="#fcee21"/>
     <path id="pad-debug" d="M-.7 0v-1.373a.7 .7 0 0 1 1.4 0V0z"/>
     <rect id="pad-debug-gnd" x="-.7" y="-2.073" width="1.4" height="2.073"/>
-    <circle id="pad-mount" r="1.6" fill="#fcee21"/>
     <rect id="pad-test-square" x="-.675" y="-.675" width="1.35" height="1.35" rx=".4"/>
   </defs>
   <use href="#usb-micro-b-back" x="10.5" y="3"/>
@@ -145,19 +145,15 @@
       <text x="18" y="48.909">GP 15</text>
     </g>
     <g text-anchor="start">
-      <text transform="translate(8.3 50.25)rotate(-90)">SWDIO</text>
-      <text transform="translate(10.84 50.25)rotate(-90)">GND</text>
-      <text transform="translate(13.38 50.25)rotate(-90)">SWCLK</text>
-    </g>
-    <g text-anchor="start">
-      <text x="10.12" y="8.111">TP 1</text>
-      <text x="7.9" y="5.284">TP 2</text>
-      <text x="11.01" y="5.284">TP 3</text>
-    </g>
-    <g text-anchor="end">
-      <text x="11.63" y="10.055">TP 4</text>
-      <text x="11.63" y="12.528">TP 5</text>
-      <text x="11.63" y="15.015">TP 6</text>
+      <text transform="translate(8.302 50.25)rotate(-90)">SWDIO</text>
+      <text transform="translate(10.841 50.25)rotate(-90)">GND</text>
+      <text transform="translate(13.322 50.25)rotate(-90)">SWCLK</text>
+      <text x="7.895" y="5.284">TP 2</text>
+      <text x="11.011" y="5.284">TP 3</text>
+      <text x="10.087" y="8.111">TP 1</text>
+      <text x="9.792" y="10.055">TP 4</text>
+      <text x="9.817" y="12.528">TP 5</text>
+      <text x="9.799" y="15.015">TP 6</text>
     </g>
   </g>
 </svg>
