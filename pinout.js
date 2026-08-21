@@ -1,5 +1,6 @@
 'use strict';
 var pinout = document.getElementById("pinout");
+var main = document.querySelector("main");
 var inputs = document.getElementsByTagName("input");
 var advanced = document.querySelectorAll(".advanced");
 document.getElementById("nav").classList.remove("nojs");
@@ -522,7 +523,7 @@ function apply_advanced(box) {
 }
 function apply_interface(box) {
     var checked = box.checked;
-    Array.prototype.forEach.call(pinout.querySelectorAll("." + box.name), function (element) {
+    Array.prototype.forEach.call(main.querySelectorAll("." + box.name), function (element) {
         var owner = element.closest("td.custom");
         if (owner && owner !== element) return;
         element.classList.toggle("hidden", !checked);
