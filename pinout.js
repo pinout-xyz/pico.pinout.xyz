@@ -487,7 +487,7 @@ function build_custom_labels() {
     });
 }
 
-/* Toggles change the content width, and flipping the view resets the scroll origin. */
+/* Deferred to the next frame so centring on load does not force layout. */
 var centring = 0;
 
 function center_board() {
@@ -551,18 +551,14 @@ function apply_all_boxes() {
 function filter_on_change() {
     apply_box(this);
     align_custom_column();
-    center_board();
     store_toggles();
     update_url();
 }
 function view_on_change() {
     apply_box(this);
-    center_board();
 }
 
 url_ready = true;
-
-window.addEventListener("resize", center_board);
 
 /* Keyboard navigation: one tab stop per table, arrow keys move between pins.
    Cells hidden by an interface toggle are skipped, and the travelling column is
