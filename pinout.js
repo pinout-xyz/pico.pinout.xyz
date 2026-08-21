@@ -268,7 +268,9 @@ function open_editor(cell) {
 }
 
 function is_shown(cell) {
-    return cell.offsetParent !== null && window.getComputedStyle(cell).visibility !== "hidden";
+    return !cell.classList.contains("hidden")
+        && !cell.classList.contains("advanced")
+        && !cell.classList.contains("collapsed");
 }
 
 function align_custom_column() {
@@ -434,7 +436,6 @@ function build_custom_labels() {
 
     render_all_labels();
     store_labels();
-    align_custom_column();
 
     var clear = document.getElementById("clear");
     if (clear) {
@@ -477,10 +478,28 @@ function build_custom_labels() {
         var toggles = hash_param("i");
         if (toggles !== null) {
             apply_toggles(toggles);
-            for (var j = 0; j < inputs.length; j++) {
-                if (inputs[j].type === "checkbox" && inputs[j].onchange) inputs[j].onchange();
-            }
+            apply_all_boxes();
+            align_custom_column();
+            center_board();
+            store_toggles();
+            update_url();
         }
+    });
+}
+
+/* Toggles change the content width, and flipping the view resets the scroll origin. */
+var centring = 0;
+
+function center_board() {
+    if (centring) window.cancelAnimationFrame(centring);
+    centring = window.requestAnimationFrame(function () {
+        centring = 0;
+        var board = pinout.querySelector(pinout.classList.contains("underside-view")
+            ? ".pico.underside" : ".pico:not(.underside)");
+        if (!board) return;
+        var box = board.getBoundingClientRect();
+        var view = pinout.getBoundingClientRect();
+        pinout.scrollLeft += (box.left + box.right - view.left - view.right) / 2;
     });
 }
 
@@ -488,65 +507,61 @@ restore_toggles();
 build_custom_labels();
 for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].type != "checkbox") continue;
-    switch(inputs[i].name) {
-        case "australian":
-            inputs[i].onchange = australian_on_change;
-            break;
-        case "reversed":
-            inputs[i].onchange = reversed_on_change;
-            break;
-        case "advanced":
-            inputs[i].onchange = advanced_on_change;
-            break;
-        default:
-            inputs[i].onchange = interface_on_change;
-    }
-    inputs[i].onchange();
+    inputs[i].onchange = inputs[i].name === "reversed" || inputs[i].name === "australian"
+        ? view_on_change : filter_on_change;
 }
-function advanced_on_change() {
+apply_all_boxes();
+align_custom_column();
+center_board();
+store_toggles();
+
+function apply_advanced(box) {
     for (var j = 0; j < advanced.length; j++) {
-        advanced[j].classList.toggle("advanced", !this.checked);
+        advanced[j].classList.toggle("advanced", !box.checked);
     }
-    if (typeof align_custom_column === "function") align_custom_column();
-    center_board();
-    store_toggles();
-    update_url();
 }
-function interface_on_change() {
-    var checked = this.checked;
-    Array.prototype.forEach.call(pinout.querySelectorAll("." + this.name), function (element) {
+function apply_interface(box) {
+    var checked = box.checked;
+    Array.prototype.forEach.call(pinout.querySelectorAll("." + box.name), function (element) {
         var owner = element.closest("td.custom");
         if (owner && owner !== element) return;
         element.classList.toggle("hidden", !checked);
     });
-    if (typeof align_custom_column === "function") align_custom_column();
+}
+function apply_box(box) {
+    switch (box.name) {
+        case "australian":
+            pinout.classList.toggle("australian-view", box.checked);
+            break;
+        case "reversed":
+            pinout.classList.toggle("underside-view", box.checked);
+            break;
+        case "advanced":
+            apply_advanced(box);
+            break;
+        default:
+            apply_interface(box);
+    }
+}
+function apply_all_boxes() {
+    for (var j = 0; j < inputs.length; j++) {
+        if (inputs[j].type === "checkbox") apply_box(inputs[j]);
+    }
+}
+function filter_on_change() {
+    apply_box(this);
+    align_custom_column();
     center_board();
     store_toggles();
     update_url();
 }
-/* Toggles change the content width, and flipping the view resets the scroll origin. */
-function center_board() {
-    var boards = pinout.querySelectorAll(".pico");
-    for (var i = 0; i < boards.length; i++) {
-        if (boards[i].offsetParent === null) continue;
-        var board = boards[i].getBoundingClientRect();
-        var view = pinout.getBoundingClientRect();
-        pinout.scrollLeft += (board.left + board.right - view.left - view.right) / 2;
-        return;
-    }
-}
-function reversed_on_change() {
-    pinout.classList.toggle("underside-view", this.checked);
-    center_board();
-}
-function australian_on_change() {
-    pinout.classList.toggle("australian-view", this.checked);
+function view_on_change() {
+    apply_box(this);
     center_board();
 }
 
 url_ready = true;
 
-center_board();
 window.addEventListener("resize", center_board);
 
 /* Keyboard navigation: one tab stop per table, arrow keys move between pins.
@@ -562,10 +577,6 @@ Array.prototype.forEach.call(pinout.querySelectorAll("table.labels.left, table.l
     var desired_column = 0;
     var moving_focus = false;
 
-    function shown(cell) {
-        return cell.offsetParent !== null && getComputedStyle(cell).visibility !== "hidden";
-    }
-
     function locate(cell) {
         for (var row = 0; row < grid.length; row++) {
             var column = grid[row].indexOf(cell);
@@ -575,7 +586,7 @@ Array.prototype.forEach.call(pinout.querySelectorAll("table.labels.left, table.l
     }
 
     function nearest(row, column) {
-        var visible = grid[row].filter(shown);
+        var visible = grid[row].filter(is_shown);
         if (!visible.length) return null;
         return visible.reduce(function (best, candidate) {
             var a = Math.abs(grid[row].indexOf(candidate) - column);
@@ -607,7 +618,7 @@ Array.prototype.forEach.call(pinout.querySelectorAll("table.labels.left, table.l
     }
 
     function move_column(from, delta) {
-        var visible = grid[from.row].filter(shown);
+        var visible = grid[from.row].filter(is_shown);
         var at = visible.indexOf(grid[from.row][from.column]);
         var target = visible[Math.max(0, Math.min(visible.length - 1, at + delta))];
         if (!target) return;
@@ -652,7 +663,6 @@ Array.prototype.forEach.call(pinout.querySelectorAll("table.labels.left, table.l
         set_tab_stop(cell);
     });
 
-    focus_cell(0, 0);
     grid.forEach(function (row) { row.forEach(function (cell) { cell.tabIndex = -1; }); });
     var first = nearest(0, 0);
     if (first) first.tabIndex = 0;
