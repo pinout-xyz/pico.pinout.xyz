@@ -19,6 +19,16 @@ article {
     align-items: center;
     margin-top: 10px;
     padding: 0 10px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    position: relative;
+}
+/* scroll-initial-target takes its alignment from scroll-snap-align. */
+.pinout .pico {
+    scroll-snap-align: center;
+    scroll-initial-target: nearest;
 }
 footer {
     display: grid;
@@ -421,9 +431,14 @@ button.swatch.chosen {box-shadow: inset 0 0 0 2px #ffffff, inset 0 0 0 3px #0000
     grid-column: 1 / -1;
     direction: ltr;
     background: none;
-    margin: 30px 0 0 0;
+    margin: 30px auto 0 auto;
     text-align: center;
     font-size: 12px;
+    position: sticky;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    max-width: 100vw;
 }
 .share button {
     font: inherit;
@@ -501,6 +516,7 @@ button.trash:hover svg {fill: #dc322f;}
 
 @media print {
     footer, header ul, #nav {display: none;}
+    article {overflow: visible; max-width: none;}
     footer.print {
         display: block;
         border-top: 5px solid #268bd2;

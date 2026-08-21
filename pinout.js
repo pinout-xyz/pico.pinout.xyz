@@ -508,6 +508,7 @@ function advanced_on_change() {
         advanced[j].classList.toggle("advanced", !this.checked);
     }
     if (typeof align_custom_column === "function") align_custom_column();
+    center_board();
     store_toggles();
     update_url();
 }
@@ -519,27 +520,34 @@ function interface_on_change() {
         element.classList.toggle("hidden", !checked);
     });
     if (typeof align_custom_column === "function") align_custom_column();
+    center_board();
     store_toggles();
     update_url();
 }
+/* Toggles change the content width, and flipping the view resets the scroll origin. */
+function center_board() {
+    var boards = pinout.querySelectorAll(".pico");
+    for (var i = 0; i < boards.length; i++) {
+        if (boards[i].offsetParent === null) continue;
+        var board = boards[i].getBoundingClientRect();
+        var view = pinout.getBoundingClientRect();
+        pinout.scrollLeft += (board.left + board.right - view.left - view.right) / 2;
+        return;
+    }
+}
 function reversed_on_change() {
     pinout.classList.toggle("underside-view", this.checked);
+    center_board();
 }
 function australian_on_change() {
     pinout.classList.toggle("australian-view", this.checked);
-}
-
-
-// Janky hack for iOS at least
-if (window.innerWidth < 400) {
-    for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].type != "checkbox") continue;
-        inputs[i].checked = false;
-        inputs[i].onchange();
-    }
+    center_board();
 }
 
 url_ready = true;
+
+center_board();
+window.addEventListener("resize", center_board);
 
 /* Keyboard navigation: one tab stop per table, arrow keys move between pins.
    Cells hidden by an interface toggle are skipped, and the travelling column is
