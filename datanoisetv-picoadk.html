@@ -7,7 +7,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="shortcut icon" href="pinout-logo.png" type="image/png">
-<script src="register_serviceworker.js" type="text/javascript"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+}
+</script>
 <link rel="manifest" href="manifest.json">
 <title>DatanoiseTV PicoADK GPIO Pinout</title>
 <meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the DatanoiseTV PicoADK GPIO Pinout" />
@@ -306,7 +310,7 @@ label:has(input:focus-visible) {
             <tr aria-label="Twenty-third pin."><td class="spiadc" title="ADC2">ADC2</td></tr>
             <tr aria-label="Twenty-fourth pin."><td class="spiadc" title="ADC3">ADC3</td></tr>
         </table>
-        <div class="pico" id="upside"><img width="210" height="620" style="margin-top: 8pt;" alt="DatanoiseTV PicoADK with the micro USB port facing upwards, standing face-up on its GPIO pins." src="datanoise-picoadk.svg" /></div>
+        <div class="pico" id="upside"><img fetchpriority="high" width="210" height="620" style="margin-top: 8pt;" alt="DatanoiseTV PicoADK with the micro USB port facing upwards, standing face-up on its GPIO pins." src="datanoise-picoadk.svg" /></div>
         <table aria-label="Right-hand pins" class="labels right" cellpadding="0" cellspacing="5">
             <tr aria-label="First pin."       ><td class="power" title="Power: USB Bus">VBUS</td></tr>
             <tr aria-label="Second pin."      ><td class="power" title="Power: System">VSYS</td></tr>

@@ -7,7 +7,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="shortcut icon" href="pinout-logo.png" type="image/png">
-<script src="register_serviceworker.js" type="text/javascript"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+}
+</script>
 <link rel="manifest" href="manifest.json">
 <title>Pimoroni Tiny 2040 GPIO Pinout</title>
 <meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the RP2040-based Pimoroni Tiny 2040" />
@@ -49,7 +53,7 @@
             <tr aria-label="Eighth pin."      ><th>8</th><td class="ground">Ground</td></tr>
             </tbody>
         </table>
-        <div class="pico"><img width="174" alt="Pimoroni Tiny 2040 with the micro USB port facing upwards, standing face-up on its GPIO pins." src="pimoroni-tiny-2040.svg" /></div>
+        <div class="pico"><img fetchpriority="high" width="174" alt="Pimoroni Tiny 2040 with the micro USB port facing upwards, standing face-up on its GPIO pins." src="pimoroni-tiny-2040.svg" /></div>
         <table aria-label="Right-hand pins" class="labels right">
             <thead>
                 <tr><th scope="col">Pin</th><th scope="col">Name</th><th scope="col">SPI</th><th scope="col">I2C</th><th scope="col">UART</th><th scope="col">PWM</th></tr>
