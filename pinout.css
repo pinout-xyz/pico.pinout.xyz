@@ -249,7 +249,7 @@ td, th {
 
 .filter {
     list-style: none;
-    margin: 0;
+    margin: 0 0 5px 0;
     padding: 0;
 }
 .filter li {
@@ -257,24 +257,51 @@ td, th {
 }
 .filter label {
     display: inline-block;
+    position: relative;
     color: #002b36;
-    padding: 0px 10px 0px 10px;
-    line-height: 30px;
-    user-select: none;
-    margin-bottom: 5px;
-}
-.interfaces label {
-    border-width:0 0px 0 30px;
+    padding: 0 12px;
+    line-height: 28px;
+    border-width: 2px;
     border-style: solid;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 2px 5px 2px;
 }
+/* Clipped rather than hidden so the toggles keep their keyboard focus. */
 .filter input {
-    margin: 0 10px 0 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    clip-path: inset(50%);
 }
-.filter.interfaces label {
-    color: #222;
+.filter label:not(:has(:checked)) {
+    background: transparent;
+    opacity: 0.65;
+}
+.filter label:hover {
+    opacity: 1;
+}
+/* Off chips outline in the tint the on state fills with. */
+.interfaces label.spi:not(:has(:checked))    {border-color: #d3368233;}
+.interfaces label.i2c:not(:has(:checked))    {border-color: #268bd233;}
+.interfaces label.uart:not(:has(:checked))   {border-color: #6c71c433;}
+.interfaces label.hstx:not(:has(:checked))   {border-color: #2aa19833;}
+.interfaces label.custom:not(:has(:checked)) {border-color: #cbcbcb33;}
+/* PWM's #333333 has no contrast against a dark page, so its chip runs mid grey. */
+.interfaces label.pwm:has(:checked)       {background-color: #76767633; border-color: #767676;}
+.interfaces label.pwm:not(:has(:checked)) {border-color: #76767633;}
+.settings label {
+    border-color: #767676;
+}
+.settings label:has(:checked) {
+    background: #002b36;
+    border-color: #002b36;
+    color: #e9e5d2;
 }
 .filter.interfaces {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .nojs ul {display: none;}
 
@@ -466,10 +493,17 @@ button.swatch.chosen {box-shadow: inset 0 0 0 2px #ffffff, inset 0 0 0 3px #0000
         color: #666666;
         border-bottom-color: #222222;
     }
-    .filter label,
     footer p,
     nav p {
         color: #666666;
+    }
+    .settings label {
+        border-color: #444444;
+    }
+    .settings label:has(:checked) {
+        background: #e9e5d2;
+        border-color: #e9e5d2;
+        color: #002b36;
     }
     footer a.selected {
         color: #666666;
@@ -509,7 +543,7 @@ button.trash:hover svg {fill: #dc322f;}
     .share button {background: #111111; border-color: #333333; color: #e9e5d2;}
     .share button:hover {background: #222222;}
 
-    td, th, .filter.interfaces label {
+    td, th, .filter label {
         color: #e9e5d2;
     }
 }

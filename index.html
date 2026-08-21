@@ -15,7 +15,7 @@ if ("serviceWorker" in navigator) {
 <link rel="manifest" href="manifest.json">
 <title>Raspberry Pi Pico GPIO Pinout</title>
 <meta name="description" content="An interactive, accessible and beautiful GPIO Pinout guide for the Raspberry Pi Pico" />
-<link rel="stylesheet" href="pinout.css?v=20260821v1" type="text/css" media="screen,print" />
+<link rel="stylesheet" href="pinout.css?v=20260821v2" type="text/css" media="screen,print" />
 </head>
 <body>
     <header>
@@ -25,8 +25,8 @@ if ("serviceWorker" in navigator) {
     <nav class="nojs" id="nav">
         <ul class="filter settings">
             <li><label for="advanced" title="Show or hide advanced pin functions."><input title="Show or hide advanced pin functions." type="checkbox" name="advanced" id="advanced" />Advanced</label></li>
-            <li><label for="reversed" title="If you solder the headers on backwards to keep the pin numbers visible, then the pinout is reversed."><input title="If you solder the headers on backwards to keep the pin numbers visible, then the pinout is reversed." type="checkbox" name="reversed" id="reversed" />Rear View</label></li>
-            <li><label for="australian" title="If your Pico is fixed upside-down for some reason."><input title="If your Pico is fixed upside-down for some reason." type="checkbox" name="australian" id="australian" />Upside-down</label></li>
+            <li><label for="reversed" title="If you solder the headers on backwards to keep the pin numbers visible, then the pinout is reversed."><input title="If you solder the headers on backwards to keep the pin numbers visible, then the pinout is flipped horizontally." type="checkbox" name="reversed" id="reversed" />Flip</label></li>
+            <li><label for="australian" title="If your Pico is fixed upside-down for some reason."><input title="If your Pico is fixed upside-down for some reason." type="checkbox" name="australian" id="australian" />Rotate</label></li>
         </ul>
         <ul class="filter interfaces">
             <li><label class="spi" for="spi" title="Show or hide SPI functions."><input title="Show or hide SPI functions." type="checkbox" checked name="spi" id="spi" />SPI</label></li>
